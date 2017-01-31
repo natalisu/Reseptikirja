@@ -83,15 +83,7 @@ p.card-desc {
     font-size: 14px;
 }
 
-h5.logoheading {
-    font-family: "Lora", serif;
-    display: inline;
-    padding-left: 5%;
-    padding-right: 5%;
-    font-size: 30px;
-}
-
-h6.navbar {
+nav {
     font-family: "PT Serif", serif;
     display: inline;
 }
