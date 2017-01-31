@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<!-- COLORS:
+    #f6e290 (yellow) menu, button background, comment border
+    #eaffa4 (green) logo, comment border
+    #eeeeee (grey) background
+    #d65164 (red) likes-heart
+    -->
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Lora|PT+Serif" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- NAVBAR -->
+
+    <div class="container" style="background-color: #fff; padding: 1%;">
+        <nav class="navbar navbar-light navbar-toggleable-md">
+            <a class="navbar-brand" href="#">
+                <img src="http://68.media.tumblr.com/avatar_59929f1faa4b_128.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <h5 class="logoheading">Foooood</h5>
+            </a>
+            <nav class="nav nav-pills flex-column flex-sm-row" id="navbaritems">
+                <a class="flex-sm-fill text-sm-center nav-link active menubutton" href="index.html">Home</a>
+                <a class="flex-sm-fill text-sm-center nav-link menubutton" href="recipe.html">Recipe search</a>
+                <a class="flex-sm-fill text-sm-center nav-link menubutton" href="#">My recipes</a>
+            </nav>
+        </nav>
+    </div>
+
+    <!-- CONTENT -->
+
+    <!-- CAROUSEL -->
+
+    <div class="container">
+        <div id="kuvakaruselli" class="carousel slide" data-ride="carousel" style="align-content: center;">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid" src="ruoka5.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="ruoka4.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="ruoka3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="ruoka2.jpg" alt="Fourth slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="ruoka1.jpg" alt="Fifth slide">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+
+    <div class="container" style="background-color: #fff; padding: 2%;">
+        <div class="row">
+            <div class="col">
+                <h4>Recommendations</h4></div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti1.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 1</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains fish</i></p>
+                            </div>
+                            <div class="col-2">
+                                <p class="card-text">60min</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti2.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 2</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Vegan</i></p>
+                            </div>
+                            <div class="col-2">
+                                <p class="card-text">120min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti3.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 3</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains dairy</i></p>
+                            </div>
+                            <div class="col-2">
+                                <p class="card-text">75min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti9.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 4</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains chicken</i></p>
+                            </div>
+                            <div class="col-2">
+                                <p class="card-text">35min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- FAVOURITES -->
+
+    <div class="container" style="background-color: #fff; padding: 2%;">
+        <div class="row">
+            <div class="col">
+                <h4>My recipes</h4></div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti4.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 1</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains beef</i></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">20min</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti8.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 2</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains nuts</i></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">45min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti6.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 3</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Vegan</i></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">90min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 recipecard">
+                <div class="card" style="width: 13rem;">
+                    <img class="card-img-top img-fluid" src="resepti7.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">Recipe 4</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains eggs</i></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">25min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+    </div>
+    <br>
+    <br>
+
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
