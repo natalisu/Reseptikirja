@@ -1,0 +1,21 @@
+<div *ngIf="recipeInfo">
+
+ <h2>{{recipeInfo.title}}</h2> 
+ <b>Preparing time: {{recipeInfo.readyInMinutes}} minutes</b><br>
+ 
+ <ul>
+   <li><b>Ingredients:</b></li>
+   <li *ngFor="let foodthing of ingredients">
+    <!-- {{foodthing.originalString}} -->
+    {{foodthing.amount}} <i>{{foodthing.unit}}</i> {{foodthing.name}}
+     </li>
+ </ul>
+
+ <ul>
+   <li><b>Steps:</b></li>
+   <li *ngFor="let phase of instructions">{{phase.step}}</li>
+ </ul>
+
+<p><a href="{{recipeInfo.sourceUrl}}">Original recipe {{recipeInfo.sourceName}}</a></p>
+
+ </div>

@@ -1,0 +1,298 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.carousel-inner > .carousel-item > img,
+.carousel-inner > .item > a > img {
+    margin: auto;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+sisalto.container {
+    background-color: #fff;
+}
+
+h4 {
+    font-family: "Lora", serif;
+}
+
+p.card-text {
+    font-family: "PT Serif", serif;
+    font-size: 12px;
+}
+
+p.card-desc {
+    font-family: "PT Serif", serif;
+    font-size: 14px;
+}
+
+h5.logoheading {
+    font-family: "Lora", serif;
+    display: inline;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 30px;
+}
+
+h6.navbar {
+    font-family: "PT Serif", serif;
+    display: inline;
+}
+
+p.card-title {
+    font-size: 18px;
+    font-family: "Lora", serif;
+}
+
+h5 {
+    font-family: "Lora", serif;
+}
+
+h6 {
+    font-family: "Lora", serif;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+ol,
+ul {
+    font-family: "PT Serif", serif;
+}
+
+li {
+    padding-bottom: 1%;
+}
+
+recipeIngredients {
+    padding-bottom: 1%;
+}
+
+.verticalLine {
+    border-left: thin solid #000;
+    border-right: thin solid #000;
+    padding-left: 12%;
+    font-family: "PT Serif", serif;
+}
+
+.comment {
+    border: thin solid #f6e290;
+    padding: 2%;
+    margin-bottom: 2%;
+    font-family: "PT Serif", serif;
+}
+
+.date {
+    font-family: "PT Serif", serif;
+    font-size: 12px;
+    color: grey;
+    padding-top: 2%;
+    float: right;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {}
+
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {}
+
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+    }
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
