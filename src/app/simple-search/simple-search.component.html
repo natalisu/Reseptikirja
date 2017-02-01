@@ -1,0 +1,9 @@
+<p>Front page search:</p>
+
+  <form [formGroup]="searchForm" (ngSubmit)="search($event)">
+  <input formControlName="searchterm" minlength="3" required>
+  <button type="submit">Search</button>
+  </form>
+
+
+
