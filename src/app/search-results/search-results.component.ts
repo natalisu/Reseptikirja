@@ -17,11 +17,6 @@ export class SearchResultsComponent implements OnInit {
 
   constructor(private recipeservice: RecipequeryService, private router: Router, private route: ActivatedRoute) { }
 
-  recipeInfo(id: number){
-    console.log(id);
-    this.router.navigate(['recipe', id]);
-  }
-
   ngOnInit() {
      this.route.params
     .switchMap((params: Params) =>

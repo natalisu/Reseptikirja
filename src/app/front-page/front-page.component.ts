@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FrontPageComponent implements OnInit {
 
   constructor(private router: Router) {
-    
+
   }
 
   ngOnInit() {

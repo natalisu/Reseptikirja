@@ -20,7 +20,8 @@ export class SimpleSearchComponent implements OnInit {
     console.log(event);
     console.log(query);
     event.preventDefault();
-    this.router.navigate(['search-results', query]);
+    this.router.navigate(['search', query]);
+    console.log('moi');
   }
 
   ngOnInit() {

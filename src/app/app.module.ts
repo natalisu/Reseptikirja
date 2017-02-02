@@ -13,6 +13,8 @@ import { ImageCarouselComponent } from './image-carousel/image-carousel.componen
 import { SimpleSearchComponent } from './simple-search/simple-search.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
+import { SearchComponent } from './search/search.component';
 
 const routeConfig = [
   {
@@ -20,10 +22,18 @@ const routeConfig = [
     pathMatch: 'full',
     component: FrontPageComponent
   },
+  {
+    path: 'home',
+    component: FrontPageComponent
+  },
     {
-    path: 'search-results/:query',
-    component: SearchResultsComponent
-},
+    path: 'search/:query',
+    component: SearchComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
   {
     path: 'recipe/:id',
     component: RecipeCardDetailedComponent
@@ -37,7 +47,9 @@ const routeConfig = [
     ImageCarouselComponent,
     SimpleSearchComponent,
     SearchResultsComponent,
-    FrontPageComponent
+    FrontPageComponent,
+    AdvancedSearchComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
