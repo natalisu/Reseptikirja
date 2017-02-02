@@ -1,9 +1,9 @@
 <div *ngIf="recipeInfo">
-
+  <img src="http://i.imgur.com/uG0XRBH.jpg"><br>
  <h2>{{recipeInfo.title}}</h2> 
  <b>Preparing time: {{recipeInfo.readyInMinutes}} minutes</b><br>
  
- <ul>
+ <ul *ngIf="ingredients">
    <li><b>Ingredients:</b></li>
    <li *ngFor="let foodthing of ingredients">
     <!-- {{foodthing.originalString}} -->
@@ -11,7 +11,7 @@
      </li>
  </ul>
 
- <ul>
+ <ul *ngIf="instructions">
    <li><b>Steps:</b></li>
    <li *ngFor="let phase of instructions">{{phase.step}}</li>
  </ul>

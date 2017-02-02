@@ -1,3 +1,14 @@
 <p>
-  search-results works!
+  Search results:
 </p>
+
+<div *ngIf="recipes">
+
+  <ul *ngFor="let recipe of recipes">
+    <li><img src="http://i.imgur.com/uG0XRBH.jpg"></li>
+    <li>
+      <!-- <img src="{{imageurl}}{{recipe.image}}"><br> -->
+    <button (click)="recipeInfo(recipe.id)">{{recipe.title}}</button></li>
+  </ul>
+
+</div>

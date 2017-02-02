@@ -10,17 +10,17 @@ import { Router } from '@angular/router';
 export class SimpleSearchComponent implements OnInit {
 
   public searchForm = this.fb.group({
-    searchterm: ['', Validators.required]
+    query: ['', Validators.required]
   });
 
   constructor(public fb: FormBuilder, private router: Router) { }
 
   search(event) {
-    let searchterm = this.searchForm.value.searchterm;
+    let query = this.searchForm.value.query;
     console.log(event);
-    console.log(searchterm);
+    console.log(query);
     event.preventDefault();
-    this.router.navigate(['search-results', searchterm]);
+    this.router.navigate(['search-results', query]);
   }
 
   ngOnInit() {

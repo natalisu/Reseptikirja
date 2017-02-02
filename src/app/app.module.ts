@@ -12,12 +12,22 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { ImageCarouselComponent } from './image-carousel/image-carousel.component';
 import { SimpleSearchComponent } from './simple-search/simple-search.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 const routeConfig = [
   {
-    path: 'search-results/:searchterm',
+    path: '',
+    pathMatch: 'full',
+    component: FrontPageComponent
+  },
+    {
+    path: 'search-results/:query',
     component: SearchResultsComponent
-}];
+},
+  {
+    path: 'recipe/:id',
+    component: RecipeCardDetailedComponent
+  }];
 
 @NgModule({
   declarations: [
@@ -26,7 +36,8 @@ const routeConfig = [
     NavigationBarComponent,
     ImageCarouselComponent,
     SimpleSearchComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    FrontPageComponent
   ],
   imports: [
     BrowserModule,
