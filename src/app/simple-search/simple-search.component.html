@@ -1,13 +1,15 @@
-
 <div class="container">
+  <div class="row">
+    <div class="col">
 
-<div class="searchBox">
-  <form [formGroup]="searchForm" (ngSubmit)="search($event)">
-  <input formControlName="query" minlength="3" required>
-  <button type="submit">Search</button>
+  <h4><b>Search for a recipe:</b></h4>
+
+  <form class="search" [formGroup]="searchForm" (ngSubmit)="search($event)">
+  <input size="30" height="100" class="isearch" formControlName="query" minlength="3" placeholder="i.e. chicken, bacon..." required>
+  <button type="submit" class="btn btn-warning">Submit</button>
   </form>
-</div>
 
+    </div>
+  </div>
 </div>
-
 
