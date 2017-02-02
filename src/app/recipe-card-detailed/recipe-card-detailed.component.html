@@ -1,23 +1,30 @@
-<div *ngIf="recipeInfo">
-  <img src="http://i.imgur.com/uG0XRBH.jpg"><br>
- <h2>{{recipeInfo.title}}</h2> 
- <b>Preparing time: {{recipeInfo.readyInMinutes}} minutes</b><br>
- 
- <ul *ngIf="ingredients">
-   <li><b>Ingredients:</b></li>
-   <li *ngFor="let foodthing of ingredients">
-    <!-- {{foodthing.originalString}} -->
-    {{foodthing.amount}} <i>{{foodthing.unit}}</i> {{foodthing.name}}
-     </li>
- </ul>
+<div *ngIf="recipeInfo" class="container">
+  <div class="row">
+    <div class="col">
+      <img src="http://i.imgur.com/uG0XRBH.jpg">
+      <h3>Ingredients:</h3>
+        <ul *ngIf="ingredients">
+          <li><b>Ingredients:</b></li>
+          <li *ngFor="let foodthing of ingredients">
+           <!-- {{foodthing.originalString}} -->
+            {{foodthing.amount}} <i>{{foodthing.unit}}</i> {{foodthing.name}}
+            </li>
+        </ul>
+    </div>
 
- <ul *ngIf="instructions">
-   <li><b>Steps:</b></li>
-   <li *ngFor="let phase of instructions">{{phase.step}}</li>
- </ul>
+    <div class="col">
+      <h2>{{recipeInfo.title}}</h2> 
+      <b>Preparing time: {{recipeInfo.readyInMinutes}} minutes</b><br>
 
-<p><a href="{{recipeInfo.sourceUrl}}">Original recipe {{recipeInfo.sourceName}}</a></p>
+    <ul *ngIf="instructions">
+       <li><b>Steps:</b></li>
+      <li *ngFor="let phase of instructions">{{phase.step}}</li>
+    </ul>
 
+    <p><a href="{{recipeInfo.sourceUrl}}">Original recipe {{recipeInfo.sourceName}}</a></p>
+
+    </div>
+  </div>
  </div>
 
  

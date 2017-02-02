@@ -9,6 +9,12 @@
     position: relative;
 }
 
+.col {
+    margin: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
 .searchbox {
     position: absolute;
     z-index:9999999;
