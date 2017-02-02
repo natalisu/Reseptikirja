@@ -1,0 +1,29 @@
+.carousel-inner > .carousel-item > img,
+.carousel-inner > .item > a > img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#kuvakaruselli {
+    position: relative;
+}
+
+.searchbox {
+    position: absolute;
+    z-index:9999999;
+    top:45%;
+    width: 33em;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4%;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px #fff;
+    
+    .container {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    }

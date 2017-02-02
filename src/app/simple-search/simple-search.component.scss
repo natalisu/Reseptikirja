@@ -1,0 +1,15 @@
+
+.isearch {
+    margin-right: 5%;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+textarea:focus, input:focus {
+    outline: none !important;
+    box-shadow: 0 0 20px grey;
+}
+
+.btn-warning {
+    letter-spacing: 1px;
+}

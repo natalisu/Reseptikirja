@@ -1,0 +1,19 @@
+nav {
+    background-color: #fff;
+}
+
+.navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(246, 226, 144, 1);
+}
+
+.navbar-brand {
+
+    img {
+        width:30px;
+        height:30px;
+    }
+
+}

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import {APP_BASE_HREF} from '@angular/common';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { FrontPageComponent } from './front-page/front-page.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { SearchComponent } from './search/search.component';
+import { FrontPageRecComponent } from './front-page-rec/front-page-rec.component';
 
 const routeConfig = [
   {
@@ -49,7 +51,8 @@ const routeConfig = [
     SearchResultsComponent,
     FrontPageComponent,
     AdvancedSearchComponent,
-    SearchComponent
+    SearchComponent,
+    FrontPageRecComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,7 @@ const routeConfig = [
     HttpModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [RecipequeryService],
+  providers: [RecipequeryService, {provide: APP_BASE_HREF, useValue : '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
