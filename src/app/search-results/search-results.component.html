@@ -1,18 +1,46 @@
-<div *ngIf="recipes">
-
-  <ul *ngFor="let recipe of recipes">
-    <li><img src="http://i.imgur.com/uG0XRBH.jpg"></li>
-    <li>
-      <!-- <img src="{{imageurl}}{{recipe.image}}"><br> -->
-    <a [routerLink]="['/recipe', recipe.id]">{{recipe.title}}</a></li>
-  </ul>
+<div class="container">
 
 
+  <div class="row" *ngIf="recipes">
+
+     <div class="col-3 recipecard" *ngFor="let recipe of recipes">
+            <a [routerLink]="['/recipe', recipe.id]">
+                <div class="card" style="width: 13rem;">
+                  <img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">
+                  <!-- <img src="{{imageurl}}{{recipe.image}}"><br> -->
+                  <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <p class="card-title">{{recipe.title}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-desc" id="text">Description</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="card-text"><i>Contains fish</i></p>
+                            </div>
+                            <div class="col-2">
+                                <p class="card-text">{{recipe.readyInMinutes}}</p>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+          </a>
+  </div>
 
 <div *ngIf="!recipes.length">
 
   <p>No results :(</p>
 
 </div>
+
+</div>
+
+
 
 </div>

@@ -17,11 +17,8 @@ export class SimpleSearchComponent implements OnInit {
 
   search(event) {
     let query = this.searchForm.value.query;
-    console.log(event);
-    console.log(query);
     event.preventDefault();
     this.router.navigate(['search', query]);
-    console.log('moi');
   }
 
   ngOnInit() {
