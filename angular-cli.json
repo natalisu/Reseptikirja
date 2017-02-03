@@ -32,7 +32,8 @@
       }
     }
   ],
-  "addons": [],
+  "addons": [
+  ],
   "packages": [],
   "e2e": {
     "protractor": {

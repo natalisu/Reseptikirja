@@ -17,6 +17,10 @@ $gr: #eaffa4;
 $heart: #d65164;
 
 /* FONTS */
+
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
 $head: 'Lora', serif;
 $txt: 'PT Serif', serif;
 
