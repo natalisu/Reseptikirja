@@ -17,6 +17,8 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { SearchComponent } from './search/search.component';
 import { FrontPageRecComponent } from './front-page-rec/front-page-rec.component';
+import { CommentboxComponent } from './commentbox/commentbox.component';
+import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 
 const routeConfig = [
   {
@@ -52,7 +54,9 @@ const routeConfig = [
     FrontPageComponent,
     AdvancedSearchComponent,
     SearchComponent,
-    FrontPageRecComponent
+    FrontPageRecComponent,
+    CommentboxComponent,
+    MyRecipesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,77 @@
+/* COLOURS */
+$bg: #eee;
+$darkgr: #65874B;
+$midgr: #84A16E;
+$gr: #A8C095;
+$heart: #d65164;
+
+/* FONTS */
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
+
+h4 {
+    font-family: $desc;
+    text-transform: uppercase;
+}
+
+.comment {
+    border: thin solid $midgr;
+    padding: 2%;
+    margin-bottom: 2%;
+    font-family: $desc;
+}
+
+.date {
+    font-family: $desc;
+    font-size: 12px;
+    color: grey;
+    padding-top: 2%;
+    float: right;
+}
+
+.card {
+    margin: 3%;
+    display: inline-block;
+}
+
+h4, p.card-text {
+    font-family: $desc;
+    text-transform: uppercase;
+}
+
+p.card-text {
+    font-size: 12px;
+}
+
+p.card-desc {
+    font-size: 14px;
+    font-family: $txt;
+}
+
+p.card-title {
+    font-size: 18px;
+    font-family: $head;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.btn-warning {
+    letter-spacing: 1px;
+    font-family: $desc;
+    background-color: $midgr;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: $darkgr;
+}
+
+textarea:focus, input:focus {
+    outline: none !important;
+    border: thin solid $midgr;
+    box-shadow: 0 0 10px $darkgr;
+}

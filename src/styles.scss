@@ -17,30 +17,21 @@ $gr: #eaffa4;
 $heart: #d65164;
 
 /* FONTS */
-
-$fa-font-path: "../node_modules/font-awesome/fonts";
-@import "../node_modules/font-awesome/scss/font-awesome.scss";
-
 $head: 'Lora', serif;
 $txt: 'PT Serif', serif;
-
-.searchbox {
-    font-family: $txt;
-}
-
-.btn-warning {
-    font-family: $head;
-}
-
-.isearch {
-    font-family: $txt;
-}
+$desc: 'Karla', sans-serif;
 
 /* BODY */
 
 body {
     background-color: $bg;
+    padding-top: 1%;
+    background-image: url("https://static.pexels.com/photos/24859/pexels-photo-24859.jpg");
+    background-position: right;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 
 .container {
     background-color: #fff;
@@ -50,98 +41,4 @@ body {
 
 .carousel-item {
      @include border-radius(4px);
-}
-
-
-/* NAVBAR */
-
-nav {
-    font-family: $txt;
-}
-
-h5, h6, h4 {
-    font-family: $head;
-}
-
-.head {
-    font-family: $head;
-}
-/*  SEARCH      */
-
-textarea:focus, input:focus {
-    border: 2px solid $yel;
-}
-
-/* RECIPE CARDS */
-
-p.card-text {
-    font-size: 12px;
-}
-
-p.card-desc {
-    font-size: 14px;
-}
-
-p.card-desc, p.card-text {
-    font-family: $txt;
-}
-
-p.card-title {
-    font-size: 18px;
-    font-family: $head;
-}
-
-.card-img-top {
-    width: 100%;
-    height: auto;
-}
-.card {
-    display: inline-block;
-}
-
-
-
-/* LISTS */
-
-ol,
-ul {
-    font-family: $txt;
-}
-
-li {
-    padding-bottom: 1%;
-}
-
-
-
-/* RECIPE */
-
-recipeIngredients {
-    padding-bottom: 1%;
-}
-
-.verticalLine {
-    border-left: thin solid #000;
-    border-right: thin solid #000;
-    padding-left: 12%;
-    font-family: $txt;
-}
-
-
-
-/* COMMENTS */
-
-.comment {
-    border: thin solid $yel;
-    padding: 2%;
-    margin-bottom: 2%;
-    font-family: $txt;
-}
-
-.date {
-    font-family: $txt;
-    font-size: 12px;
-    color: grey;
-    padding-top: 2%;
-    float: right;
 }

@@ -2,29 +2,43 @@
   <div class="row">
     <div class="col">
       <img src="http://i.imgur.com/uG0XRBH.jpg">
-      <h3>Ingredients:</h3>
-        <ul *ngIf="ingredients">
-          <li><b>Ingredients:</b></li>
+      <br>
+      <div class="recipeIngredients">
+      <ul *ngIf="ingredients">
+      <h5>Ingredients:</h5>
           <li *ngFor="let foodthing of ingredients">
            <!-- {{foodthing.originalString}} -->
-            {{foodthing.amount}} <i>{{foodthing.unit}}</i> {{foodthing.name}}
+            <b>{{foodthing.amount}} {{foodthing.unit}}</b> {{foodthing.name}}
             </li>
         </ul>
+        </div>
     </div>
 
     <div class="col">
-      <h2>{{recipeInfo.title}}</h2> 
-      <b>Preparing time: {{recipeInfo.readyInMinutes}} minutes</b><br>
+      <div class="recipetitle">
+      <h2>{{recipeInfo.title}}</h2>
+      <hr>
+      <div class="recipedesc">
+      <b>Preparing time:</b> {{recipeInfo.readyInMinutes}} minutes</div>
+      </div>
+      <br>
 
-    <ul *ngIf="instructions">
-       <li><b>Steps:</b></li>
+    <ol *ngIf="instructions">
+       <h5>Instructions:</h5>
       <li *ngFor="let phase of instructions">{{phase.step}}</li>
-    </ul>
+      <br>
 
-    <p><a href="{{recipeInfo.sourceUrl}}">Original recipe {{recipeInfo.sourceName}}</a></p>
+    <p><a href="{{recipeInfo.sourceUrl}}">Original recipe: {{recipeInfo.sourceName}}</a></p>
+    </ol>
 
     </div>
   </div>
  </div>
 
- 
+<br>
+
+<div class="container">
+
+<app-commentbox></app-commentbox>
+
+</div>

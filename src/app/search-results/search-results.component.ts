@@ -18,16 +18,11 @@ export class SearchResultsComponent implements OnInit {
   constructor(private recipeservice: RecipequeryService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
-    console.log(this.route.params);
-
      this.route.params
     .switchMap((params: Params) =>
     this.recipeservice.getSearchResults(params))
         .subscribe(
           (res) => {
-
-
             this.imageurl = res.baseUri;
             this.recipes = res.results;
             console.log(res);

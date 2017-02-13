@@ -1,0 +1,51 @@
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
+$gr: #A8C095;
+
+h2 {
+    font-family: $head;
+    line-height: 1.2em;
+}
+
+h6, a {
+    font-family: $txt;
+}
+
+.container {
+    padding: 2%;
+}
+
+img {
+    margin-bottom: 8%;
+}
+
+li, h5 {
+    font-family: $desc;
+}
+
+.recipetitle {
+    background: rgba(168, 192, 149, 0.6);
+    padding: 5%;
+    box-shadow: 0 0 20px $gr;
+}
+
+.recipedesc {
+    font-family: $desc;
+    text-transform: uppercase;
+}
+
+.recipeIngredients {
+    border-left: thin solid #000;
+    border-right: thin solid #000;
+    padding-left: 12%;
+    margin-right: 5%;
+    padding-bottom: 1%;
+}
+
+.verticalLine {
+    border-left: thin solid #000;
+    border-right: thin solid #000;
+    padding-left: 12%;
+    font-family: $txt;
+}
