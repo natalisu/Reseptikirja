@@ -1,3 +1,4 @@
+import { RecipequeryService } from './../services/recipequery.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -11,7 +12,7 @@ export class AdvancedSearchComponent implements OnInit {
 
   private chosenType: string = '';
   checkTypes(){
-      this.chosenType = this.searchForm['type'];
+      this.chosenType = this.searchQuery['type'];
   }
 
    private dietArray = [
@@ -46,20 +47,13 @@ export class AdvancedSearchComponent implements OnInit {
     'drink'
   ];
 
-
-  public searchForm = this.fb.group({
-    query: [''],
-    excludeIngredients: [''],
-    intolerances: [],
-    type: [''],
-    diet: ['']
-  });
-
+  private searchQuery: Object = {};
 
   constructor(public fb: FormBuilder, private router: Router) { }
 
-  search(event) {
+  search() {
 
+    console.log();
     let iArray = [];
 
      this.intolerancesArray
@@ -71,15 +65,19 @@ export class AdvancedSearchComponent implements OnInit {
 
     console.log(iArray);
 
-    let query = this.searchForm.value;
 
-    query.intolerances = iArray;
-    query.type = query.type.replace(/ /,"+");
+    this.searchQuery['intolerances'] = iArray;
+    if ( this.searchQuery['type']) {
+      this.searchQuery['type'] = this.searchQuery['type'].replace(/ /,"+");
+    }
 
+    // console.log(query);
+    event.preventDefault();
+    this.router.navigate(['search', this.searchQuery]);
 
    // console.log(query);
     event.preventDefault();
-    this.router.navigate(['search', query]);
+    this.router.navigate(['search', this.searchQuery]);
   }
 
 

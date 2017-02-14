@@ -4,19 +4,19 @@
   <h4><i class="fa fa-search" aria-hidden="true"></i> <b>Advanced search:</b></h4>
 
 
-  <form class="search" [formGroup]="searchForm" (ngSubmit)="search($event)">
+  <form class="search" #f="ngForm" (ngSubmit)="search()">
 
 <div class="form-group row justify-content-center">
   <label class="col-sm-4 col-form-label">Recipe name or ingredient(s)</label>
    <div class="col-sm-8">
-  <input size="30" height="100" class="isearch" formControlName="query" minlength="3" placeholder="i.e. chicken, bacon...">
+  <input size="30" height="100" class="isearch" name="searchQuery.query" [(ngModel)]="searchQuery.query" minlength="3" placeholder="i.e. chicken, bacon...">
    </div>
 </div>
 
 <div class="form-group row justify-content-center">
   <label class="col-sm-4 col-form-label">Exclude ingredients</label><br>
    <div class="col-sm-8">
-    <input size="30" height="100" class="isearch" formControlName="excludeIngredients" minlength="3" placeholder="i.e. tomato"><br>
+    <input size="30" height="100" class="isearch" name="searchQuery.excludeIngredients" [(ngModel)]="searchQuery.excludeIngredients" minlength="3" placeholder="i.e. tomato"><br>
    </div>
 </div>
 
@@ -28,7 +28,7 @@
          <div class="form-check" *ngFor="let diettype of dietArray">
           <label>
             <input class="form-check-input" type="radio" 
-            value="{{diettype}}" name="diet" formControlName="diet">
+            value="{{diettype}}" [(ngModel)]="searchQuery.diet" name="searchQuery.diet">
                   {{diettype}}
           </label>
         </div>
@@ -38,18 +38,23 @@
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#allergensModal">
   Allergens
-</button>
+</button><br>
+
+  <div *ngFor="let intolerance of intolerancesArray">
+    <span *ngIf="intolerance.checked">{{intolerance.value}} <br></span>
+  </div>
+
 
 <div class="modal" id="allergensModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <div class="form-check" *ngFor="let option of intolerancesArray">
+        <div class="" *ngFor="let option of intolerancesArray">
           <label>
-            <input class="form-check-input" type="checkbox" name="option"
+            <input class="" type="checkbox"
+                  name="option"
                    value="{{option.value}}"
-                   [(ngModel)]="option.checked"
-                   [ngModelOptions]="{standalone: true}"/>
+                   [(ngModel)]="option.checked"/>
                   {{option.value}} {{option.checked}}
           </label>
         </div> 
@@ -67,16 +72,17 @@
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#typesModal">
   Type
-</button>
+</button><br>
+{{chosenType}}
 
 <div class="modal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <div class="form-check" *ngFor="let foodtype of typesArray">
+        <div class="" *ngFor="let foodtype of typesArray">
           <label>
-            <input class="form-check-input" type="radio" 
-            value="{{foodtype}}" name="type" formControlName="type">
+            <input class="" type="radio" 
+            value="{{foodtype}}" [(ngModel)]="searchQuery.type" name="searchQuery.type">
                   {{foodtype}}
           </label>
         </div>
