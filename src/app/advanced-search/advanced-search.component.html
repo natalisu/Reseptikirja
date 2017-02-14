@@ -1,5 +1,5 @@
 <div class="container">
-<div class="container">
+
 
   <h4><i class="fa fa-search" aria-hidden="true"></i> <b>Advanced search:</b></h4>
 
@@ -45,22 +45,22 @@
   </div>
 
 
-<div class="modal" id="allergensModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal optionsModal" id="allergensModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <div class="" *ngFor="let option of intolerancesArray">
+        <div class="advancedOptions" *ngFor="let option of intolerancesArray">
           <label>
             <input class="" type="checkbox"
                   name="option"
                    value="{{option.value}}"
                    [(ngModel)]="option.checked"/>
-                  {{option.value}} {{option.checked}}
+                  {{option.value}}
           </label>
         </div> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -75,11 +75,11 @@
 </button><br>
 {{chosenType}}
 
-<div class="modal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal optionsModal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <div class="" *ngFor="let foodtype of typesArray">
+        <div class="advancedOptions" *ngFor="let foodtype of typesArray">
           <label>
             <input class="" type="radio" 
             value="{{foodtype}}" [(ngModel)]="searchQuery.type" name="searchQuery.type">
@@ -88,7 +88,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="checkTypes()">Close</button>
+        <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal" (click)="checkTypes()">Close</button>
       </div>
     </div>
   </div>
@@ -105,10 +105,5 @@
   </div>
 
   </form>
-
-</div>
-
-
-
 
 </div>

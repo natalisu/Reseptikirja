@@ -9,24 +9,32 @@ $heart: #d65164;
 $head: 'Lora', serif;
 $txt: 'PT Serif', serif;
 $desc: 'Karla', sans-serif;
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
 
 .container {
     padding: 2%;
 }
 
 .card {
-    margin: 3% 3% 5% 3%;
+    margin: 3%;
     display: inline-block;
+    
+    .row {
+        padding: 0%;
+
+        .col {
+            padding: 1%;
+        }
+    }
 }
+
+
 
 h4, p.card-text {
     font-family: $desc;
     text-transform: uppercase;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
 }
 
 p.card-text {
