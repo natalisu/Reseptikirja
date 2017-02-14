@@ -28,7 +28,7 @@ export class RecipequeryService {
   }
 
   getSearchResults = (params: Params) => {
-    let parameters = '?';
+    let parameters = '?instructionsRequired=true&';
     for (let key in params){
       parameters = parameters + key.toString()+"="+params[key]+"&";
     };

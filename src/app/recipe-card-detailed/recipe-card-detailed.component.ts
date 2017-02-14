@@ -20,6 +20,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private sub: Subscription ;
   private params;
   private similarRecipes: Array<Object> = [];
+  private recipesTitle = "Similar recipes";
 
 
   constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute) { 
@@ -49,6 +50,7 @@ export class RecipeCardDetailedComponent implements OnInit {
           (res) => {
             console.log(res);
             this.similarRecipes =  res.slice(0, 3);
+
         })
       })
   }

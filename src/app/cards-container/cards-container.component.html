@@ -1,9 +1,11 @@
 <div class="container">
 
 
-  <div class="row" *ngIf="recipes">
+  <div *ngIf="recipes">
 
-      <div *ngIf="horizontal">
+      <h4>{{title}}</h4>
+
+      <div class="row" *ngIf="horizontal">
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 recipecard" *ngFor="let recipe of recipes">
           <div class="card">
             <a [routerLink]="['/recipe', recipe.id]"><img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">
@@ -24,8 +26,9 @@
           </div>
       </div>
       </div>
+   
+<div class="row" *ngIf="!horizontal">
 
-      <div *ngIf="!horizontal">
         <div class="col" *ngFor="let recipe of recipes">
           <div class="card">
             <a [routerLink]="['/recipe', recipe.id]"><img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">
