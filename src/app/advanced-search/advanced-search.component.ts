@@ -63,8 +63,7 @@ export class AdvancedSearchComponent implements OnInit {
           iArray.push(opt)
         });
 
-    console.log(iArray);
-
+    
 
     this.searchQuery['intolerances'] = iArray;
     if ( this.searchQuery['type']) {
@@ -72,10 +71,6 @@ export class AdvancedSearchComponent implements OnInit {
     }
 
     // console.log(query);
-    event.preventDefault();
-    this.router.navigate(['search', this.searchQuery]);
-
-   // console.log(query);
     event.preventDefault();
     this.router.navigate(['search', this.searchQuery]);
   }
