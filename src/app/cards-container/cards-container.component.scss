@@ -13,6 +13,12 @@ $head: 'Lora', serif;
 $txt: 'PT Serif', serif;
 $desc: 'Karla', sans-serif;
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  
+}
+
 .container {
     padding: 2%;
 }
@@ -55,4 +61,15 @@ p.card-title {
 .card-img-top {
     width: 100%;
     height: auto;
+}
+
+.heartContainer {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 700;
+    background-color: rgba(255,255,255,0.9);
+    i {
+        color: $heart;
+    }
 }

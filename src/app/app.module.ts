@@ -1,3 +1,4 @@
+import { LikesService } from './services/likes.service';
 import { RecipequeryService } from './services/recipequery.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,6 +21,7 @@ import { FrontPageRecComponent } from './front-page-rec/front-page-rec.component
 import { CommentboxComponent } from './commentbox/commentbox.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { CardsContainerComponent } from './cards-container/cards-container.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 const routeConfig = [
   {
@@ -38,6 +40,10 @@ const routeConfig = [
   {
     path: 'search',
     component: SearchComponent
+  },
+   {
+    path: 'favourites',
+    component: FavouritesComponent
   },
   {
     path: 'recipe/:id',
@@ -58,7 +64,8 @@ const routeConfig = [
     FrontPageRecComponent,
     CommentboxComponent,
     MyRecipesComponent,
-    CardsContainerComponent
+    CardsContainerComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,9 @@ const routeConfig = [
     HttpModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [RecipequeryService, {provide: APP_BASE_HREF, useValue : '' }],
+  providers: [
+    LikesService,
+    RecipequeryService, {provide: APP_BASE_HREF, useValue : '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

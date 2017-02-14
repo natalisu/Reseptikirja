@@ -1,0 +1,8 @@
+<div class="container">
+
+<h4>{{title}}</h4>
+
+<app-cards-container [recipes]="ownRecipes"></app-cards-container>
+
+<button class="btn btn-warning" (click)="emptyFavourites()" *ngIf="showButton">Clear favourites</button>
+</div>

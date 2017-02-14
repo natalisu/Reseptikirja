@@ -1,3 +1,4 @@
+import { LikesService } from './../services/likes.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -11,9 +12,18 @@ export class CardsContainerComponent implements OnInit {
   @Input() horizontal: boolean = true;
   @Input() title: string = '';
 
-  constructor() { }
+  constructor(private likes: LikesService) { }
 
   ngOnInit() {
+
+  }
+
+  saveToFavourites(event) {
+    let recipe: Object = {};
+    recipe['id']= event.id;
+    recipe['title'] = event.title;
+    recipe['readyInMinutes'] = event.readyInMinutes;
+    this.likes.saveToFavourites(recipe);
   }
 
 }
