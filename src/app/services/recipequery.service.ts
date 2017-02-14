@@ -43,5 +43,14 @@ export class RecipequeryService {
     return this.http.get(recipeUrl, options).map(resp => resp.json());
     }
 
+    getSimilarRecipe = (id: number) => {
+      let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
+      let options = new RequestOptions({ headers: headers });
+
+      let recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+id+'/similar';
+
+      return this.http.get(recipeUrl, options).map(resp => resp.json());
+    }
+
 
 }

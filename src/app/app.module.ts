@@ -19,6 +19,7 @@ import { SearchComponent } from './search/search.component';
 import { FrontPageRecComponent } from './front-page-rec/front-page-rec.component';
 import { CommentboxComponent } from './commentbox/commentbox.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
+import { CardsContainerComponent } from './cards-container/cards-container.component';
 
 const routeConfig = [
   {
@@ -56,7 +57,8 @@ const routeConfig = [
     SearchComponent,
     FrontPageRecComponent,
     CommentboxComponent,
-    MyRecipesComponent
+    MyRecipesComponent,
+    CardsContainerComponent
   ],
   imports: [
     BrowserModule,

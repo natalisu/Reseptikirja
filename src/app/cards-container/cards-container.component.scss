@@ -1,0 +1,58 @@
+/* COLOURS */
+$bg: #eee;
+$darkgr: #65874B;
+$midgr: #84A16E;
+$gr: #A8C095;
+$heart: #d65164;
+
+/* FONTS */
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
+
+.container {
+    padding: 2%;
+}
+
+.card {
+    margin: 3%;
+    display: inline-block;
+    min-width: 200px;
+    
+    .row {
+        padding: 0%;
+
+        .col {
+            padding: 1%;
+        }
+    }
+}
+
+
+
+h4, p.card-text {
+    font-family: $desc;
+    text-transform: uppercase;
+}
+
+p.card-text {
+    font-size: 12px;
+}
+
+p.card-desc {
+    font-size: 14px;
+    font-family: $txt;
+}
+
+p.card-title {
+    font-size: 18px;
+    font-family: $head;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}

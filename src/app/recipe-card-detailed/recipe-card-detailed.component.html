@@ -39,6 +39,15 @@
 
 <div class="container">
 
-<app-commentbox></app-commentbox>
+<div class="row">
+
+  <div class="col-9">
+    <app-commentbox></app-commentbox>
+  </div>
+  <div class="col-3">
+    <h4>Similar recipes:</h4>
+    <app-cards-container [recipes]="similarRecipes" [horizontal]="false"></app-cards-container>
+  </div>
+</div>
 
 </div>
