@@ -2,7 +2,7 @@
 
 <br>
 
-<app-cards-container [imageurl]="imageurl" [recipes]="recommendRecipes" [title]="recTitle"></app-cards-container> 
+<app-cards-container (update)="saveUpdate($event)" [imageurl]="imageurl" [recipes]="recommendRecipes" [title]="recTitle"></app-cards-container> 
 
 <!--
 <br>

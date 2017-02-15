@@ -16,12 +16,20 @@ export class FavouritesComponent implements OnInit {
 
   ngOnInit() {
     this.ownRecipes = this.likes.getFavourites();
+    this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
     if (this.ownRecipes === null) {
       this.title = "No saved recipes found";
     } else {
       this.title = "Saved recipes";
       this.showButton = true;
     }
+  }
+
+  
+   saveUpdate(event) {
+    console.log('save');
+      this.ownRecipes = this.likes.getFavourites();
+      this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
   }
 
   emptyFavourites() {

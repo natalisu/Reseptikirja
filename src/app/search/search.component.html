@@ -1,6 +1,6 @@
 <app-advanced-search></app-advanced-search>
 
-<app-cards-container [imageurl]="imageurl" [recipes]="recipes" [title]="recTitle" *ngIf="recipes.length"></app-cards-container> 
+<app-cards-container (update)="saveUpdate($event)" [imageurl]="imageurl" [recipes]="recipes" [title]="recTitle" *ngIf="recipes.length"></app-cards-container> 
 
 
 <div *ngIf="!recipes.length">

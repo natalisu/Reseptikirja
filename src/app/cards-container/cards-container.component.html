@@ -8,7 +8,9 @@
       <div class="row" *ngIf="horizontal">
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 recipecard" *ngFor="let recipe of recipes">
           <div class="card">
-            <a class="btn btn-default heartContainer" (click)="saveToFavourites(recipe)"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
+            <a class="btn btn-default heartContainer">
+            <i class="fa fa-heart fa-lg likedHeart" aria-hidden="true" *ngIf="recipe.isliked" (click)="removeFromFavourites(recipe)"></i>
+            <i class="fa fa-heart fa-lg notLikedHeart" aria-hidden="true" *ngIf="!recipe.isliked" (click)="saveToFavourites(recipe)"></i></a>
             <a [routerLink]="['/recipe', recipe.id]">
            <!-- <img class="card-img-top img-fluid" src="{{imageurl}}{{recipe.image}}"> -->
             <img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">
@@ -33,7 +35,9 @@
 
         <div class="col" *ngFor="let recipe of recipes">
           <div class="card">
-            <a class="btn btn-default heartContainer" (click)="saveToFavourites(recipe)"> <i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
+            <a class="btn btn-default heartContainer">
+            <i class="fa fa-heart fa-lg likedHeart" aria-hidden="true" *ngIf="recipe.isliked" (click)="removeFromFavourites(recipe)"></i>
+            <i class="fa fa-heart fa-lg notLikedHeart" aria-hidden="true" *ngIf="!recipe.isliked" (click)="saveToFavourites(recipe)"></i></a>
             <a [routerLink]="['/recipe', recipe.id]">
            <!-- <img class="card-img-top img-fluid" src="{{imageurl}}{{recipe.image}}"> -->
             <img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">

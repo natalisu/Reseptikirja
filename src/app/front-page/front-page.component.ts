@@ -1,3 +1,4 @@
+import { LikesService } from './../services/likes.service';
 import { RecipequeryService } from './../services/recipequery.service';
 import { Router, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -19,7 +20,7 @@ export class FrontPageComponent implements OnInit {
   private recTitle: string = "Recommended recipes";
   private horizontal: boolean = true;
   private imageurl: string = '';
-  constructor(private router: Router, private recipeservice: RecipequeryService) {
+  constructor(private router: Router, private recipeservice: RecipequeryService, private likes: LikesService) {
 
   }
 
@@ -30,10 +31,17 @@ export class FrontPageComponent implements OnInit {
      this.recipeservice.getSearchResults(this.recParams)
         .subscribe(
           (res) => {
-            this.recommendRecipes = res.results.slice(0, 4);
+            this.recommendRecipes = this.likes.isFavourite(res.results);
+            this.recommendRecipes = this.recommendRecipes.slice(0, 4);
             this.imageurl = res.baseUri;
+            console.log(this.recommendRecipes);
 
         });
+  }
+
+   saveUpdate(event) {
+    console.log('save');
+      this.recommendRecipes = this.likes.isFavourite(event);
   }
 
 }

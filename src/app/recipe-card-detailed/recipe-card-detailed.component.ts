@@ -1,3 +1,4 @@
+import { LikesService } from './../services/likes.service';
 import { Params, Router, ActivatedRoute } from '@angular/router';
 import { RecipequeryService } from './../services/recipequery.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -24,7 +25,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private imageurl: string = '';
 
 
-  constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute) { 
+  constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
   }
 
@@ -51,10 +52,18 @@ export class RecipeCardDetailedComponent implements OnInit {
           (res) => {
             console.log(res);
             this.similarRecipes =  res.slice(0, 3);
+            this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
 
         })
       })
   }
   }
+
+   saveUpdate(event) {
+    console.log('save');
+      this.similarRecipes = this.likes.isFavourite(event);
+  }
+
+  
 }
