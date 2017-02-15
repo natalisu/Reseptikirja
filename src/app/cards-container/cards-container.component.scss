@@ -46,6 +46,7 @@ h4, p.card-text {
 
 p.card-text {
     font-size: 12px;
+    display: inline-block;
 }
 
 p.card-desc {
@@ -72,4 +73,8 @@ p.card-title {
     i {
         color: $heart;
     }
+}
+
+.fa-clock-o {
+    display: inline-block;
 }

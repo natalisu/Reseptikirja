@@ -45,7 +45,7 @@ const routeConfig = [
     path: 'favourites',
     component: FavouritesComponent
   },
-  {
+   {
     path: 'recipe/:id',
     component: RecipeCardDetailedComponent
   }];
