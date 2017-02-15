@@ -13,11 +13,11 @@ import { RecipeCardDetailedComponent } from './recipe-card-detailed/recipe-card-
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { ImageCarouselComponent } from './image-carousel/image-carousel.component';
 import { SimpleSearchComponent } from './simple-search/simple-search.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
+
 import { FrontPageComponent } from './front-page/front-page.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { SearchComponent } from './search/search.component';
-import { FrontPageRecComponent } from './front-page-rec/front-page-rec.component';
+
 import { CommentboxComponent } from './commentbox/commentbox.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { CardsContainerComponent } from './cards-container/cards-container.component';
@@ -57,11 +57,9 @@ const routeConfig = [
     NavigationBarComponent,
     ImageCarouselComponent,
     SimpleSearchComponent,
-    SearchResultsComponent,
     FrontPageComponent,
     AdvancedSearchComponent,
     SearchComponent,
-    FrontPageRecComponent,
     CommentboxComponent,
     MyRecipesComponent,
     CardsContainerComponent,

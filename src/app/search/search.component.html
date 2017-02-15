@@ -3,9 +3,9 @@
 <app-cards-container [imageurl]="imageurl" [recipes]="recipes" [title]="recTitle" *ngIf="recipes.length"></app-cards-container> 
 
 
-<div *ngIf="recipes">
+<div *ngIf="!recipes.length">
 
-<div class="container" *ngIf="!recipes.length">
+<div class="container">
 
 <h4>No suitable matches</h4>
 
