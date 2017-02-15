@@ -1,5 +1,7 @@
-import { ActivatedRoute } from '@angular/router';
+import { RecipequeryService } from './../services/recipequery.service';
+
 import { Component, OnInit } from '@angular/core';
+import { Router, Params, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -8,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  private recipes: Array<Object>= [];
+  private imageurl: string;
+
+  constructor(private route: ActivatedRoute, private recipeservice: RecipequeryService) { }
 
   ngOnInit() {
+     this.route.params
+    .switchMap((params: Params) =>
+    this.recipeservice.getSearchResults(params))
+        .subscribe(
+          (res) => {
+            this.imageurl = res.baseUri;
+            this.recipes = res.results;
+            console.log(res);
+        });
   }
 
 }

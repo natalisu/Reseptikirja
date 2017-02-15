@@ -14,11 +14,11 @@ import 'rxjs/add/operator/switchMap';
 })
 export class FrontPageComponent implements OnInit {
 
-  private recParams: Params = {'cuisine': 'nordic'};
+  private recParams: Params = {'cuisine': 'french'};
   private recommendRecipes: Array<Object> = [];
   private recTitle: string = "Recommended recipes";
   private horizontal: boolean = true;
-
+  private imageurl: string = '';
   constructor(private router: Router, private recipeservice: RecipequeryService) {
 
   }
@@ -31,8 +31,8 @@ export class FrontPageComponent implements OnInit {
         .subscribe(
           (res) => {
             this.recommendRecipes = res.results.slice(0, 4);
-            
-            console.log(res);
+            this.imageurl = res.baseUri;
+
         });
   }
 

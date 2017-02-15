@@ -11,6 +11,7 @@ export class CardsContainerComponent implements OnInit {
   @Input() recipes: Array<Object> = [];
   @Input() horizontal: boolean = true;
   @Input() title: string = '';
+  @Input() imageurl: string = '';
 
   constructor(private likes: LikesService) { }
 

@@ -1,3 +1,14 @@
 <app-advanced-search></app-advanced-search>
 
-<app-search-results *ngIf="route.params"></app-search-results>
+<app-cards-container [imageurl]="imageurl" [recipes]="recipes" [title]="recTitle" *ngIf="recipes.length"></app-cards-container> 
+
+
+<div *ngIf="recipes">
+
+<div class="container" *ngIf="!recipes.length">
+
+<h4>No suitable matches</h4>
+
+</div>
+
+</div>

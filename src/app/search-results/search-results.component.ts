@@ -25,7 +25,6 @@ export class SearchResultsComponent implements OnInit {
           (res) => {
             this.imageurl = res.baseUri;
             this.recipes = res.results;
-            console.log(res);
         });
   }
 

@@ -21,6 +21,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private params;
   private similarRecipes: Array<Object> = [];
   private recipesTitle = "Similar recipes";
+  private imageurl: string = '';
 
 
   constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute) { 
@@ -50,6 +51,7 @@ export class RecipeCardDetailedComponent implements OnInit {
           (res) => {
             console.log(res);
             this.similarRecipes =  res.slice(0, 3);
+            this.imageurl = "https://spoonacular.com/recipeImages/";
 
         })
       })
