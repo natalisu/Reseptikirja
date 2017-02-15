@@ -1,47 +1,45 @@
 <div class="container">
 
 
-  <h4><i class="fa fa-search" aria-hidden="true"></i> <b>Advanced search:</b></h4>
+  <h4><i class="fa fa-search" aria-hidden="true"></i> <b>Search for a recipe:</b></h4>
+  <hr>
+  <br>
 
 
   <form class="search" #f="ngForm" (ngSubmit)="search()">
-
-<div class="form-group row justify-content-center">
-  <label class="col-sm-4 col-form-label">Recipe name or ingredient(s)</label>
-   <div class="col-sm-8">
+<div class="row">
+  <div class="col-sm-6">
+<div class="form-group">
+  Include keywords:
   <input size="30" height="100" class="isearch" name="searchQuery.query" [(ngModel)]="searchQuery.query" minlength="3" placeholder="i.e. chicken, bacon...">
    </div>
-</div>
 
-<div class="form-group row justify-content-center">
-  <label class="col-sm-4 col-form-label">Exclude ingredients</label><br>
-   <div class="col-sm-8">
-    <input size="30" height="100" class="isearch" name="searchQuery.excludeIngredients" [(ngModel)]="searchQuery.excludeIngredients" minlength="3" placeholder="i.e. tomato"><br>
+<div class="form-group">
+  Exclude ingredients:
+    <input size="30" height="100" class="isearch2" name="searchQuery.excludeIngredients" [(ngModel)]="searchQuery.excludeIngredients" minlength="3" placeholder="i.e. tomato, almond..."><br>
    </div>
-</div>
+   <br>
 
- 
- <div class="form-group row justify-content-center">
-      <div class="col-sm-3">
-
-       Diet
+   <div class="form-group">
+       <h6><b>I am...</b></h6>
          <div class="form-check" *ngFor="let diettype of dietArray">
-          <label>
             <input class="form-check-input" type="radio" 
             value="{{diettype}}" [(ngModel)]="searchQuery.diet" name="searchQuery.diet">
                   {{diettype}}
-          </label>
         </div>
-      </div> 
+    </div>
+</div>
 
-      <div class="col-sm-3">
+
+
+<div class="col-sm-3">
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#allergensModal">
-  Allergens
+  I am allergic to...
 </button><br>
 
   <div *ngFor="let intolerance of intolerancesArray">
-    <span *ngIf="intolerance.checked">{{intolerance.value}} <br></span>
+    <ul><span *ngIf="intolerance.checked"><li> {{intolerance.value}} </li></span></ul>
   </div>
 
 
@@ -60,7 +58,7 @@
         </div> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal">Done!</button>
       </div>
     </div>
   </div>
@@ -68,12 +66,12 @@
 
 </div>
 
-      <div class="col-sm-3">
+<div class="col-sm-3">
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#typesModal">
-  Type
+  I want to make...
 </button><br>
-{{chosenType}}
+<div class="foodtype"> {{chosenType}} </div>
 
 <div class="modal optionsModal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -88,7 +86,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal" (click)="checkTypes()">Close</button>
+        <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal" (click)="checkTypes()">Done!</button>
       </div>
     </div>
   </div>
@@ -96,11 +94,21 @@
 
        
       </div>
-    </div>
+
+      </div>
+
+
+
+
+<br>
+
+ 
+ 
+
   
-  <div class="row justify-content-center">
-    <div class="col-3">
-      <button type="submit" class="btn btn-warning btn-primary">Submit</button>
+  <div class="row">
+    <div class="col">
+      <button type="submit" class="btn btn-warning submitbtn">Search!</button>
     </div>
   </div>
 

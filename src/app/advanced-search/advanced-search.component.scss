@@ -4,6 +4,9 @@ $darkgr: #65874B;
 $midgr: #84A16E;
 $gr: #A8C095;
 $heart: #d65164;
+$yel: #f4e8b8;
+$midyel: #DAC77B;
+$darkyel: #CEB65A;
 
 /* FONTS */
 $head: 'Lora', serif;
@@ -14,7 +17,7 @@ $txt: 'PT Serif', serif;
 $desc: 'Karla', sans-serif;
 
 .container {
-    padding: 2%;
+    padding: 2em;
 }
 
 .search {
@@ -28,6 +31,99 @@ $desc: 'Karla', sans-serif;
     padding-left: 7%;
 }
 
+h4 {
+    font-family: $head;
+    letter-spacing: 1px;
+}
+
+h6 {
+    font-family: $txt;
+    letter-spacing: 1px;
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+.col, .col-sm-6 {
+    font-family: $desc;
+}
+
+input {
+    margin-left: 1em;
+}
+
+textarea:focus, input:focus {
+    outline: none !important;
+    box-shadow: 0 0 20px $yel;
+    border: 2px solid $yel;
+}
+
+.isearch {
+    padding-left: 0.5em;
+    font-family: $desc;
+    margin-left: 2.15em;
+}
+
+.isearch2 {
+    padding-left: 0.5em;
+    font-family: $desc;
+}
+
+.form-check {
+    font-family: $desc;
+    letter-spacing: 1px;
+}
+
+.advancedOptions {
+    font-family: $desc;
+}
+
+ul {
+    font-family: $desc;
+    letter-spacing: 1px;
+    margin-top: 5%;
+    margin-bottom: -5%;
+}
+
+li {
+    margin-top: -6%;
+}
+
+.foodtype {
+    font-family: $desc;
+    letter-spacing: 1px;
+    margin-left: 2em;
+}
+
+/* BUTTONS */
+
+.btn-primary, .btn-options {
+    letter-spacing: 1px;
+    font-family: $desc;
+    background-color: $midyel;
+    border: none;
+    color: white;
+    margin: 0.5em;
+}
+
+.btn-primary:hover, .btn-options:hover  {
+    background-color: $darkyel;
+}
+
+.btn-warning {
+    letter-spacing: 1px;
+    font-family: $desc;
+    background-color: $midgr;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: $darkgr;
+}
+
 .btn-options {
     margin: auto;
+}
+
+.submitbtn {
+    float: right;
 }

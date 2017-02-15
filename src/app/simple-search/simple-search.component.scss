@@ -1,34 +1,47 @@
+/* COLOURS */
+$bg: #eee;
+$darkgr: #65874B;
+$midgr: #84A16E;
+$gr: #A8C095;
+$heart: #d65164;
+$yel: #f4e8b8;
+
+/* FONTS */
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
+
 .isearch {
     margin-right: 5%;
     padding: 2%;
     margin-top: 2%;
-    font-family: 'Karla', sans-serif;
+    font-family: $desc;
 }
 
 textarea:focus, input:focus {
     outline: none !important;
-    box-shadow: 0 0 20px #65874B;
+    box-shadow: 0 0 20px $darkgr;
 }
 
 .btn-warning {
     letter-spacing: 1px;
-    font-family: 'Karla', sans-serif;
-    background-color: #84A16E;
+    font-family: $desc;
+    background-color: $midgr;
     border: none;
 }
 
 .btn-warning:hover {
-    background-color: #65874B;
+    background-color: $darkgr;
 }
 
 .searchbox {
-    font-family: 'PT Serif', serif;
+    font-family: $txt;
 }
 
 textarea:focus, input:focus {
-    border: 2px solid #A8C095;
+    border: 2px solid $gr;
 }
 
 h4 {
-    font-family: 'Lora', serif;
+    font-family: $head;
 }
