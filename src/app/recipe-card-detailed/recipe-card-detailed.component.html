@@ -47,7 +47,7 @@
     <app-commentbox></app-commentbox>
   </div>
   <div class="col-3" *ngIf="similarRecipes">
-    <app-cards-container (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [horizontal]="false" [title]="recipesTitle"></app-cards-container>
+    <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [horizontal]="false" [title]="recipesTitle"></app-cards-container>
   </div>
 </div>
 

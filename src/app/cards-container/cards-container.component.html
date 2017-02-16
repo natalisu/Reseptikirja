@@ -11,7 +11,7 @@
             <a class="btn btn-default heartContainer">
             <i class="fa fa-heart fa-lg likedHeart" aria-hidden="true" *ngIf="recipe.isliked" (click)="removeFromFavourites(recipe)"></i>
             <i class="fa fa-heart fa-lg notLikedHeart" aria-hidden="true" *ngIf="!recipe.isliked" (click)="saveToFavourites(recipe)"></i></a>
-            <a [routerLink]="['/recipe', recipe.id]">
+            <a [routerLink]="['/recipe', recipe.id]" (click)="navigate(recipe.id)">
            <!-- <img class="card-img-top img-fluid" src="{{imageurl}}{{recipe.image}}"> -->
             <img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">
             <div class="card-block">
@@ -38,7 +38,7 @@
             <a class="btn btn-default heartContainer">
             <i class="fa fa-heart fa-lg likedHeart" aria-hidden="true" *ngIf="recipe.isliked" (click)="removeFromFavourites(recipe)"></i>
             <i class="fa fa-heart fa-lg notLikedHeart" aria-hidden="true" *ngIf="!recipe.isliked" (click)="saveToFavourites(recipe)"></i></a>
-            <a [routerLink]="['/recipe', recipe.id]">
+            <a [routerLink]="['/recipe', recipe.id]" (click)="navigate(recipe.id)">
            <!-- <img class="card-img-top img-fluid" src="{{imageurl}}{{recipe.image}}"> -->
             <img class="card-img-top img-fluid" src="http://i.imgur.com/uG0XRBH.jpg" alt="Card image cap">
             <div class="card-block">
