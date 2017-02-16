@@ -28,7 +28,7 @@ const routeConfig = [
   {
     path: '',
     pathMatch: 'full',
-    component: FrontPageComponent
+    redirectTo: 'home'
   },
   {
     path: 'home',

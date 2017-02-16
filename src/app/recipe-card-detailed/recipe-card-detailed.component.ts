@@ -44,14 +44,11 @@ export class RecipeCardDetailedComponent implements OnInit {
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
-                console.log(res);
-                console.log(this.activeId);
                 window.scrollTo(0, 0);
 
         this.recipequery.getSimilarRecipe(this.activeId)
         .subscribe(
           (res) => {
-            console.log(res);
             this.similarRecipes =  res.slice(0, 3);
             this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
@@ -67,28 +64,23 @@ export class RecipeCardDetailedComponent implements OnInit {
   }
 
   navigate(event) {
-    console.log(event,'fired');
      this.recipequery.getRecipeById(event)
           .subscribe(
             (res) => {
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
-                console.log(res);
-                console.log(this.activeId);
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(
           (res) => {
-            console.log(res);
             this.similarRecipes =  res.slice(0, 3);
             this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
 
         })
       })
-window.scrollTo(0, 0);
-       
+    window.scrollTo(0, 0);
   }
 
   convert() {

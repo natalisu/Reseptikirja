@@ -1,29 +1,29 @@
 <div class="container">
 
-        <nav class="navbar navbar-toggleable-md navbar-light">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-toggleable-md navbar-light">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" [routerLink]="['/home']">
-                <img src="https://trello-attachments.s3.amazonaws.com/588727fd73d9c03b796b7e16/306x282/1c03784ed78a3c26c554d8d85430b643/logo.png" class="d-inline-block align-top" alt="">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item navitem">
-                        <a [routerLink]="['/home']" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i><b>  Home</b></a>
-                    </li>
-                    <li class="nav-item navitem">
-                        <a [routerLink]="['/search']" class="nav-link">  Recipe search</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link shownext"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item myrecipes">
-                        <a [routerLink]="['/favourites']" class="nav-link">  My recipes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+        <a class="navbar-brand" [routerLink]="['/']">
+            <img src="https://trello-attachments.s3.amazonaws.com/588727fd73d9c03b796b7e16/306x282/1c03784ed78a3c26c554d8d85430b643/logo.png" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item navitem">
+                    <a [routerLink]="['/']" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i><b>  Home</b></a>
+
+                </li>
+                <li class="nav-item navitem">
+                    <a [routerLink]="['/search']" class="nav-link">  Recipe search</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item myrecipes">
+                    <i class="fa fa-heart shownext" aria-hidden="true"></i><a [routerLink]="['/favourites']" class="nav-link">  My recipes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
