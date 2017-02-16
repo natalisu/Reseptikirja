@@ -1,3 +1,4 @@
+import { RecipequeryService } from './../services/recipequery.service';
 import { LikesService } from './../services/likes.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -21,19 +22,18 @@ export class CardsContainerComponent implements OnInit {
   }
 
   saveToFavourites(event) {
-    console.log('added to favs:', event.id);
+    console.log('added to favs:', event);
     let recipe: Object = {};
     recipe['id']= event.id;
     recipe['title'] = event.title;
     recipe['readyInMinutes'] = event.readyInMinutes;
+    recipe['image'] = event.image;
     this.likes.saveToFavourites(recipe);
-    console.log(this.recipes);
     this.update.emit(this.recipes);
   }
 
   removeFromFavourites(event) {
     this.likes.removeFavourite(event);
-    console.log('removed from favs:', event.id);
     this.update.emit(this.recipes);
   }
 

@@ -11,6 +11,7 @@ export class FavouritesComponent implements OnInit {
   @Input() ownRecipes: Array<Object> = [];
   private title: string = '';
   private showButton: boolean = false;
+  private imageurl ="https://spoonacular.com/recipeImages/";
 
   constructor(private likes: LikesService) { }
 

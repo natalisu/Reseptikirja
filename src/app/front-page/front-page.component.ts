@@ -31,10 +31,11 @@ export class FrontPageComponent implements OnInit {
      this.recipeservice.getSearchResults(this.recParams)
         .subscribe(
           (res) => {
-            this.recommendRecipes = this.likes.isFavourite(res.results);
+            this.recommendRecipes=  this.likes.isFavourite(res.results);
             this.recommendRecipes = this.recommendRecipes.slice(0, 4);
             this.imageurl = res.baseUri;
             console.log(this.recommendRecipes);
+          
 
         });
   }
