@@ -15,6 +15,7 @@ export class CardsContainerComponent implements OnInit {
   @Input() imageurl: string = '';
 
   @Output() update: EventEmitter<Array<Object>> = new EventEmitter<Array<Object>>();
+  @Output() navigateTo: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private likes: LikesService) { }
 
@@ -35,6 +36,10 @@ export class CardsContainerComponent implements OnInit {
   removeFromFavourites(event) {
     this.likes.removeFavourite(event);
     this.update.emit(this.recipes);
+  }
+
+  navigate(id: number) {
+    this.navigateTo.emit(id);
   }
 
 }

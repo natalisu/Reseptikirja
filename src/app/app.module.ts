@@ -22,6 +22,7 @@ import { CommentboxComponent } from './commentbox/commentbox.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { CardsContainerComponent } from './cards-container/cards-container.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { RoundingPipe } from './pipes/rounding.pipe';
 
 const routeConfig = [
   {
@@ -63,7 +64,8 @@ const routeConfig = [
     CommentboxComponent,
     MyRecipesComponent,
     CardsContainerComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    RoundingPipe
   ],
   imports: [
     BrowserModule,

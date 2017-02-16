@@ -14,9 +14,13 @@ export class SearchComponent implements OnInit {
   private recipes: Array<Object>= [];
   private imageurl: string;
 
-  constructor(private route: ActivatedRoute, private recipeservice: RecipequeryService, private likes: LikesService) { }
+
+  constructor( private route: ActivatedRoute, private recipeservice: RecipequeryService, private likes: LikesService) { }
+
 
   ngOnInit() {
+
+    
      this.route.params
     .switchMap((params: Params) =>
     this.recipeservice.getSearchResults(params))
@@ -33,5 +37,6 @@ export class SearchComponent implements OnInit {
     console.log('save');
       this.recipes = this.likes.isFavourite(event);
   }
+
 
 }
