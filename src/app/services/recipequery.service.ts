@@ -57,20 +57,23 @@ export class RecipequeryService {
       let options = new RequestOptions({ headers: headers });
 
       for (let ingredient of ingredients) {
-          if (ingredient['unit'].indexOf('cup') >= 0 || ingredient['unit'].indexOf('pound') >= 0 || ingredient['unit'].indexOf('oz') >= 0
+          if (ingredient['unit'].indexOf('pound') >= 0 || ingredient['unit'].indexOf('oz') >= 0
           || ingredient['unit'].indexOf('ounce') >= 0) {
             console.log(ingredient);
            let  name = ingredient['name'];
            let  amount = ingredient['amount'];
            let  unit = ingredient['unit'];
-            let recipeUrl='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/convert?ingredientName='+name+'&sourceAmount='+amount+'&sourceUnit='+unit+'&targetUnit='+targetUnit;
+          let recipeUrl='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/convert?ingredientName='+name+'&sourceAmount='+amount+'&sourceUnit='+unit+'&targetUnit='+targetUnit;
             this.http.get(recipeUrl, options).map(resp => resp.json()).subscribe(
           (resp) => {
               console.log(resp);
               ingredient['unit'] = resp.targetUnit;
               ingredient['amount'] = resp.targetAmount;
             });
-          } 
+          } else if (ingredient['unit'].indexOf('cup') >= 0 ) {
+             ingredient['unit'] = 'dl';
+            ingredient['amount'] = ingredient['amount']*2,365;
+          }
     }
 
     return ingredients;
