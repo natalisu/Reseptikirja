@@ -22,8 +22,13 @@ h4, p.card-text {
 .btn {
     margin: auto;
     display: block;
+    letter-spacing: 1px;
+    font-family: $desc;
+    background-color: $midgr;
+    border: none;
 }
 
 .container {
     padding: 2%;
 }
+

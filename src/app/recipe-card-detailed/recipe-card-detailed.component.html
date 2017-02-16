@@ -6,7 +6,7 @@
       <div class="recipeIngredients">
       <ul *ngIf="ingredients">
       <h5>Ingredients:</h5>
-          <li *ngFor="let foodthing of ingredients">
+          <li *ngFor="let foodthing of ingredients" class="ingrd">
            <!-- {{foodthing.originalString}} -->
             <b>{{foodthing.amount}} {{foodthing.unit}}</b> {{foodthing.name}}
             </li>

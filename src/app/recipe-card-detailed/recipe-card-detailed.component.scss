@@ -22,6 +22,11 @@ img {
 
 li, h5 {
     font-family: $desc;
+    padding-bottom: 0.5em;
+}
+
+li.ingrd {
+    font-family: $desc;
 }
 
 .recipetitle {
