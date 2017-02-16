@@ -65,5 +65,10 @@ export class RecipeCardDetailedComponent implements OnInit {
       this.similarRecipes = this.likes.isFavourite(event);
   }
 
+  convert() {
+    this.ingredients = this.recipequery.convertUnits(this.ingredients);
+  
+  }
+
   
 }
