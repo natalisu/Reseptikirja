@@ -8,7 +8,7 @@
       <h5>Ingredients:</h5>
           <li *ngFor="let foodthing of ingredients">
            <!-- {{foodthing.originalString}} -->
-            <b>{{foodthing.amount}} {{foodthing.unit}}</b> {{foodthing.name}}
+            <b>{{foodthing.amount | rounding}} {{foodthing.unit}}</b> {{foodthing.name}}
             </li>
         </ul>
 

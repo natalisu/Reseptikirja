@@ -66,7 +66,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   }
 
   convert() {
-    this.ingredients = this.recipequery.convertUnits(this.ingredients);
+    this.ingredients = this.recipequery.convertUnits(this.ingredients, 'grams');
   
   }
 
