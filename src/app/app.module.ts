@@ -23,7 +23,6 @@ import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { CardsContainerComponent } from './cards-container/cards-container.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { RoundingPipe } from './pipes/rounding.pipe';
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 const routeConfig = [
   {
@@ -73,8 +72,7 @@ const routeConfig = [
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routeConfig),
-    Ng2PageScrollModule.forRoot()
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [
     LikesService,
