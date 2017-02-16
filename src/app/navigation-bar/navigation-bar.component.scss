@@ -4,8 +4,14 @@ $darkgr: #65874B;
 $midgr: #84A16E;
 $gr: #A8C095;
 $heart: #d65164;
+$yel: #f4e8b8;
+$midyel: #DAC77B;
+$darkyel: #CEB65A;
 
 /* FONTS */
+$head: 'Lora', serif;
+$txt: 'PT Serif', serif;
+$desc: 'Karla', sans-serif;
 $head: 'Lora', serif;
 $txt: 'PT Serif', serif;
 $desc: 'Karla', sans-serif;
@@ -22,13 +28,41 @@ nav {
     }
 }
 
-.nav-item {
+.navitem, .myrecipes {
     font-family: $desc;
     text-transform: uppercase;
     padding-bottom: 1%;
     font-size: 1.4em;
 }
 
-.nav-item:hover {
+.navitem:hover {
     background-color: rgba(168, 192, 149, 0.6);
+}
+
+.text-right {
+    float: right;
+}
+
+li {
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+ul {
+    white-space: nowrap;
+}
+
+.myrecipes {
+    display: inline-block;
+}
+
+.shownext {
+    display: none;
+    color: $heart;
+    z-index: 10000;
+}
+
+.myrecipes:hover .shownext {
+    display: block;
 }
