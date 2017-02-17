@@ -26,8 +26,8 @@ export class SearchComponent implements OnInit {
     this.recipeservice.getSearchResults(params))
         .subscribe(
           (res) => {
-          this.recipes = this.likes.isFavourite(res.results);
-       //   this.recipes = res.results;
+        //  this.recipes = this.likes.isFavourite(res.results);
+         this.recipes = res.results;
             this.imageurl = res.baseUri;
             console.log(res);
         });

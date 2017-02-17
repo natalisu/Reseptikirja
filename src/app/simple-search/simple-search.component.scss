@@ -21,6 +21,7 @@ $desc: 'Karla', sans-serif;
 textarea:focus, input:focus {
     outline: none !important;
     box-shadow: 0 0 20px $darkgr;
+    border: 2px solid $gr;
 }
 
 .btn-warning {
@@ -36,10 +37,6 @@ textarea:focus, input:focus {
 
 .searchbox {
     font-family: $txt;
-}
-
-textarea:focus, input:focus {
-    border: 2px solid $gr;
 }
 
 h4 {
