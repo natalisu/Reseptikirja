@@ -27,8 +27,7 @@ import { RoundingPipe } from './pipes/rounding.pipe';
 const routeConfig = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
+    component: FrontPageComponent
   },
   {
     path: 'home',
