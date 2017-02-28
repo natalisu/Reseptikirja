@@ -7,15 +7,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RecipequeryService {
 
+  private foodUrl: string = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random';
+
   constructor(private http:Http) { }
 
-  getFoodJoke = () => {
+  getFoodFact = () => {
     let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
     let options = new RequestOptions({ headers: headers });
 
-    let recipeUrl: string = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random';
-
-    return this.http.get(recipeUrl, options).map(resp => resp.json());
+    return this.http.get(this.foodUrl, options).map(resp => resp.json());
      }
 
   getRecipeById = (id: number) => {
@@ -79,15 +79,6 @@ export class RecipequeryService {
     return ingredients;
 
 
-    }
-
-    getFoodFact() {
-      let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
-      let options = new RequestOptions({ headers: headers });
-
-      let recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/trivia/random';
-
-      return this.http.get(recipeUrl, options).map(resp => resp.json());
     }
 
 

@@ -20,12 +20,13 @@ export class FrontPageComponent implements OnInit {
   private recTitle: string = "Recommended recipes";
   private horizontal: boolean = true;
   private imageurl: string = '';
-  private foodFact: string = '';
   constructor(private router: Router, private recipeservice: RecipequeryService, private likes: LikesService) {
 
   }
 
   ngOnInit() {
+
+
 
      this.recipeservice.getSearchResults(this.recParams)
         .subscribe(
@@ -34,10 +35,6 @@ export class FrontPageComponent implements OnInit {
             this.recommendRecipes = res.results.slice(0, 4);
             this.imageurl = res.baseUri;
         });
-
-        this.recipeservice.getFoodFact()
-        .subscribe(res => this.foodFact = res.text);
-
   }
 
    saveUpdate(event) {
