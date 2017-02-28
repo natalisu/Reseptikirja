@@ -44,7 +44,7 @@
 <div class="row">
 
   <div class="col-9">
-    <app-commentbox></app-commentbox>
+      <app-commentbox [recipeURL]="activeId"></app-commentbox>
   </div>
   <div class="col-3" *ngIf="similarRecipes">
     <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [horizontal]="false" [title]="recipesTitle"></app-cards-container>

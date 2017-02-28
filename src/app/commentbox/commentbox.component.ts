@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-commentbox',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commentbox.component.scss']
 })
 export class CommentboxComponent implements OnInit {
+
+  @Input() recipeURL: any;
 
   constructor() { }
 
