@@ -24,7 +24,6 @@ export class RecipeCardDetailedComponent implements OnInit {
   private recipesTitle = "Similar recipes";
   private imageurl: string = '';
 
-
   constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
   }
@@ -67,6 +66,7 @@ export class RecipeCardDetailedComponent implements OnInit {
      this.recipequery.getRecipeById(event)
           .subscribe(
             (res) => {
+                this.activeId= event;
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
