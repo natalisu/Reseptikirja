@@ -1,53 +1,53 @@
 <div *ngIf="recipeInfo" class="container">
-  <div class="row">
-    <div class="col">
-      <img src="http://i.imgur.com/uG0XRBH.jpg">
-      <br>
-      <div class="recipeIngredients">
-      <ul *ngIf="ingredients">
-      <h5>Ingredients:</h5>
-          <li *ngFor="let foodthing of ingredients" class="ingrd">
-           <!-- {{foodthing.originalString}} -->
-            <b>{{foodthing.amount | rounding}} {{foodthing.unit}}</b> {{foodthing.name}}
-            </li>
-        </ul>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <img class="img-fluid" src="{{recipeInfo.image}}">
+            <br>
+            <div class="recipeIngredients">
+                <ul *ngIf="ingredients">
+                    <h5>Ingredients:</h5>
+                    <li *ngFor="let foodthing of ingredients" class="ingrd">
+                        <!-- {{foodthing.originalString}} -->
+                        <b>{{foodthing.amount | rounding}} {{foodthing.unit}}</b> {{foodthing.name}}
+                    </li>
+                </ul>
 
-        <button class="btn btn-primary" (click)="convert()">Convert to grams</button>
+                <button class="btn btn-primary" (click)="convert()">Convert to grams</button>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <div class="recipetitle">
+                <h2>{{recipeInfo.title}}</h2>
+                <hr>
+                <div class="recipedesc">
+                    <b>Preparing time:</b> {{recipeInfo.readyInMinutes}} minutes</div>
+            </div>
+            <br>
+
+            <ol *ngIf="instructions">
+                <h5>Instructions:</h5>
+                <li *ngFor="let phase of instructions">{{phase.step}}</li>
+                <br>
+
+                <p><a href="{{recipeInfo.sourceUrl}}">Original recipe: {{recipeInfo.sourceName}}</a></p>
+            </ol>
+
         </div>
     </div>
-
-    <div class="col">
-      <div class="recipetitle">
-      <h2>{{recipeInfo.title}}</h2>
-      <hr>
-      <div class="recipedesc">
-      <b>Preparing time:</b> {{recipeInfo.readyInMinutes}} minutes</div>
-      </div>
-      <br>
-
-    <ol *ngIf="instructions">
-       <h5>Instructions:</h5>
-      <li *ngFor="let phase of instructions">{{phase.step}}</li>
-      <br>
-
-    <p><a href="{{recipeInfo.sourceUrl}}">Original recipe: {{recipeInfo.sourceName}}</a></p>
-    </ol>
-
-    </div>
-  </div>
- </div>
+</div>
 
 <br>
 
 <div class="container">
-<div class="row">
+    <div class="row">
 
-  <div class="col-9">
-    <app-commentbox [recipeURL]="activeId"></app-commentbox>
-  </div>
-  <div class="col-3" *ngIf="similarRecipes">
-    <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [horizontal]="false" [title]="recipesTitle"></app-cards-container>
-  </div>
-</div>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+            <app-commentbox [recipeURL]="activeId"></app-commentbox>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12" *ngIf="similarRecipes">
+            <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [horizontal]="false" [title]="recipesTitle"></app-cards-container>
+        </div>
+    </div>
 
 </div>

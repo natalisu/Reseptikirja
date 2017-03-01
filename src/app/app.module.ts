@@ -25,9 +25,11 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { RoundingPipe } from './pipes/rounding.pipe';
 
 const routeConfig = [
-  {
+
+   {
     path: '',
-    component: FrontPageComponent
+    pathMatch: 'full',
+    redirectTo: 'home'
   },
   {
     path: 'home',
@@ -71,7 +73,7 @@ const routeConfig = [
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig, { useHash: true })
   ],
   providers: [
     LikesService,

@@ -1,4 +1,5 @@
 /* COLOURS */
+
 $bg: #eee;
 $darkgr: #65874B;
 $midgr: #84A16E;
@@ -9,13 +10,19 @@ $midyel: #DAC77B;
 $darkyel: #CEB65A;
 
 /* FONTS */
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
 
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
 .container {
     padding: 2em;
 }
@@ -57,7 +64,8 @@ input {
     margin-left: 1em;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     outline: none !important;
     box-shadow: 0 0 20px $yel;
     border: 2px solid $yel;
@@ -76,9 +84,9 @@ ul {
     margin-top: 5%;
 }
 
-.navbar > li{
-  padding-left:3em;
-  padding-right:3em;
+.navbar>li {
+    padding-left: 3em;
+    padding-right: 3em;
 }
 
 li {
@@ -88,6 +96,7 @@ li {
 .foodtype {
     letter-spacing: 1px;
     margin-left: 2em;
+    margin-bottom: 0.5em;
 }
 
 .dietType {
@@ -95,9 +104,18 @@ li {
     padding-left: 2em;
 }
 
+
+/* ICONS */
+
+.fa-times {
+    color: #d65164;
+}
+
+
 /* BUTTONS */
 
-.btn-primary, .btn-options {
+.btn-primary,
+.btn-options {
     letter-spacing: 1px;
     font-family: $desc;
     background-color: $midyel;
@@ -107,7 +125,8 @@ li {
     display: inline-block;
 }
 
-.btn-primary:hover, .btn-options:hover  {
+.btn-primary:hover,
+.btn-options:hover {
     background-color: $darkyel;
 }
 
@@ -123,4 +142,21 @@ li {
 
 .btn-warning:hover {
     background-color: $darkgr;
+}
+
+@media screen and (max-width: 560px) {
+    .btn-primary,
+    .btn-options {
+        margin: auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width:742px) {
+    .dietType {
+        .h6 {
+            margin: 0 auto;
+            display: block;
+        }
+    }
 }

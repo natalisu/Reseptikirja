@@ -43,6 +43,23 @@ export class RecipequeryService {
     return this.http.get(recipeUrl, options).map(resp => resp.json());
     }
 
+ getSearchResultsOffSet = (params: Params, ten: string) => {
+    let parameters = '?instructionsRequired=true&';
+    for (let key in params){
+      parameters = parameters + key.toString()+"="+params[key]+"&";
+    };
+    parameters = parameters + 'offset='+ten;
+
+    let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
+    let options = new RequestOptions({ headers: headers });
+
+    console.log(parameters);
+
+    let recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search' + parameters;
+
+    return this.http.get(recipeUrl, options).map(resp => resp.json());
+    }
+
     getSimilarRecipe = (id: number) => {
       let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
       let options = new RequestOptions({ headers: headers });

@@ -10,9 +10,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CommentboxComponent implements OnInit {
 
   @Input() recipeURL: any;
+  private url: string = '';
 
   constructor() { }
 
   ngOnInit() {
+    this.url="http://users.metropolia.fi/recipe/" + this.recipeURL;
   }
 }

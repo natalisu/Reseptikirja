@@ -72,15 +72,17 @@ p.card-title {
     top: 1%;
     right: 1.5%;
     z-index: 700;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(0, 0, 0, 0.24);
 }
 
 .likedHeart {
     color: $heart;
+    text-shadow: 2px 2px 3px #51002a;
 }
 
 .notLikedHeart {
-    color: #A9A8A8;
+    color: #f2f2f2;
+    text-shadow: 2px 2px 3px #000;
 }
 
 .fa-clock-o {
@@ -104,5 +106,15 @@ p.card-title {
         width: auto;
         min-width: 100%;
         min-height: 100%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .card {
+        min-width: 90%;
+    }
+    .card-group {
+        min-width: 90%;
+        text-align: center;
     }
 }

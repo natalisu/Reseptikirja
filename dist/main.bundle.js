@@ -6,7 +6,7 @@ webpackJsonp([0,4],{
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RecipequeryService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25,11 +25,11 @@ var RecipequeryService = (function () {
     function RecipequeryService(http) {
         var _this = this;
         this.http = http;
-        this.foodUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random';
-        this.getFoodFact = function () {
+        this.getFoodJoke = function () {
             var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Headers */]({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
             var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* RequestOptions */]({ headers: headers });
-            return _this.http.get(_this.foodUrl, options).map(function (resp) { return resp.json(); });
+            var recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random';
+            return _this.http.get(recipeUrl, options).map(function (resp) { return resp.json(); });
         };
         this.getRecipeById = function (id) {
             var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Headers */]({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
@@ -85,6 +85,12 @@ var RecipequeryService = (function () {
         }
         return ingredients;
     };
+    RecipequeryService.prototype.getFoodFact = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Headers */]({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
+        var options = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        var recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/trivia/random';
+        return this.http.get(recipeUrl, options).map(function (resp) { return resp.json(); });
+    };
     RecipequeryService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["e" /* Injectable */])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* Http */]) === 'function' && _a) || Object])
@@ -92,7 +98,7 @@ var RecipequeryService = (function () {
     return RecipequeryService;
     var _a;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/recipequery.service.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/recipequery.service.js.map
 
 /***/ },
 
@@ -115,11 +121,11 @@ webpackEmptyContext.id = 389;
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(523);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(479);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(510);
 
 
 
@@ -129,17 +135,17 @@ if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_4__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/main.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/main.js.map
 
 /***/ },
 
-/***/ 509:
+/***/ 508:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(199);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AdvancedSearchComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -214,19 +220,19 @@ var AdvancedSearchComponent = (function () {
     AdvancedSearchComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* Component */])({
             selector: 'app-advanced-search',
-            template: __webpack_require__(695),
-            styles: [__webpack_require__(682)]
+            template: __webpack_require__(694),
+            styles: [__webpack_require__(681)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormBuilder */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormBuilder */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === 'function' && _b) || Object])
     ], AdvancedSearchComponent);
     return AdvancedSearchComponent;
     var _a, _b;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/advanced-search.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/advanced-search.component.js.map
 
 /***/ },
 
-/***/ 510:
+/***/ 509:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -249,42 +255,42 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(696),
-            styles: [__webpack_require__(683)]
+            template: __webpack_require__(695),
+            styles: [__webpack_require__(682)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/app.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/app.component.js.map
 
 /***/ },
 
-/***/ 511:
+/***/ 510:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(510);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__recipe_card_detailed_recipe_card_detailed_component__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__navigation_bar_navigation_bar_component__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__image_carousel_image_carousel_component__ = __webpack_require__(516);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__simple_search_simple_search_component__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__front_page_front_page_component__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__advanced_search_advanced_search_component__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__search_search_component__ = __webpack_require__(521);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__commentbox_commentbox_component__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__my_recipes_my_recipes_component__ = __webpack_require__(517);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__cards_container_cards_container_component__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__favourites_favourites_component__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pipes_rounding_pipe__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__recipe_card_detailed_recipe_card_detailed_component__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__navigation_bar_navigation_bar_component__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__image_carousel_image_carousel_component__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__simple_search_simple_search_component__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__front_page_front_page_component__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__advanced_search_advanced_search_component__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__search_search_component__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__commentbox_commentbox_component__ = __webpack_require__(512);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__my_recipes_my_recipes_component__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__cards_container_cards_container_component__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__favourites_favourites_component__ = __webpack_require__(513);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pipes_rounding_pipe__ = __webpack_require__(518);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -319,7 +325,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var routeConfig = [
     {
         path: '',
-        component: __WEBPACK_IMPORTED_MODULE_13__front_page_front_page_component__["a" /* FrontPageComponent */]
+        pathMatch: 'full',
+        redirectTo: 'home'
     },
     {
         path: 'home',
@@ -366,7 +373,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */].forRoot(routeConfig)
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */].forRoot(routeConfig, { useHash: true })
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */],
@@ -377,15 +384,15 @@ var AppModule = (function () {
     ], AppModule);
     return AppModule;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/app.module.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/app.module.js.map
 
 /***/ },
 
-/***/ 512:
+/***/ 511:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CardsContainerComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -405,7 +412,7 @@ var CardsContainerComponent = (function () {
         this.recipes = [];
         this.horizontal = true;
         this.title = '';
-        this.imageurl = '';
+        this.imageurl = 'https://spoonacular.com/recipeImages/';
         this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* EventEmitter */]();
         this.navigateTo = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* EventEmitter */]();
     }
@@ -455,19 +462,19 @@ var CardsContainerComponent = (function () {
     CardsContainerComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* Component */])({
             selector: 'app-cards-container',
-            template: __webpack_require__(697),
-            styles: [__webpack_require__(684)]
+            template: __webpack_require__(696),
+            styles: [__webpack_require__(683)]
         }), 
         __metadata('design:paramtypes', [(typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */]) === 'function' && _c) || Object])
     ], CardsContainerComponent);
     return CardsContainerComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/cards-container.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/cards-container.component.js.map
 
 /***/ },
 
-/***/ 513:
+/***/ 512:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -485,8 +492,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CommentboxComponent = (function () {
     function CommentboxComponent() {
+        this.url = '';
     }
     CommentboxComponent.prototype.ngOnInit = function () {
+        this.url = "http://212.24.98.139/#/recipe/" + this.recipeURL;
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Input */])(), 
@@ -495,22 +504,22 @@ var CommentboxComponent = (function () {
     CommentboxComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
             selector: 'app-commentbox',
-            template: __webpack_require__(698),
-            styles: [__webpack_require__(685)]
+            template: __webpack_require__(697),
+            styles: [__webpack_require__(684)]
         }), 
         __metadata('design:paramtypes', [])
     ], CommentboxComponent);
     return CommentboxComponent;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/commentbox.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/commentbox.component.js.map
 
 /***/ },
 
-/***/ 514:
+/***/ 513:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FavouritesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -561,27 +570,27 @@ var FavouritesComponent = (function () {
     FavouritesComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_4" /* Component */])({
             selector: 'app-favourites',
-            template: __webpack_require__(699),
-            styles: [__webpack_require__(686)]
+            template: __webpack_require__(698),
+            styles: [__webpack_require__(685)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */]) === 'function' && _a) || Object])
     ], FavouritesComponent);
     return FavouritesComponent;
     var _a;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/favourites.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/favourites.component.js.map
 
 /***/ },
 
-/***/ 515:
+/***/ 514:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(374);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
@@ -611,6 +620,7 @@ var FrontPageComponent = (function () {
         this.recTitle = "Recommended recipes";
         this.horizontal = true;
         this.imageurl = '';
+        this.foodFact = '';
     }
     FrontPageComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -620,6 +630,8 @@ var FrontPageComponent = (function () {
             _this.recommendRecipes = res.results.slice(0, 4);
             _this.imageurl = res.baseUri;
         });
+        this.recipeservice.getFoodFact()
+            .subscribe(function (res) { return _this.foodFact = res.text; });
     };
     FrontPageComponent.prototype.saveUpdate = function (event) {
         console.log('save', event);
@@ -628,19 +640,19 @@ var FrontPageComponent = (function () {
     FrontPageComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["_4" /* Component */])({
             selector: 'app-front-page',
-            template: __webpack_require__(700),
-            styles: [__webpack_require__(687)]
+            template: __webpack_require__(699),
+            styles: [__webpack_require__(686)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__["a" /* RecipequeryService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__["a" /* RecipequeryService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */]) === 'function' && _c) || Object])
     ], FrontPageComponent);
     return FrontPageComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/front-page.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/front-page.component.js.map
 
 /***/ },
 
-/***/ 516:
+/***/ 515:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -664,18 +676,18 @@ var ImageCarouselComponent = (function () {
     ImageCarouselComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
             selector: 'app-image-carousel',
-            template: __webpack_require__(701),
-            styles: [__webpack_require__(688)]
+            template: __webpack_require__(700),
+            styles: [__webpack_require__(687)]
         }), 
         __metadata('design:paramtypes', [])
     ], ImageCarouselComponent);
     return ImageCarouselComponent;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/image-carousel.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/image-carousel.component.js.map
 
 /***/ },
 
-/***/ 517:
+/***/ 516:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,18 +711,18 @@ var MyRecipesComponent = (function () {
     MyRecipesComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
             selector: 'app-my-recipes',
-            template: __webpack_require__(702),
-            styles: [__webpack_require__(689)]
+            template: __webpack_require__(701),
+            styles: [__webpack_require__(688)]
         }), 
         __metadata('design:paramtypes', [])
     ], MyRecipesComponent);
     return MyRecipesComponent;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/my-recipes.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/my-recipes.component.js.map
 
 /***/ },
 
-/***/ 518:
+/***/ 517:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -734,18 +746,18 @@ var NavigationBarComponent = (function () {
     NavigationBarComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
             selector: 'app-navigation-bar',
-            template: __webpack_require__(703),
-            styles: [__webpack_require__(690)]
+            template: __webpack_require__(702),
+            styles: [__webpack_require__(689)]
         }), 
         __metadata('design:paramtypes', [])
     ], NavigationBarComponent);
     return NavigationBarComponent;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/navigation-bar.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/navigation-bar.component.js.map
 
 /***/ },
 
-/***/ 519:
+/***/ 518:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -786,21 +798,21 @@ var RoundingPipe = (function () {
     ], RoundingPipe);
     return RoundingPipe;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/rounding.pipe.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/rounding.pipe.js.map
 
 /***/ },
 
-/***/ 520:
+/***/ 519:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_recipequery_service__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__ = __webpack_require__(374);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RecipeCardDetailedComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -826,7 +838,7 @@ var RecipeCardDetailedComponent = (function () {
         this.likes = likes;
         this.similarRecipes = [];
         this.recipesTitle = "Similar recipes";
-        this.imageurl = '';
+        this.imageurl = 'https://spoonacular.com/recipeImages/';
     }
     RecipeCardDetailedComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -877,26 +889,26 @@ var RecipeCardDetailedComponent = (function () {
     RecipeCardDetailedComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["_4" /* Component */])({
             selector: 'app-recipe-card-detailed',
-            template: __webpack_require__(704),
-            styles: [__webpack_require__(691)]
+            template: __webpack_require__(703),
+            styles: [__webpack_require__(690)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_recipequery_service__["a" /* RecipequeryService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_recipequery_service__["a" /* RecipequeryService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */]) === 'function' && _d) || Object])
     ], RecipeCardDetailedComponent);
     return RecipeCardDetailedComponent;
     var _a, _b, _c, _d;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/recipe-card-detailed.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/recipe-card-detailed.component.js.map
 
 /***/ },
 
-/***/ 521:
+/***/ 520:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_likes_service__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(77);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SearchComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -938,25 +950,25 @@ var SearchComponent = (function () {
     SearchComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_4" /* Component */])({
             selector: 'app-search',
-            template: __webpack_require__(705),
-            styles: [__webpack_require__(692)]
+            template: __webpack_require__(704),
+            styles: [__webpack_require__(691)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__["a" /* RecipequeryService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_recipequery_service__["a" /* RecipequeryService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__services_likes_service__["a" /* LikesService */]) === 'function' && _c) || Object])
     ], SearchComponent);
     return SearchComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/search.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/search.component.js.map
 
 /***/ },
 
-/***/ 522:
+/***/ 521:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(77);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SimpleSearchComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -988,19 +1000,19 @@ var SimpleSearchComponent = (function () {
     SimpleSearchComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* Component */])({
             selector: 'app-simple-search',
-            template: __webpack_require__(706),
-            styles: [__webpack_require__(693)]
+            template: __webpack_require__(705),
+            styles: [__webpack_require__(692)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormBuilder */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormBuilder */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === 'function' && _b) || Object])
     ], SimpleSearchComponent);
     return SimpleSearchComponent;
     var _a, _b;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/simple-search.component.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/simple-search.component.js.map
 
 /***/ },
 
-/***/ 523:
+/***/ 522:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1012,45 +1024,45 @@ var SimpleSearchComponent = (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/environment.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/environment.js.map
 
 /***/ },
 
-/***/ 524:
+/***/ 523:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(537);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(530);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(526);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(532);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(531);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(529);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(528);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(536);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(525);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(524);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(534);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(536);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(535);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(534);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(533);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(539);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(538);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(725);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -1068,179 +1080,179 @@ var environment = {
 
 
 
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/polyfills.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/polyfills.js.map
 
 /***/ },
 
-/***/ 682:
+/***/ 681:
 /***/ function(module, exports) {
 
 module.exports = "/* COLOURS */\n/* FONTS */\n.container {\n  padding: 2em; }\n\n.search {\n  display: block;\n  margin: auto;\n  width: 95%; }\n\n.advancedOptions {\n  display: block;\n  padding-left: 7%; }\n\nh4 {\n  font-family: \"Lora\", serif;\n  letter-spacing: 1px; }\n\nh6 {\n  font-family: \"PT Serif\", serif;\n  letter-spacing: 1px;\n  margin-left: 2em;\n  margin-bottom: 1em; }\n\n.col,\n.col-md-6,\n.isearch,\n.form-check,\n.advancedOptions,\nul,\n.foodtype {\n  font-family: \"Karla\", sans-serif; }\n\ninput {\n  margin-left: 1em; }\n\ntextarea:focus, input:focus {\n  outline: none !important;\n  box-shadow: 0 0 20px #f4e8b8;\n  border: 2px solid #f4e8b8; }\n\n.isearch {\n  padding-left: 0.5em; }\n\n.form-check {\n  letter-spacing: 1px; }\n\nul {\n  letter-spacing: 1px;\n  margin-top: 5%; }\n\n.navbar > li {\n  padding-left: 3em;\n  padding-right: 3em; }\n\nli {\n  margin-top: -6%; }\n\n.foodtype {\n  letter-spacing: 1px;\n  margin-left: 2em; }\n\n.dietType {\n  padding-top: 2em;\n  padding-left: 2em; }\n\n/* BUTTONS */\n.btn-primary, .btn-options {\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #DAC77B;\n  border: none;\n  color: white;\n  margin: 0.5em;\n  display: inline-block; }\n\n.btn-primary:hover, .btn-options:hover {\n  background-color: #CEB65A; }\n\n.btn-warning {\n  letter-spacing: 2px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none;\n  margin: auto;\n  text-transform: uppercase;\n  font-size: 1.2em; }\n\n.btn-warning:hover {\n  background-color: #65874B; }\n"
 
 /***/ },
 
-/***/ 683:
+/***/ 682:
 /***/ function(module, exports) {
 
 module.exports = ""
+
+/***/ },
+
+/***/ 683:
+/***/ function(module, exports) {
+
+module.exports = "/* COLOURS */\n/* FONTS */\n.container {\n  padding: 2%; }\n\n.card {\n  margin: 0.5%;\n  display: inline-block;\n  min-width: 200px; }\n\na {\n  text-decoration: none;\n  color: #000; }\n\nh4,\np.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\np.card-text {\n  font-size: 12px;\n  display: inline-block; }\n\np.card-desc {\n  font-size: 14px;\n  font-family: \"PT Serif\", serif; }\n\np.card-title {\n  font-size: 18px;\n  font-family: \"Lora\", serif; }\n\n.card-img-top {\n  width: 100%;\n  height: auto; }\n\n.heartContainer {\n  position: absolute;\n  top: 1%;\n  right: 1.5%;\n  z-index: 700;\n  background-color: rgba(255, 255, 255, 0.65); }\n\n.likedHeart {\n  color: #d65164; }\n\n.notLikedHeart {\n  color: #A9A8A8; }\n\n.fa-clock-o {\n  display: inline-block; }\n\n.container-image {\n  background-color: #fff;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: center/cover;\n  height: auto;\n  width: 100%;\n  min-width: 100%;\n  margin: 0;\n  padding: 0 0 100% 0;\n  overflow: hidden;\n  position: relative; }\n  .container-image img {\n    position: absolute;\n    width: auto;\n    min-width: 100%;\n    min-height: 100%; }\n"
 
 /***/ },
 
 /***/ 684:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\n.container {\n  padding: 2%; }\n\n.card {\n  margin: 3%;\n  display: inline-block;\n  min-width: 200px; }\n\na {\n  text-decoration: none;\n  color: #000; }\n\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\np.card-text {\n  font-size: 12px;\n  display: inline-block; }\n\np.card-desc {\n  font-size: 14px;\n  font-family: \"PT Serif\", serif; }\n\np.card-title {\n  font-size: 18px;\n  font-family: \"Lora\", serif; }\n\n.card-img-top {\n  width: 100%;\n  height: auto; }\n\n.heartContainer {\n  position: absolute;\n  top: 1%;\n  right: 1.5%;\n  z-index: 700;\n  background-color: rgba(255, 255, 255, 0.65); }\n\n.likedHeart {\n  color: #d65164; }\n\n.notLikedHeart {\n  color: #A9A8A8; }\n\n.fa-clock-o {\n  display: inline-block; }\n"
+module.exports = "/* COLOURS */\n/* FONTS */\nh4 {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.comment {\n  border: thin solid #84A16E;\n  padding: 2%;\n  margin-bottom: 2%;\n  font-family: \"Karla\", sans-serif; }\n\n.date {\n  font-family: \"Karla\", sans-serif;\n  font-size: 12px;\n  color: grey;\n  padding-top: 2%;\n  float: right; }\n\n.card {\n  margin: 3%;\n  display: inline-block; }\n\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\np.card-text {\n  font-size: 12px; }\n\np.card-desc {\n  font-size: 14px;\n  font-family: \"PT Serif\", serif; }\n\np.card-title {\n  font-size: 18px;\n  font-family: \"Lora\", serif; }\n\n.card-img-top {\n  width: 100%;\n  height: auto; }\n\n.btn-warning {\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.btn-warning:hover {\n  background-color: #65874B; }\n\ntextarea:focus, input:focus {\n  outline: none !important;\n  border: thin solid #84A16E;\n  box-shadow: 0 0 10px #65874B; }\n"
 
 /***/ },
 
 /***/ 685:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\nh4 {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.comment {\n  border: thin solid #84A16E;\n  padding: 2%;\n  margin-bottom: 2%;\n  font-family: \"Karla\", sans-serif; }\n\n.date {\n  font-family: \"Karla\", sans-serif;\n  font-size: 12px;\n  color: grey;\n  padding-top: 2%;\n  float: right; }\n\n.card {\n  margin: 3%;\n  display: inline-block; }\n\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\np.card-text {\n  font-size: 12px; }\n\np.card-desc {\n  font-size: 14px;\n  font-family: \"PT Serif\", serif; }\n\np.card-title {\n  font-size: 18px;\n  font-family: \"Lora\", serif; }\n\n.card-img-top {\n  width: 100%;\n  height: auto; }\n\n.btn-warning {\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.btn-warning:hover {\n  background-color: #65874B; }\n\ntextarea:focus, input:focus {\n  outline: none !important;\n  border: thin solid #84A16E;\n  box-shadow: 0 0 10px #65874B; }\n"
+module.exports = "/* COLOURS */\n/* FONTS */\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.btn {\n  margin: auto;\n  display: block;\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.container {\n  padding: 2%; }\n"
 
 /***/ },
 
 /***/ 686:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.btn {\n  margin: auto;\n  display: block;\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.container {\n  padding: 2%; }\n"
+module.exports = "/** COLOURS */\n/* FONTS */\n.container {\n  padding: 1%; }\n\n.container-fact {\n  text-align: center;\n  width: 90%;\n  margin: 3% auto;\n  background-color: #f4e8b8; }\n\nh4 {\n  font-family: \"Caveat\", cursive; }\n\n@media screen and (min-width: 768px) {\n  .container-fact {\n    width: 70%; } }\n\n@media screen and (min-width: 1200px) {\n  .container-fact {\n    width: 40%; } }\n"
 
 /***/ },
 
 /***/ 687:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "/* COLOURS */\n/* FONTS */\n.carousel-inner > .carousel-item > img,\n.carousel-inner > .item > a > img {\n  margin: auto;\n  height: 100%;\n  width: 100%; }\n\n#kuvakaruselli {\n  position: relative; }\n\n.col {\n  margin: 0;\n  padding-right: 0px;\n  padding-left: 0px; }\n\n.searchbox {\n  position: absolute;\n  z-index: 9999999;\n  top: 45%;\n  width: 33em;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  background-color: rgba(255, 255, 255, 0.8);\n  padding: 4%;\n  letter-spacing: 1px;\n  box-shadow: 0 0 20px #fff; }\n  .searchbox .container {\n    background-color: rgba(255, 255, 255, 0); }\n"
 
 /***/ },
 
 /***/ 688:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\n.carousel-inner > .carousel-item > img,\n.carousel-inner > .item > a > img {\n  margin: auto;\n  height: 100%;\n  width: 100%; }\n\n#kuvakaruselli {\n  position: relative; }\n\n.col {\n  margin: 0;\n  padding-right: 0px;\n  padding-left: 0px; }\n\n.searchbox {\n  position: absolute;\n  z-index: 9999999;\n  top: 45%;\n  width: 33em;\n  left: 0;\n  right: 0;\n  margin-left: auto;\n  margin-right: auto;\n  background-color: rgba(255, 255, 255, 0.8);\n  padding: 4%;\n  letter-spacing: 1px;\n  box-shadow: 0 0 20px #fff; }\n  .searchbox .container {\n    background-color: rgba(255, 255, 255, 0); }\n"
+module.exports = "/* COLOURS */\n/* FONTS */\n"
 
 /***/ },
 
 /***/ 689:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\n"
+module.exports = "/* COLOURS */\n/* FONTS */\nnav {\n  background-color: #fff; }\n\n.navbar-brand img {\n  width: 60px;\n  height: 60px;\n  margin-left: -0.8em; }\n\n.navitem,\n.myrecipes {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase;\n  padding-bottom: 1%;\n  font-size: 1.4em; }\n\n.navitem:hover {\n  background-color: rgba(168, 192, 149, 0.6); }\n\n.text-right {\n  float: right; }\n\nli {\n  width: 100%;\n  margin-left: 2%;\n  margin-right: 2%; }\n\nul {\n  white-space: nowrap; }\n\n.myrecipes {\n  display: inline-block; }\n  .myrecipes a {\n    display: inline-block; }\n\n.shownext {\n  display: inline-block;\n  color: #fff;\n  z-index: 10000; }\n\n.myrecipes:hover .shownext {\n  color: #d65164; }\n"
 
 /***/ },
 
 /***/ 690:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\nnav {\n  background-color: #fff; }\n\n.navbar-brand img {\n  width: 60px;\n  height: 60px;\n  margin-left: -0.8em; }\n\n.navitem,\n.myrecipes {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase;\n  padding-bottom: 1%;\n  font-size: 1.4em; }\n\n.navitem:hover {\n  background-color: rgba(168, 192, 149, 0.6); }\n\n.text-right {\n  float: right; }\n\nli {\n  width: 100%;\n  margin-left: 2%;\n  margin-right: 2%; }\n\nul {\n  white-space: nowrap; }\n\n.myrecipes {\n  display: inline-block; }\n  .myrecipes a {\n    display: inline-block; }\n\n.shownext {\n  display: inline-block;\n  color: #fff;\n  z-index: 10000; }\n\n.myrecipes:hover .shownext {\n  color: #d65164; }\n"
+module.exports = "h2 {\n  font-family: \"Lora\", serif;\n  line-height: 1.2em; }\n\nh6, a {\n  font-family: \"PT Serif\", serif; }\n\n.container {\n  padding: 2%; }\n\nimg {\n  margin-bottom: 8%; }\n\nli, h5 {\n  font-family: \"Karla\", sans-serif;\n  padding-bottom: 0.5em; }\n\nli.ingrd {\n  font-family: \"Karla\", sans-serif; }\n\n.recipetitle {\n  background: rgba(168, 192, 149, 0.6);\n  padding: 5%;\n  box-shadow: 0 0 20px #A8C095; }\n\n.recipedesc {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.recipeIngredients {\n  border-left: thin solid #000;\n  border-right: thin solid #000;\n  padding-left: 12%;\n  margin-right: 5%;\n  padding-bottom: 1%; }\n\n.verticalLine {\n  border-left: thin solid #000;\n  border-right: thin solid #000;\n  padding-left: 12%;\n  font-family: \"PT Serif\", serif; }\n"
 
 /***/ },
 
 /***/ 691:
 /***/ function(module, exports) {
 
-module.exports = "h2 {\n  font-family: \"Lora\", serif;\n  line-height: 1.2em; }\n\nh6, a {\n  font-family: \"PT Serif\", serif; }\n\n.container {\n  padding: 2%; }\n\nimg {\n  margin-bottom: 8%; }\n\nli, h5 {\n  font-family: \"Karla\", sans-serif;\n  padding-bottom: 0.5em; }\n\nli.ingrd {\n  font-family: \"Karla\", sans-serif; }\n\n.recipetitle {\n  background: rgba(168, 192, 149, 0.6);\n  padding: 5%;\n  box-shadow: 0 0 20px #A8C095; }\n\n.recipedesc {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.recipeIngredients {\n  border-left: thin solid #000;\n  border-right: thin solid #000;\n  padding-left: 12%;\n  margin-right: 5%;\n  padding-bottom: 1%; }\n\n.verticalLine {\n  border-left: thin solid #000;\n  border-right: thin solid #000;\n  padding-left: 12%;\n  font-family: \"PT Serif\", serif; }\n"
+module.exports = "/* COLOURS */\n/* FONTS */\n.container {\n  padding: 2%; }\n\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n"
 
 /***/ },
 
 /***/ 692:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\n.container {\n  padding: 2%; }\n\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n"
-
-/***/ },
-
-/***/ 693:
-/***/ function(module, exports) {
-
 module.exports = "/* COLOURS */\n/* FONTS */\n.isearch {\n  margin-right: 5%;\n  padding: 2%;\n  margin-top: 2%;\n  font-family: \"Karla\", sans-serif; }\n\ntextarea:focus, input:focus {\n  outline: none !important;\n  box-shadow: 0 0 20px #65874B;\n  border: 2px solid #A8C095; }\n\n.btn-warning {\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.btn-warning:hover {\n  background-color: #65874B; }\n\n.searchbox {\n  font-family: \"PT Serif\", serif; }\n\nh4 {\n  font-family: \"Lora\", serif; }\n"
 
 /***/ },
 
-/***/ 695:
+/***/ 694:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"container\">\r\n\r\n\r\n  <h4><i class=\"fa fa-search\" aria-hidden=\"true\"></i> <b>Search for a recipe:</b></h4>\r\n  <hr>\r\n  <br>\r\n\r\n\r\n  <form class=\"search\" #f=\"ngForm\" (ngSubmit)=\"search()\">\r\n<div class=\"row\">\r\n  <div class=\"col-md-6\">\r\n<div class=\"form-group\">\r\n  <b>Include keywords:</b>\r\n  <input size=\"30\" height=\"100\" class=\"isearch\" name=\"searchQuery.query\" [(ngModel)]=\"searchQuery.query\" minlength=\"3\" placeholder=\"i.e. chicken, bacon...\">\r\n   </div>\r\n  </div>\r\n\r\n<div class=\"col-md-6\">\r\n<div class=\"form-group\">\r\n  <b>Exclude keywords:</b>\r\n    <input size=\"30\" height=\"100\" class=\"isearch\" name=\"searchQuery.excludeIngredients\" [(ngModel)]=\"searchQuery.excludeIngredients\" minlength=\"3\" placeholder=\"i.e. tomato, almond...\"><br>\r\n   </div>\r\n   <br>\r\n   </div>\r\n   </div>\r\n\r\n   <div class=\"row\">\r\n\r\n\r\n\r\n<div class=\"col-md-4\">\r\n\r\n<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#allergensModal\">\r\n  I am allergic to...\r\n</button><br>\r\n\r\n  <div *ngFor=\"let intolerance of intolerancesArray\">\r\n    <ul><span *ngIf=\"intolerance.checked\"><li> {{intolerance.value}} </li></span></ul>\r\n  </div>\r\n\r\n\r\n<div class=\"modal optionsModal\" id=\"allergensModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-body\">\r\n        <div class=\"advancedOptions\" *ngFor=\"let option of intolerancesArray\">\r\n          <label>\r\n            <input class=\"\" type=\"checkbox\"\r\n                  name=\"option\"\r\n                   value=\"{{option.value}}\"\r\n                   [(ngModel)]=\"option.checked\"/>\r\n                  {{option.value}}\r\n          </label>\r\n        </div> \r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary btn-options\" data-dismiss=\"modal\">Done!</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n</div>\r\n\r\n<div class=\"col-md-4\">\r\n\r\n<button type=\"button\" class=\"btn btn-primary btn2\" data-toggle=\"modal\" data-target=\"#typesModal\">\r\n  I want to make...\r\n</button><br>\r\n<div class=\"foodtype\"> {{chosenType}} </div>\r\n\r\n<div class=\"modal optionsModal\" id=\"typesModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-body\">\r\n        <div class=\"advancedOptions\" *ngFor=\"let foodtype of typesArray\">\r\n          <label>\r\n            <input class=\"\" type=\"radio\" \r\n            value=\"{{foodtype}}\" [(ngModel)]=\"searchQuery.type\" name=\"searchQuery.type\">\r\n                  {{foodtype}}\r\n          </label>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary btn-options\" data-dismiss=\"modal\" (click)=\"checkTypes()\">Done!</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n       \r\n      </div>\r\n\r\n<div class=\"col-md-4 dietType\">\r\n         <div class=\"form-group\">\r\n       <h6><b>I am...</b></h6>\r\n         <div class=\"form-check\" *ngFor=\"let diettype of dietArray\">\r\n            <input class=\"form-check-input\" type=\"radio\" \r\n            value=\"{{diettype}}\" [(ngModel)]=\"searchQuery.diet\" name=\"searchQuery.diet\">\r\n                  {{diettype}}\r\n        </div>\r\n    </div>\r\n</div>\r\n</div>\r\n<br>\r\n  \r\n  <div class=\"row\">\r\n      <button type=\"submit\" class=\"btn btn-warning\"><b>Search</b></button>\r\n  </div>\r\n\r\n  </form>\r\n\r\n</div>"
 
 /***/ },
 
-/***/ 696:
+/***/ 695:
 /***/ function(module, exports) {
 
 module.exports = "<app-navigation-bar></app-navigation-bar>\r\n\r\n<!-- <app-recipe-card-detailed></app-recipe-card-detailed> -->\r\n\r\n<router-outlet></router-outlet>"
 
 /***/ },
 
+/***/ 696:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"container\">\n\n    <div *ngIf=\"recipes\">\n\n        <h4>{{title}}</h4>\n        <br>\n\n        <div class=\"row\" *ngIf=\"horizontal\">\n            <div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12 recipecard\" *ngFor=\"let recipe of recipes\">\n                <div class=\"card-group\">\n                    <div class=\"card\">\n                        <a class=\"btn btn-default heartContainer\">\n                            <i class=\"fa fa-heart fa-lg likedHeart\" aria-hidden=\"true\" *ngIf=\"recipe.isliked\" (click)=\"removeFromFavourites(recipe)\"></i>\n                            <i class=\"fa fa-heart fa-lg notLikedHeart\" aria-hidden=\"true\" *ngIf=\"!recipe.isliked\" (click)=\"saveToFavourites(recipe)\"></i></a>\n                        <a [routerLink]=\"['/recipe', recipe.id]\" (click)=\"navigate(recipe.id)\">\n                            <!--  <img class=\"card-img-top img-fluid\" src=\"http://i.imgur.com/uG0XRBH.jpg\" alt=\"Card image cap\"> -->\n                            <div class=\"row container-image\">\n                                <img class=\"img-fluid\" src=\"{{imageurl}}{{recipe.image}}\">\n                            </div>\n                            <div class=\"card-block\">\n                                <p class=\"card-title\">{{recipe.title}}</p>\n                                <i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>\n                                <p class=\"card-text align-middle\"><b> {{recipe.readyInMinutes}} min </b></p>\n                            </div>\n                        </a>\n                    </div>\n\n                </div>\n\n            </div>\n        </div>\n\n        <div class=\"row\" *ngIf=\"!horizontal\">\n\n            <div class=\"col\" *ngFor=\"let recipe of recipes\">\n                <div class=\"card-group\">\n                    <div class=\"card\">\n                        <a class=\"btn btn-default heartContainer\">\n                            <i class=\"fa fa-heart fa-lg likedHeart\" aria-hidden=\"true\" *ngIf=\"recipe.isliked\" (click)=\"removeFromFavourites(recipe)\"></i>\n                            <i class=\"fa fa-heart fa-lg notLikedHeart\" aria-hidden=\"true\" *ngIf=\"!recipe.isliked\" (click)=\"saveToFavourites(recipe)\"></i></a>\n                        <a [routerLink]=\"['/recipe', recipe.id]\" (click)=\"navigate(recipe.id)\">\n                            <!--  <img class=\"card-img-top img-fluid\" src=\"http://i.imgur.com/uG0XRBH.jpg\" alt=\"Card image cap\"> -->\n                            <div class=\"row container-image\">\n                                <img class=\"img-fluid\" src=\"{{imageurl}}{{recipe.image}}\">\n                            </div>\n                            <div class=\"card-block\">\n                                <p class=\"card-title\">{{recipe.title}}</p>\n                                <i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>\n                                <p class=\"card-text align-middle\"><b> {{recipe.readyInMinutes}} min </b></p>\n                            </div>\n                        </a>\n                    </div>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+
+/***/ },
+
 /***/ 697:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n\n  <div *ngIf=\"recipes\">\n\n      <h4>{{title}}</h4>\n      <br>\n\n      <div class=\"row\" *ngIf=\"horizontal\">\n      <div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12 recipecard\" *ngFor=\"let recipe of recipes\">\n          <div class=\"card\">\n            <a class=\"btn btn-default heartContainer\">\n            <i class=\"fa fa-heart fa-lg likedHeart\" aria-hidden=\"true\" *ngIf=\"recipe.isliked\" (click)=\"removeFromFavourites(recipe)\"></i>\n            <i class=\"fa fa-heart fa-lg notLikedHeart\" aria-hidden=\"true\" *ngIf=\"!recipe.isliked\" (click)=\"saveToFavourites(recipe)\"></i></a>\n            <a [routerLink]=\"['/recipe', recipe.id]\" (click)=\"navigate(recipe.id)\">\n           <!-- <img class=\"card-img-top img-fluid\" src=\"{{imageurl}}{{recipe.image}}\"> -->\n            <img class=\"card-img-top img-fluid\" src=\"http://i.imgur.com/uG0XRBH.jpg\" alt=\"Card image cap\">\n            <div class=\"card-block\">\n                        <div class=\"row\">\n                            <div class=\"col\">\n                                <p class=\"card-title\">{{recipe.title}}</p>\n                            </div>\n                        </div>\n                        <div class=\"row\">                            \n                            <div class=\"col text-right\">\n                                 <i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> <p class=\"card-text align-middle\"><b> {{recipe.readyInMinutes}} min </b></p>\n                            </div>\n                        </div>  \n             </div>\n            </a>\n          </div>\n      </div>\n      </div>\n   \n<div class=\"row\" *ngIf=\"!horizontal\">\n\n        <div class=\"col\" *ngFor=\"let recipe of recipes\">\n          <div class=\"card\">\n            <a class=\"btn btn-default heartContainer\">\n            <i class=\"fa fa-heart fa-lg likedHeart\" aria-hidden=\"true\" *ngIf=\"recipe.isliked\" (click)=\"removeFromFavourites(recipe)\"></i>\n            <i class=\"fa fa-heart fa-lg notLikedHeart\" aria-hidden=\"true\" *ngIf=\"!recipe.isliked\" (click)=\"saveToFavourites(recipe)\"></i></a>\n            <a [routerLink]=\"['/recipe', recipe.id]\" (click)=\"navigate(recipe.id)\">\n           <!-- <img class=\"card-img-top img-fluid\" src=\"{{imageurl}}{{recipe.image}}\"> -->\n            <img class=\"card-img-top img-fluid\" src=\"http://i.imgur.com/uG0XRBH.jpg\" alt=\"Card image cap\">\n            <div class=\"card-block\">\n                      <!-- <img src=\"{{imageurl}}{{recipe.image}}\"><br> -->\n                        <div class=\"row\">\n                            <div class=\"col\">\n                                <p class=\"card-title\">{{recipe.title}}</p>\n                            \n                            </div>\n                        </div>\n                        <div class=\"row\">                            \n                            <div class=\"col text-right\">\n                                <i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> <p class=\"card-text align-middle\">{{recipe.readyInMinutes}} min</p>\n                            </div>\n                        </div>  \n             </div>\n            </a>\n          </div>\n      </div>\n  </div>\n\n\n    </div>\n\n</div>"
+module.exports = "<div class=\"container\" style=\"background-color: #fff; padding: 2%;\">\n\n\n    <!-- <div class=\"row\">\n\n            <div class=\"col\">\n                <h4>Comments</h4>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">qqqqqqq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">qqqqqqq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">Tosipitkä kommenttiteksti jee jee asdsdadsadsaadsads qw qwe ewq q wq ewq wqe wqe ewq ewq ewq qew eq ewq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <br>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <h4>Write a comment</h4></div>\n                </div>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <textarea class=\"form-control\" id=\"commentarea\" rows=\"5\"></textarea>\n                    </div>\n                </div>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <button type=\"submit\" class=\"btn btn-warning\">Submit</button>\n                    </div>\n                </div>\n            </div>\n        </div> -->\n\n    <div *ngIf=\"url\">\n        <div class=\"fb-comments\" [attr.data-href]=\"url\" data-width=\"100%\" data-numposts=\"5\"></div>\n    </div>\n\n</div>"
 
 /***/ },
 
 /***/ 698:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"background-color: #fff; padding: 2%;\">\n       <!-- <div class=\"row\">\n            <div class=\"col\">\n                <h4>Comments</h4>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">qqqqqqq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">qqqqqqq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">Tosipitkä kommenttiteksti jee jee asdsdadsadsaadsads qw qwe ewq q wq ewq wqe wqe ewq ewq ewq qew eq ewq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <br>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <h4>Write a comment</h4></div>\n                </div>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <textarea class=\"form-control\" id=\"commentarea\" rows=\"5\"></textarea>\n                    </div>\n                </div>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <button type=\"submit\" class=\"btn btn-warning\">Submit</button>\n                    </div>\n                </div>\n\n\n            </div>\n        </div> -->\n    <div class=\"fb-comments\" data-href=\"http://localhost:4200/recipe/'+recipeURL+'\"  data-width=\"100%\" data-numposts=\"5\"></div>\n</div>"
+module.exports = "<div class=\"container\">\n\n<h4>{{title}}</h4>\n\n<app-cards-container (update)=\"saveUpdate($event)\" [recipes]=\"ownRecipes\" [imageurl]=\"imageurl\"></app-cards-container>\n\n<button class=\"btn btn-warning\" (click)=\"emptyFavourites()\" *ngIf=\"showButton\">Clear favourites</button>\n</div>"
 
 /***/ },
 
 /***/ 699:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n<h4>{{title}}</h4>\n\n<app-cards-container (update)=\"saveUpdate($event)\" [recipes]=\"ownRecipes\" [imageurl]=\"imageurl\"></app-cards-container>\n\n<button class=\"btn btn-warning\" (click)=\"emptyFavourites()\" *ngIf=\"showButton\">Clear favourites</button>\n</div>"
+module.exports = "<app-image-carousel></app-image-carousel>\r\n\r\n<br>\r\n\r\n<app-cards-container (update)=\"saveUpdate($event)\" [imageurl]=\"imageurl\" [recipes]=\"recommendRecipes\" [title]=\"recTitle\" *ngIf=\"recommendRecipes\"></app-cards-container>\r\n\r\n<div class=\"container container-fact\">\r\n    <h4><b>Did you know?</b></h4>\r\n    <p> {{foodFact}} </p>\r\n</div>\r\n\r\n<!--\r\n<br>\r\n<app-cards-container [recipes]=\"ownRecipes\" [horizontal]=\"false\" [title]=\"Similar recipes\"></app-cards-container>\r\n<br>\r\n-->"
 
 /***/ },
 
 /***/ 700:
 /***/ function(module, exports) {
 
-module.exports = "<app-image-carousel></app-image-carousel>\r\n\r\n<br>\r\n\r\n<app-cards-container (update)=\"saveUpdate($event)\" [imageurl]=\"imageurl\" [recipes]=\"recommendRecipes\" [title]=\"recTitle\" *ngIf=\"recommendRecipes\"></app-cards-container> \r\n\r\n<!--\r\n<br>\r\n<app-cards-container [recipes]=\"ownRecipes\" [horizontal]=\"false\" [title]=\"Similar recipes\"></app-cards-container>\r\n\r\n<br>\r\n-->"
+module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n        <div id=\"kuvakaruselli\" class=\"carousel slide\" data-ride=\"carousel\" style=\"align-content: center;\">\r\n            <div class=\"carousel-inner\" role=\"listbox\">\r\n                <div class=\"searchbox\">\r\n                <app-simple-search></app-simple-search>\r\n                </div>\r\n                <div class=\"carousel-item active\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/9umx9az.jpg\" alt=\"First slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/v3Oeehk.jpg\" alt=\"Second slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/Cz6B8xf.jpg\" alt=\"Third slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/T3tM5rp.jpg\" alt=\"Fourth slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/bwFrm6t.jpg\" alt=\"Fifth slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/Gj4Ey6O.jpg\" alt=\"Sixth slide\">\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ },
 
 /***/ 701:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n        <div id=\"kuvakaruselli\" class=\"carousel slide\" data-ride=\"carousel\" style=\"align-content: center;\">\r\n            <div class=\"carousel-inner\" role=\"listbox\">\r\n                <div class=\"searchbox\">\r\n                <app-simple-search></app-simple-search>\r\n                </div>\r\n                <div class=\"carousel-item active\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/9umx9az.jpg\" alt=\"First slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/v3Oeehk.jpg\" alt=\"Second slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/Cz6B8xf.jpg\" alt=\"Third slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/T3tM5rp.jpg\" alt=\"Fourth slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/bwFrm6t.jpg\" alt=\"Fifth slide\">\r\n                </div>\r\n                <div class=\"carousel-item\">\r\n                    <img class=\"d-block img-fluid\" src=\"http://i.imgur.com/Gj4Ey6O.jpg\" alt=\"Sixth slide\">\r\n                </div>\r\n            </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<p>\n  my-recipes works!\n</p>\n"
 
 /***/ },
 
 /***/ 702:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  my-recipes works!\n</p>\n"
+module.exports = "<div class=\"container\">\r\n\r\n    <nav class=\"navbar navbar-toggleable-md navbar-light\">\r\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n                <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">\r\n            <img src=\"https://trello-attachments.s3.amazonaws.com/588727fd73d9c03b796b7e16/306x282/1c03784ed78a3c26c554d8d85430b643/logo.png\" class=\"d-inline-block align-top\" alt=\"\">\r\n        </a>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item navitem\">\r\n                    <a [routerLink]=\"['/']\" class=\"nav-link\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><b>  Home</b></a>\r\n\r\n                </li>\r\n                <li class=\"nav-item navitem\">\r\n                    <a [routerLink]=\"['/search']\" class=\"nav-link\">  Recipe search</a>\r\n                </li>\r\n\r\n            </ul>\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item myrecipes\">\r\n                    <a [routerLink]=\"['/favourites']\" class=\"nav-link\">  My recipes</a> <i class=\"fa fa-heart shownext\" aria-hidden=\"true\"></i>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </nav>\r\n</div>"
 
 /***/ },
 
 /***/ 703:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\r\n    <nav class=\"navbar navbar-toggleable-md navbar-light\">\r\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n                <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">\r\n            <img src=\"https://trello-attachments.s3.amazonaws.com/588727fd73d9c03b796b7e16/306x282/1c03784ed78a3c26c554d8d85430b643/logo.png\" class=\"d-inline-block align-top\" alt=\"\">\r\n        </a>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item navitem\">\r\n                    <a [routerLink]=\"['/']\" class=\"nav-link\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><b>  Home</b></a>\r\n\r\n                </li>\r\n                <li class=\"nav-item navitem\">\r\n                    <a [routerLink]=\"['/search']\" class=\"nav-link\">  Recipe search</a>\r\n                </li>\r\n\r\n            </ul>\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item myrecipes\">\r\n                    <i class=\"fa fa-heart shownext\" aria-hidden=\"true\"></i><a [routerLink]=\"['/favourites']\" class=\"nav-link\">  My recipes</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </nav>\r\n</div>"
+module.exports = "<div *ngIf=\"recipeInfo\" class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <img class=\"img-fluid\" src=\"{{recipeInfo.image}}\">\r\n            <br>\r\n            <div class=\"recipeIngredients\">\r\n                <ul *ngIf=\"ingredients\">\r\n                    <h5>Ingredients:</h5>\r\n                    <li *ngFor=\"let foodthing of ingredients\" class=\"ingrd\">\r\n                        <!-- {{foodthing.originalString}} -->\r\n                        <b>{{foodthing.amount | rounding}} {{foodthing.unit}}</b> {{foodthing.name}}\r\n                    </li>\r\n                </ul>\r\n\r\n                <button class=\"btn btn-primary\" (click)=\"convert()\">Convert to grams</button>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"col\">\r\n            <div class=\"recipetitle\">\r\n                <h2>{{recipeInfo.title}}</h2>\r\n                <hr>\r\n                <div class=\"recipedesc\">\r\n                    <b>Preparing time:</b> {{recipeInfo.readyInMinutes}} minutes</div>\r\n            </div>\r\n            <br>\r\n\r\n            <ol *ngIf=\"instructions\">\r\n                <h5>Instructions:</h5>\r\n                <li *ngFor=\"let phase of instructions\">{{phase.step}}</li>\r\n                <br>\r\n\r\n                <p><a href=\"{{recipeInfo.sourceUrl}}\">Original recipe: {{recipeInfo.sourceName}}</a></p>\r\n            </ol>\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n\r\n        <div class=\"col-lg-9 col-md-12 col-sm-12\">\r\n            <app-commentbox [recipeURL]=\"activeId\"></app-commentbox>\r\n        </div>\r\n        <div class=\"col-lg-3 col-md-12 col-sm-12\" *ngIf=\"similarRecipes\">\r\n            <app-cards-container (navigateTo)=\"navigate($event)\" (update)=\"saveUpdate($event)\" [recipes]=\"similarRecipes\" [imageurl]=\"imageurl\" [horizontal]=\"false\" [title]=\"recipesTitle\"></app-cards-container>\r\n        </div>\r\n    </div>\r\n\r\n</div>"
 
 /***/ },
 
 /***/ 704:
 /***/ function(module, exports) {
 
-module.exports = "<div *ngIf=\"recipeInfo\" class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n      <img src=\"http://i.imgur.com/uG0XRBH.jpg\">\r\n      <br>\r\n      <div class=\"recipeIngredients\">\r\n      <ul *ngIf=\"ingredients\">\r\n      <h5>Ingredients:</h5>\r\n          <li *ngFor=\"let foodthing of ingredients\" class=\"ingrd\">\r\n           <!-- {{foodthing.originalString}} -->\r\n            <b>{{foodthing.amount | rounding}} {{foodthing.unit}}</b> {{foodthing.name}}\r\n            </li>\r\n        </ul>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"convert()\">Convert to grams</button>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col\">\r\n      <div class=\"recipetitle\">\r\n      <h2>{{recipeInfo.title}}</h2>\r\n      <hr>\r\n      <div class=\"recipedesc\">\r\n      <b>Preparing time:</b> {{recipeInfo.readyInMinutes}} minutes</div>\r\n      </div>\r\n      <br>\r\n\r\n    <ol *ngIf=\"instructions\">\r\n       <h5>Instructions:</h5>\r\n      <li *ngFor=\"let phase of instructions\">{{phase.step}}</li>\r\n      <br>\r\n\r\n    <p><a href=\"{{recipeInfo.sourceUrl}}\">Original recipe: {{recipeInfo.sourceName}}</a></p>\r\n    </ol>\r\n\r\n    </div>\r\n  </div>\r\n </div>\r\n\r\n<br>\r\n\r\n<div class=\"container\">\r\n<div class=\"row\">\r\n\r\n  <div class=\"col-9\">\r\n    <app-commentbox [recipeURL]=\"activeId\"></app-commentbox>\r\n  </div>\r\n  <div class=\"col-3\" *ngIf=\"similarRecipes\">\r\n    <app-cards-container (navigateTo)=\"navigate($event)\" (update)=\"saveUpdate($event)\" [recipes]=\"similarRecipes\" [imageurl]=\"imageurl\" [horizontal]=\"false\" [title]=\"recipesTitle\"></app-cards-container>\r\n  </div>\r\n</div>\r\n\r\n</div>"
+module.exports = "<app-advanced-search></app-advanced-search>\r\n\r\n<app-cards-container (update)=\"saveUpdate($event)\" [imageurl]=\"imageurl\" [recipes]=\"recipes\" [title]=\"recTitle\" *ngIf=\"recipes.length\"></app-cards-container> \r\n\r\n\r\n<div *ngIf=\"!recipes.length\">\r\n\r\n<div class=\"container\">\r\n\r\n<h4>No recipes found. Try something else!</h4>\r\n\r\n</div>\r\n\r\n</div>"
 
 /***/ },
 
 /***/ 705:
 /***/ function(module, exports) {
 
-module.exports = "<app-advanced-search></app-advanced-search>\r\n\r\n<app-cards-container (update)=\"saveUpdate($event)\" [imageurl]=\"imageurl\" [recipes]=\"recipes\" [title]=\"recTitle\" *ngIf=\"recipes.length\"></app-cards-container> \r\n\r\n\r\n<div *ngIf=\"!recipes.length\">\r\n\r\n<div class=\"container\">\r\n\r\n<h4>No recipes found. Try something else!</h4>\r\n\r\n</div>\r\n\r\n</div>"
-
-/***/ },
-
-/***/ 706:
-/***/ function(module, exports) {
-
 module.exports = "\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n\r\n  <h4><b>Search for a recipe:</b></h4>\r\n\r\n  <form class=\"search\" [formGroup]=\"searchForm\" (ngSubmit)=\"search($event)\">\r\n  <input size=\"30\" height=\"100\" class=\"isearch\" formControlName=\"query\" minlength=\"3\" placeholder=\"i.e. chicken, bacon...\" required>\r\n  <button type=\"submit\" class=\"btn btn-warning\">Submit</button>\r\n  </form>\r\n\r\n    </div>\r\n  </div>\r\n"
 
 /***/ },
 
-/***/ 727:
+/***/ 726:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(390);
@@ -1248,7 +1260,7 @@ module.exports = __webpack_require__(390);
 
 /***/ },
 
-/***/ 78:
+/***/ 79:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1333,9 +1345,9 @@ var LikesService = (function () {
     ], LikesService);
     return LikesService;
 }());
-//# sourceMappingURL=/Users/jerekii/Desktop/Reseptikirja/src/likes.service.js.map
+//# sourceMappingURL=C:/Users/User/reseptikirja/src/likes.service.js.map
 
 /***/ }
 
-},[727]);
+},[726]);
 //# sourceMappingURL=main.bundle.map
