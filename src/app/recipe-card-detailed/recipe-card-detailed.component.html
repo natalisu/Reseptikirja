@@ -35,7 +35,11 @@
 
         </div>
     </div>
-    <div class="fb-like" [attr.data-href]="url" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+    <div class="fb-box">
+            <div class="fb-like" [attr.data-href]="url" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+            <div class="fb-save" [attr.data-uri]="url" data-size="large"></div>
+            <div class="fb-send" [attr.data-href]="url"></div>
+    </div>
 </div>
 
 <div class="container">
