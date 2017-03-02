@@ -60,6 +60,19 @@ export class RecipeCardDetailedComponent implements OnInit {
   }
   }
 
+  saveToFavourites() {
+    let recipe: Object = {};
+    recipe['id']= this.activeId;
+    recipe['title'] = this.recipeInfo.title;
+    recipe['readyInMinutes'] = this.recipeInfo.readyInMinutes;
+
+    let urlCheck = /[^\/]+$/g;
+    let imageUrl = this.recipeInfo.image.match(urlCheck);
+    console.log(imageUrl);
+    recipe['image'] = imageUrl;
+    this.likes.saveToFavourites(recipe);
+  }
+
    saveUpdate(event) {
     console.log('save');
       this.similarRecipes = this.likes.isFavourite(event);
@@ -73,7 +86,7 @@ export class RecipeCardDetailedComponent implements OnInit {
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
-                this.url="http://users.metropolia.fi/recipe/" + this.activeId;
+                
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(

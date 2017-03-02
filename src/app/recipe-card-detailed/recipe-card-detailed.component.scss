@@ -107,8 +107,17 @@ li.ingrd {
     font-family: $txt;
 }
 
-.fb-like {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.like-button {
+    text-align: center;
+    i,
+    h5 {
+        display: inline-block;
+    }
+}
+
+.like-container {
+    margin-top: 3%;
+    .row {
+        width: 100%;
+    }
 }
