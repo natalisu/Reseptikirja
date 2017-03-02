@@ -15,7 +15,16 @@ import 'rxjs/add/operator/switchMap';
 })
 export class FrontPageComponent implements OnInit {
 
-  private recParams: Params = {'cuisine': 'korean'};
+  private recommendedArray: Array<Params> = [
+    {'cuisine': 'korean'},
+    {'cuisine': 'japanese'},
+    {'cuisine': 'french'},
+    {'cuisine': 'italian'},
+    {'cuisine': 'swedish'},
+    {'cuisine': 'american'}
+    ];
+
+  private recParams: Params;
   private recommendRecipes: Array<Object> = [];
   private recTitle: string = "Recommended recipes";
   private horizontal: boolean = true;
@@ -26,6 +35,8 @@ export class FrontPageComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.randomizeRec();
 
      this.recipeservice.getSearchResults(this.recParams)
         .subscribe(
@@ -43,6 +54,14 @@ export class FrontPageComponent implements OnInit {
    saveUpdate(event) {
     console.log('save', event);
       this.recommendRecipes = this.likes.isFavourite(event);
+  }
+
+  randomizeRec(){
+    let length = this.recommendedArray.length;
+    let index = Math.floor((Math.random() * length) + 0.1);
+    console.log(index);
+    this.recParams = this.recommendedArray[index];
+    console.log(this.recParams);
   }
 
 }
