@@ -35,7 +35,7 @@
                 </button><br>
 
                 <div *ngFor="let intolerance of intolerancesArray" class="foodtype">
-                    <span *ngIf="intolerance.checked"> {{intolerance.value}} <i class="fa fa-times fa-lg" aria-hidden="true" (click)="intolerance.checked = false"></i></span>
+                    <span *ngIf="intolerance.checked" (click)="intolerance.checked = false"> {{intolerance.value}} <i class="fa fa-times fa-lg" aria-hidden="true"></i></span>
 
                 </div>
 
@@ -68,7 +68,7 @@
                 <button type="button" class="btn btn-primary btn2" data-toggle="modal" data-target="#typesModal">
   I want to make...
 </button><br>
-                <div class="foodtype" *ngIf="searchQuery.type"> {{searchQuery.type}} <i class="fa fa-times fa-lg" aria-hidden="true" (click)="removeType()"></i></div>
+                <div class="foodtype" *ngIf="searchQuery.type" (click)="removeType()"> {{searchQuery.type}} <i class="fa fa-times fa-lg" aria-hidden="true"></i></div>
 
                 <div class="modal optionsModal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">

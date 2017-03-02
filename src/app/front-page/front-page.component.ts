@@ -15,7 +15,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class FrontPageComponent implements OnInit {
 
-  private recParams: Params = {'cuisine': 'french'};
+  private recParams: Params = {'cuisine': 'korean'};
   private recommendRecipes: Array<Object> = [];
   private recTitle: string = "Recommended recipes";
   private horizontal: boolean = true;

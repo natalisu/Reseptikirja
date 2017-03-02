@@ -1,4 +1,5 @@
 /* COLOURS */
+
 $bg: #eee;
 $darkgr: #65874B;
 $midgr: #84A16E;
@@ -7,10 +8,13 @@ $heart: #d65164;
 $yel: #f4e8b8;
 
 /* FONTS */
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
 
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
 .isearch {
     margin-right: 5%;
     padding: 2%;
@@ -18,7 +22,8 @@ $desc: 'Karla', sans-serif;
     font-family: $desc;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     outline: none !important;
     box-shadow: 0 0 20px $darkgr;
     border: 2px solid $gr;
@@ -41,4 +46,19 @@ textarea:focus, input:focus {
 
 h4 {
     font-family: $head;
+}
+
+@media screen and (max-width: 560px) {
+    .btn-warning {
+        font-size: 0.8em;
+        margin: 3% auto 0 auto;
+        display: block;
+    }
+    input {
+        height: 50;
+        size: 20;
+    }
+    h4 {
+        font-size: 1em;
+    }
 }

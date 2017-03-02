@@ -1,14 +1,26 @@
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$cursive: 'Caveat',
+cursive;
+$bg: #eee;
+$darkgr: #65874B;
+$midgr: #84A16E;
 $gr: #A8C095;
-
+$heart: #d65164;
+$yel: #f4e8b8;
+$midyel: #DAC77B;
+$darkyel: #CEB65A;
 h2 {
     font-family: $head;
     line-height: 1.2em;
 }
 
-h6, a {
+h6,
+a {
     font-family: $txt;
 }
 
@@ -20,13 +32,53 @@ img {
     margin-bottom: 8%;
 }
 
-li, h5 {
+li,
+h5 {
     font-family: $desc;
     padding-bottom: 0.5em;
 }
 
 li.ingrd {
     font-family: $desc;
+}
+
+
+/* BUTTONS */
+
+.btn-primary,
+.btn-options {
+    letter-spacing: 1px;
+    font-family: $desc;
+    background-color: $midyel;
+    border: none;
+    color: white;
+    margin: 0.5em;
+    display: inline-block;
+}
+
+.btn-primary:hover,
+.btn-options:hover {
+    background-color: $darkyel;
+}
+
+.btn-warning {
+    letter-spacing: 2px;
+    font-family: $desc;
+    background-color: $midgr;
+    border: none;
+    margin: auto;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+.btn-warning:hover {
+    background-color: $darkgr;
+}
+
+.cursive-link {
+    font-family: $cursive;
+    font-size: 1.7em;
+    color: $heart;
 }
 
 .recipetitle {

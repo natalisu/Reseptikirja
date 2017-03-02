@@ -75,7 +75,7 @@ export class RecipequeryService {
 
       for (let ingredient of ingredients) {
           if (ingredient['unit'].indexOf('pound') >= 0 || ingredient['unit'].indexOf('oz') >= 0
-          || ingredient['unit'].indexOf('ounce') >= 0) {
+          || ingredient['unit'].indexOf('ounce') >= 0 || ingredient['unit'].indexOf('lb') >= 0) {
             console.log(ingredient);
            let  name = ingredient['name'];
            let  amount = ingredient['amount'];

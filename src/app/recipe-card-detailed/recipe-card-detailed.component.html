@@ -12,7 +12,7 @@
                     </li>
                 </ul>
 
-                <button class="btn btn-primary" (click)="convert()">Convert to grams</button>
+                <button class="btn btn-primary btn-convert" (click)="convert()">Convert to grams and litres</button>
             </div>
         </div>
 
@@ -30,24 +30,18 @@
                 <li *ngFor="let phase of instructions">{{phase.step}}</li>
                 <br>
 
-                <p><a href="{{recipeInfo.sourceUrl}}">Original recipe: {{recipeInfo.sourceName}}</a></p>
+                <p><a class="cursive-link" href="{{recipeInfo.sourceUrl}}">Original recipe: {{recipeInfo.sourceName}}</a></p>
             </ol>
 
         </div>
     </div>
 </div>
 
-<br>
+<div class="container">
+
+    <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [title]="recipesTitle"></app-cards-container>
+</div>
 
 <div class="container">
-    <div class="row">
-
-        <div class="col-lg-9 col-md-12 col-sm-12">
-            <app-commentbox [recipeURL]="activeId"></app-commentbox>
-        </div>
-        <div class="col-lg-3 col-md-12 col-sm-12" *ngIf="similarRecipes">
-            <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [horizontal]="false" [title]="recipesTitle"></app-cards-container>
-        </div>
-    </div>
-
+    <app-commentbox [recipeURL]="activeId"></app-commentbox>
 </div>
