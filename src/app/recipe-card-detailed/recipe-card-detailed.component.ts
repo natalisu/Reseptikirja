@@ -1,19 +1,20 @@
 import { LikesService } from './../services/likes.service';
 import { Params, Router, ActivatedRoute } from '@angular/router';
 import { RecipequeryService } from './../services/recipequery.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { Response } from '@angular/http';
 import { Subscription } from 'rxjs/Subscription';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
+import {initFacebook, refreshFacebook} from '../../ownjs'
 
 @Component({
   selector: 'app-recipe-card-detailed',
   templateUrl: './recipe-card-detailed.component.html',
   styleUrls: ['./recipe-card-detailed.component.scss']
 })
-export class RecipeCardDetailedComponent implements OnInit {
+export class RecipeCardDetailedComponent implements OnInit, OnChanges {
   private recipeInfo: any;
   private instructions: any;
   private ingredients: any;
@@ -31,13 +32,9 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
 
   ngOnInit() {
 
-
       this.sub = this.route.params.subscribe(params => {
        this.activeId = params['id'];
       })
-
-    this.url="http://users.metropolia.fi/recipe/" + this.activeId;
-
 
       if(this.activeId) {
         this.recipequery.getRecipeById(this.activeId)
@@ -48,6 +45,11 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 this.ingredients = res.extendedIngredients;
                 window.scrollTo(0, 0);
 
+                  this.url="http://users.metropolia.fi/recipe/" + this.activeId;
+
+                  initFacebook();
+                  refreshFacebook();
+
         this.recipequery.getSimilarRecipe(this.activeId)
         .subscribe(
           (res) => {
@@ -57,8 +59,12 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
 
         })
       })
+  }}
+
+   ngOnChanges(activeId) {
+    this.url="http://users.metropolia.fi/recipe/" + this.activeId;
   }
-  }
+
 
   saveToFavourites() {
     let recipe: Object = {};
@@ -79,6 +85,12 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
   }
 
   navigate(event) {
+
+    /* try {
+      document.getElementById('facebook-jssdk').remove();
+      }catch(e){
+      }*/
+
      this.recipequery.getRecipeById(event)
           .subscribe(
             (res) => {
@@ -86,6 +98,11 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
+
+                 this.url="http://users.metropolia.fi/recipe/" + this.activeId;
+    
+                initFacebook();
+                refreshFacebook();
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(
@@ -97,6 +114,7 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
         })
       })
     window.scrollTo(0, 0);
+    
   }
 
   convert() {

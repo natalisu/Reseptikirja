@@ -1,3 +1,13 @@
+function _window():any {
+  return window;
+}
+
+export class WindowRef {
+    public static get():any {
+        return _window();
+    }
+}
+
 function initFacebook() {
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -8,4 +18,10 @@ function initFacebook() {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 }
-export { initFacebook };
+
+function refreshFacebook(){
+    try{
+        WindowRef.get().FB.XFBML.parse(); 
+    }catch(ex){}
+}
+export { initFacebook, refreshFacebook };

@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './commentbox.component.html',
   styleUrls: ['./commentbox.component.scss']
 })
-export class CommentboxComponent implements OnInit {
+export class CommentboxComponent implements OnInit, OnChanges {
 
   @Input() recipeURL: any;
   private url: string = '';
@@ -15,6 +15,10 @@ export class CommentboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.url="http://users.metropolia.fi/recipe/" + this.recipeURL;
+  }
+
+  ngOnChanges(recipeUrl) {
     this.url="http://users.metropolia.fi/recipe/" + this.recipeURL;
   }
 }
