@@ -23,7 +23,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private similarRecipes: Array<Object> = [];
   private recipesTitle = "Similar recipes";
   private imageurl: string = 'https://spoonacular.com/recipeImages/';
-   private url: string = '';
+  private url: string = '';
 
   constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
