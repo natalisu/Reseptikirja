@@ -1,18 +1,19 @@
 import { RecipequeryService } from './../services/recipequery.service';
 import { LikesService } from './../services/likes.service';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cards-container',
   templateUrl: './cards-container.component.html',
   styleUrls: ['./cards-container.component.scss']
 })
-export class CardsContainerComponent implements OnInit {
+export class CardsContainerComponent implements OnInit{
 
   @Input() recipes: Array<Object> = [];
   @Input() horizontal: boolean = true;
   @Input() title: string = '';
   @Input() imageurl: string = 'https://spoonacular.com/recipeImages/';
+
 
   @Output() update: EventEmitter<Array<Object>> = new EventEmitter<Array<Object>>();
   @Output() navigateTo: EventEmitter<number> = new EventEmitter<number>();
@@ -20,6 +21,7 @@ export class CardsContainerComponent implements OnInit {
   constructor(private likes: LikesService) { }
 
   ngOnInit() {
+
   }
 
   saveToFavourites(event) {

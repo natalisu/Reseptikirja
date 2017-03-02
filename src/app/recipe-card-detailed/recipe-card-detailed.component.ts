@@ -23,6 +23,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private similarRecipes: Array<Object> = [];
   private recipesTitle = "Similar recipes";
   private imageurl: string = 'https://spoonacular.com/recipeImages/';
+   private url: string = '';
 
   constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
@@ -34,6 +35,9 @@ export class RecipeCardDetailedComponent implements OnInit {
       this.sub = this.route.params.subscribe(params => {
        this.activeId = params['id'];
       })
+
+    this.url="http://users.metropolia.fi/recipe/" + this.activeId;
+
 
       if(this.activeId) {
         this.recipequery.getRecipeById(this.activeId)
@@ -48,7 +52,7 @@ export class RecipeCardDetailedComponent implements OnInit {
         .subscribe(
           (res) => {
             this.similarRecipes =  res.slice(0, 4);
-            this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
+          //  this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
 
         })
@@ -69,12 +73,13 @@ export class RecipeCardDetailedComponent implements OnInit {
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
+                this.url="http://users.metropolia.fi/recipe/" + this.activeId;
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(
           (res) => {
             this.similarRecipes =  res.slice(0, 3);
-            this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
+         //   this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
 
         })
