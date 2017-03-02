@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
 
   searchNew(event) {
     this.defaultResults = 0;
+    this.parameters = event;
 
      this.recipeservice.getSearchResults(event)
         .subscribe(

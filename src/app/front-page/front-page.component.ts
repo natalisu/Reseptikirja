@@ -16,12 +16,11 @@ import 'rxjs/add/operator/switchMap';
 export class FrontPageComponent implements OnInit {
 
   private recommendedArray: Array<Params> = [
-    {'cuisine': 'korean'},
     {'cuisine': 'japanese'},
     {'cuisine': 'french'},
     {'cuisine': 'italian'},
-    {'cuisine': 'swedish'},
-    {'cuisine': 'american'}
+    {'query': 'cake'},
+    {'query': 'cupcakes'}
     ];
 
   private recParams: Params;

@@ -23,9 +23,9 @@ export class RecipeCardDetailedComponent implements OnInit {
   private similarRecipes: Array<Object> = [];
   private recipesTitle = "Similar recipes";
   private imageurl: string = 'https://spoonacular.com/recipeImages/';
-   private url: string = '';
+  private url: string = '';
 
-  constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
+constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
   }
 
@@ -86,7 +86,6 @@ export class RecipeCardDetailedComponent implements OnInit {
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
-                
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(
