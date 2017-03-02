@@ -56,6 +56,11 @@ li.ingrd {
     display: inline-block;
 }
 
+.btn-likes {
+    background-color: $heart;
+    font-size: 1em;
+}
+
 .btn-primary:hover,
 .btn-options:hover {
     background-color: $darkyel;
@@ -107,7 +112,23 @@ li.ingrd {
     font-family: $txt;
 }
 
+<<<<<<< HEAD
 .fb-box{
     display: flex;
     justify-content: center;
+=======
+.like-button {
+    text-align: center;
+    i,
+    h5 {
+        display: inline-block;
+    }
+}
+
+.like-container {
+    margin-top: 3%;
+    .row {
+        width: 100%;
+    }
+>>>>>>> likes
 }

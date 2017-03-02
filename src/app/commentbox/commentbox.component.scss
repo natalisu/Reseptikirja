@@ -1,4 +1,5 @@
 /* COLOURS */
+
 $bg: #eee;
 $darkgr: #65874B;
 $midgr: #84A16E;
@@ -6,13 +7,20 @@ $gr: #A8C095;
 $heart: #d65164;
 
 /* FONTS */
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
 
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
 h4 {
     font-family: $desc;
     text-transform: uppercase;
+}
+
+.container {
+    width: 80%;
 }
 
 .comment {
@@ -35,7 +43,8 @@ h4 {
     display: inline-block;
 }
 
-h4, p.card-text {
+h4,
+p.card-text {
     font-family: $desc;
     text-transform: uppercase;
 }
@@ -70,7 +79,8 @@ p.card-title {
     background-color: $darkgr;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     outline: none !important;
     border: thin solid $midgr;
     box-shadow: 0 0 10px $darkgr;

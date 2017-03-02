@@ -19,6 +19,7 @@ export class FavouritesComponent implements OnInit {
     this.ownRecipes = this.likes.getFavourites();
     if (this.ownRecipes){
       this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+      console.log(this.ownRecipes);
       if (this.ownRecipes === null) {
         this.title = "No saved recipes found";
       } else {
