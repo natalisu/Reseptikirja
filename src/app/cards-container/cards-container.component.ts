@@ -12,7 +12,7 @@ export class CardsContainerComponent implements OnInit {
   @Input() recipes: Array<Object> = [];
   @Input() horizontal: boolean = true;
   @Input() title: string = '';
-  @Input() imageurl: string = '';
+  @Input() imageurl: string = 'https://spoonacular.com/recipeImages/';
 
   @Output() update: EventEmitter<Array<Object>> = new EventEmitter<Array<Object>>();
   @Output() navigateTo: EventEmitter<number> = new EventEmitter<number>();

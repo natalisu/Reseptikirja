@@ -1,3 +1,5 @@
+import { MyRecipesComponent } from './../my-recipes/my-recipes.component';
+import { Response } from '@angular/http';
 import { LikesService } from './../services/likes.service';
 import { RecipequeryService } from './../services/recipequery.service';
 
@@ -13,17 +15,34 @@ export class SearchComponent implements OnInit {
 
   private recipes: Array<Object>= [];
   private imageurl: string;
+  private parameters: Params;
+  private defaultResults: number = 0;
 
 
   constructor( private route: ActivatedRoute, private recipeservice: RecipequeryService, private likes: LikesService) { }
 
+  searchNew(event) {
+    this.defaultResults = 0;
+
+     this.recipeservice.getSearchResults(event)
+        .subscribe(
+          (res) => {
+        //  this.recipes = this.likes.isFavourite(res.results);
+         this.recipes = res.results;
+            this.imageurl = res.baseUri;
+            console.log(res);
+        });
+  }
+
 
   ngOnInit() {
 
-    
-     this.route.params
-    .switchMap((params: Params) =>
-    this.recipeservice.getSearchResults(params))
+  this.route.params.subscribe(params => {
+       this.parameters = params;
+       console.log(this.parameters);
+    });
+
+    this.recipeservice.getSearchResults(this.parameters)
         .subscribe(
           (res) => {
         //  this.recipes = this.likes.isFavourite(res.results);
@@ -36,6 +55,22 @@ export class SearchComponent implements OnInit {
   saveUpdate(event) {
     console.log('save');
       this.recipes = this.likes.isFavourite(event);
+  }
+
+  nextPrevious(ten: number) {
+    this.defaultResults = this.defaultResults + ten;
+
+    this.recipeservice.getSearchResultsOffSet(this.parameters, this.defaultResults.toString())
+    .subscribe(
+          (res) => {
+
+          for (let recipe of res.results) {
+            this.recipes.push(recipe);
+          }
+        //  this.recipes = this.likes.isFavourite(res.results);
+  
+         console.log(res);
+        });
   }
 
 

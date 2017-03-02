@@ -1,4 +1,5 @@
 /* COLOURS */
+
 $bg: #eee;
 $darkgr: #65874B;
 $midgr: #84A16E;
@@ -6,26 +7,62 @@ $gr: #A8C095;
 $heart: #d65164;
 
 /* FONTS */
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
 
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$cursive: 'Caveat',
+cursive;
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  background-clip: padding-box;  
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
 }
 
 .container {
     padding: 2%;
 }
 
+.show-more {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 2% auto;
+    @include border-radius(3px);
+}
 
+.btn-warning {
+    width: 100%;
+    padding: 1%;
+    display: block;
+    letter-spacing: 1px;
+    font-family: $desc;
+    background-color: $midgr;
+    border: none;
+    @include border-radius(3px);
+    font-family: $cursive;
+    font-size: 2em;
+    color: #fff;
+}
 
-h4, p.card-text {
+.btn-warning:hover {
+    background-color: $darkgr;
+}
+
+.searchbox {
+    font-family: $txt;
+}
+
+h4,
+p.card-text {
     font-family: $desc;
     text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+    .show-more {
+        width: 40%;
+    }
 }

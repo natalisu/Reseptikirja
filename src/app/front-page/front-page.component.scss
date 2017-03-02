@@ -1,0 +1,51 @@
+/** COLOURS */
+
+$bg: #eee;
+$darkgr: #65874B;
+$midgr: #84A16E;
+$gr: #A8C095;
+$heart: #d65164;
+$accent: #f4e8b8;
+
+/* FONTS */
+
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$cursive: 'Caveat',
+cursive;
+.container {
+    padding: 1%;
+}
+
+.container-fact {
+    text-align: center;
+    width: 90%;
+    margin: 3% auto;
+    background-color: $accent;
+}
+
+h4 {
+    font-family: $cursive;
+}
+
+@media screen and (min-width: 768px) {
+    .container-fact {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container-fact {
+        width: 40%;
+    }
+}

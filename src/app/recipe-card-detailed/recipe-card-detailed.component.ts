@@ -22,7 +22,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private params;
   private similarRecipes: Array<Object> = [];
   private recipesTitle = "Similar recipes";
-  private imageurl: string = '';
+  private imageurl: string = 'https://spoonacular.com/recipeImages/';
 
   constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
@@ -33,7 +33,6 @@ export class RecipeCardDetailedComponent implements OnInit {
 
       this.sub = this.route.params.subscribe(params => {
        this.activeId = params['id'];
-       console.log(this.activeId);
       })
 
       if(this.activeId) {
@@ -48,7 +47,7 @@ export class RecipeCardDetailedComponent implements OnInit {
         this.recipequery.getSimilarRecipe(this.activeId)
         .subscribe(
           (res) => {
-            this.similarRecipes =  res.slice(0, 3);
+            this.similarRecipes =  res.slice(0, 4);
             this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
 

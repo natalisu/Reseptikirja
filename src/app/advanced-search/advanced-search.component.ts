@@ -1,6 +1,6 @@
 import { RecipequeryService } from './../services/recipequery.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -10,9 +10,15 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AdvancedSearchComponent implements OnInit {
 
-  private chosenType: string = '';
+  private chosenType: string;
+  @Output() searchAdvanced: EventEmitter<Object> = new EventEmitter<Object>();
+
   checkTypes(){
       this.chosenType = this.searchQuery['type'];
+  }
+
+  removeType() {
+    this.searchQuery['type'] = '';
   }
 
    private dietArray = [
@@ -63,18 +69,16 @@ export class AdvancedSearchComponent implements OnInit {
           iArray.push(opt)
         });
 
-    
-
     this.searchQuery['intolerances'] = iArray;
+
     if ( this.searchQuery['type']) {
       this.searchQuery['type'] = this.searchQuery['type'].replace(/ /,"+");
     }
 
     // console.log(query);
     event.preventDefault();
-    this.router.navigate(['search', this.searchQuery]);
+    this.searchAdvanced.emit(this.searchQuery);
   }
-
 
   ngOnInit() {
   }
