@@ -14,7 +14,7 @@ import {initFacebook, refreshFacebook} from '../../ownjs'
   templateUrl: './recipe-card-detailed.component.html',
   styleUrls: ['./recipe-card-detailed.component.scss']
 })
-export class RecipeCardDetailedComponent implements OnInit, OnChanges {
+export class RecipeCardDetailedComponent implements OnInit {
   private recipeInfo: any;
   private instructions: any;
   private ingredients: any;
@@ -45,7 +45,7 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 this.ingredients = res.extendedIngredients;
                 window.scrollTo(0, 0);
 
-                  this.url="http://users.metropolia.fi/recipe/" + this.activeId;
+                  this.url="http://212.24.98.139/#/recipe/" + this.activeId;
 
                   initFacebook();
                   refreshFacebook();
@@ -54,16 +54,11 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
         .subscribe(
           (res) => {
             this.similarRecipes =  res.slice(0, 4);
-          //  this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
             this.imageurl = "https://spoonacular.com/recipeImages/";
 
         })
       })
   }}
-
-   ngOnChanges(activeId) {
-    this.url="http://users.metropolia.fi/recipe/" + this.activeId;
-  }
 
 
   saveToFavourites() {
@@ -86,11 +81,6 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
 
   navigate(event) {
 
-    /* try {
-      document.getElementById('facebook-jssdk').remove();
-      }catch(e){
-      }*/
-
      this.recipequery.getRecipeById(event)
           .subscribe(
             (res) => {
@@ -99,22 +89,22 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
 
-                 this.url="http://users.metropolia.fi/recipe/" + this.activeId;
-    
+                 this.url="http://212.24.98.139/#/recipe/" + this.activeId;
+
                 initFacebook();
                 refreshFacebook();
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(
           (res) => {
-            this.similarRecipes =  res.slice(0, 3);
-         //   this.similarRecipes = this.likes.isFavourite(this.similarRecipes);
+            this.similarRecipes =  res.slice(0, 4);
             this.imageurl = "https://spoonacular.com/recipeImages/";
+            
 
         })
       })
     window.scrollTo(0, 0);
-    
+
   }
 
   convert() {

@@ -1,7 +1,7 @@
 import { LikesService } from './../services/likes.service';
 import { RecipequeryService } from './../services/recipequery.service';
 import { Router, Params } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Response } from '@angular/http';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -40,7 +40,6 @@ export class FrontPageComponent implements OnInit {
      this.recipeservice.getSearchResults(this.recParams)
         .subscribe(
           (res) => {
-          //  this.recommendRecipes=  this.likes.isFavourite(res.results);
             this.recommendRecipes = res.results.slice(0, 4);
             this.imageurl = res.baseUri;
         });

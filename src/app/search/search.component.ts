@@ -3,7 +3,7 @@ import { Response } from '@angular/http';
 import { LikesService } from './../services/likes.service';
 import { RecipequeryService } from './../services/recipequery.service';
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -28,8 +28,8 @@ export class SearchComponent implements OnInit {
      this.recipeservice.getSearchResults(event)
         .subscribe(
           (res) => {
-        //  this.recipes = this.likes.isFavourite(res.results);
          this.recipes = res.results;
+
             this.imageurl = res.baseUri;
             console.log(res);
         });
@@ -46,12 +46,13 @@ export class SearchComponent implements OnInit {
     this.recipeservice.getSearchResults(this.parameters)
         .subscribe(
           (res) => {
-        //  this.recipes = this.likes.isFavourite(res.results);
          this.recipes = res.results;
+
             this.imageurl = res.baseUri;
             console.log(res);
         });
   }
+
 
   saveUpdate(event) {
     console.log('save');
@@ -68,8 +69,8 @@ export class SearchComponent implements OnInit {
           for (let recipe of res.results) {
             this.recipes.push(recipe);
           }
-        //  this.recipes = this.likes.isFavourite(res.results);
-  
+
+          this.recipes = this.likes.isFavourite(this.recipes);
          console.log(res);
         });
   }

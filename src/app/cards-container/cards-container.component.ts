@@ -7,9 +7,9 @@ import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angu
   templateUrl: './cards-container.component.html',
   styleUrls: ['./cards-container.component.scss']
 })
-export class CardsContainerComponent implements OnInit{
+export class CardsContainerComponent implements OnInit, OnChanges{
 
-  @Input() recipes: Array<Object> = [];
+  @Input() recipes: Array<Object>;
   @Input() horizontal: boolean = true;
   @Input() title: string = '';
   @Input() imageurl: string = 'https://spoonacular.com/recipeImages/';
@@ -22,6 +22,10 @@ export class CardsContainerComponent implements OnInit{
 
   ngOnInit() {
 
+  }
+
+  ngOnChanges(recipes) {
+    this.update.emit(this.recipes);
   }
 
   saveToFavourites(event) {
