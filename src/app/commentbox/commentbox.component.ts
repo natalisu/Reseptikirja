@@ -15,10 +15,10 @@ export class CommentboxComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    this.url="http://users.metropolia.fi/recipe/" + this.recipeURL;
+    this.url="http://212.24.98.139/#/recipe/" + this.recipeURL;
   }
 
   ngOnChanges(recipeUrl) {
-    this.url="http://users.metropolia.fi/recipe/" + this.recipeURL;
+    this.url="http://212.24.98.139/#/recipe/" + this.recipeURL;
   }
 }

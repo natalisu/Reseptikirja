@@ -25,6 +25,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private recipesTitle = "Similar recipes";
   private imageurl: string = 'https://spoonacular.com/recipeImages/';
   private url: string = '';
+  private imageurlFb;
 
 constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
@@ -43,6 +44,7 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
+                this.imageurlFb = this.imageurl + this.recipeInfo.image;
                 window.scrollTo(0, 0);
 
                   this.url="http://212.24.98.139/#/recipe/" + this.activeId;

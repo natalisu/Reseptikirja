@@ -517,10 +517,10 @@ var CommentboxComponent = (function () {
         this.url = '';
     }
     CommentboxComponent.prototype.ngOnInit = function () {
-        this.url = "http://users.metropolia.fi/recipe/" + this.recipeURL;
+        this.url = "http://212.24.98.139/#/recipe/" + this.recipeURL;
     };
     CommentboxComponent.prototype.ngOnChanges = function (recipeUrl) {
-        this.url = "http://users.metropolia.fi/recipe/" + this.recipeURL;
+        this.url = "http://212.24.98.139/#/recipe/" + this.recipeURL;
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Input */])(), 
@@ -893,6 +893,7 @@ var RecipeCardDetailedComponent = (function () {
                 _this.recipeInfo = res;
                 _this.instructions = res.analyzedInstructions[0].steps;
                 _this.ingredients = res.extendedIngredients;
+                _this.imageurlFb = _this.imageurl + _this.recipeInfo.image;
                 window.scrollTo(0, 0);
                 _this.url = "http://212.24.98.139/#/recipe/" + _this.activeId;
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__ownjs__["a" /* initFacebook */])();
@@ -1313,7 +1314,7 @@ module.exports = "<div class=\"container\">\n\n    <div *ngIf=\"recipes\">\n\n  
 /***/ 698:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"background-color: #fff; padding: 2%;\">\n\n\n    <!-- <div class=\"row\">\n\n            <div class=\"col\">\n                <h4>Comments</h4>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">qqqqqqq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">qqqqqqq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <div class=\"comment\">Tosipitkä kommenttiteksti jee jee asdsdadsadsaadsads qw qwe ewq q wq ewq wqe wqe ewq ewq ewq qew eq ewq\n                            <br>Tekstiä jee\n                            <br> Lalalalalalalal\n                            <div class=\"date\">30.1.2017\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <br>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <h4>Write a comment</h4></div>\n                </div>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <textarea class=\"form-control\" id=\"commentarea\" rows=\"5\"></textarea>\n                    </div>\n                </div>\n                <br>\n                <div class=\"row\">\n                    <div class=\"col\">\n                        <button type=\"submit\" class=\"btn btn-warning\">Submit</button>\n                    </div>\n                </div>\n            </div>\n        </div> -->\n\n    <div *ngIf=\"url\">\n        <div class=\"fb-comments\" [attr.data-href]=\"url\" data-width=\"100%\" data-numposts=\"5\"></div>\n    </div>\n    <!-- <div class=\"fb-like\" [attr.data-href]=\"url\" data-layout=\"button_count\" data-action=\"like\" data-size=\"large\" data-show-faces=\"true\" data-share=\"true\"></div> -->\n\n</div>"
+module.exports = "\n<div class=\"container\" style=\"background-color: #fff; padding: 2%;\">\n    <div *ngIf=\"url\">\n        <div class=\"fb-comments\" [attr.data-href]=\"url\" data-width=\"100%\" data-numposts=\"5\"></div>\n    </div>\n\n</div>"
 
 /***/ },
 
