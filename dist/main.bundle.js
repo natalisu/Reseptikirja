@@ -32,7 +32,7 @@ var RecipequeryService = (function () {
             return _this.http.get(recipeUrl, options).map(function (resp) { return resp.json(); });
         };
         this.getSearchResults = function (params) {
-            //add our own parameter to query
+            // add our own parameter to query
             // go through parameters and form a string that can be added to the http request url
             var parameters = '?instructionsRequired=true&';
             for (var key in params) {
@@ -429,7 +429,9 @@ var CardsContainerComponent = (function () {
     CardsContainerComponent.prototype.ngOnInit = function () {
     };
     CardsContainerComponent.prototype.ngOnChanges = function (recipes) {
-        // this.update.emit(this.recipes);
+        if (recipes) {
+            this.update.emit(this.recipes);
+        }
     };
     CardsContainerComponent.prototype.saveToFavourites = function (event) {
         // save needed values to an object that is then saved to favourites

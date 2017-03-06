@@ -23,7 +23,9 @@ export class CardsContainerComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(recipes) {
-   // this.update.emit(this.recipes);
+    if (recipes) {
+      this.update.emit(this.recipes);
+    }
   }
 
   saveToFavourites(event) {

@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RecipequeryService {
 
-  constructor(private http:Http) { }
+  constructor(private http: Http) { }
 
   getRecipeById = (id: number) => {
     let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
@@ -20,7 +20,7 @@ export class RecipequeryService {
 
   getSearchResults = (params: Params) => {
 
-    //add our own parameter to query
+    // add our own parameter to query
     // go through parameters and form a string that can be added to the http request url
     let parameters = '?instructionsRequired=true&';
     for (let key in params) {

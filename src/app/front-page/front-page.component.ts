@@ -49,8 +49,7 @@ export class FrontPageComponent implements OnInit, OnDestroy {
             this.imageurl = res.baseUri;
             console.log(res.results);
         });
-
-
+        
         this.recipeservice.getFoodFact()
         .subscribe(res => this.foodFact = res.text);
 
