@@ -10,7 +10,6 @@ import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angu
 export class CardsContainerComponent implements OnInit, OnChanges{
 
   @Input() recipes: Array<Object>;
-  @Input() horizontal: boolean = true;
   @Input() title: string = '';
   @Input() imageurl: string = 'https://spoonacular.com/recipeImages/';
 
@@ -21,7 +20,6 @@ export class CardsContainerComponent implements OnInit, OnChanges{
   constructor(private likes: LikesService) { }
 
   ngOnInit() {
-
   }
 
   ngOnChanges(recipes) {
@@ -29,9 +27,10 @@ export class CardsContainerComponent implements OnInit, OnChanges{
   }
 
   saveToFavourites(event) {
-    console.log('added to favs:', event);
+
+    // save needed values to an object that is then saved to favourites
     let recipe: Object = {};
-    recipe['id']= event.id;
+    recipe['id'] = event.id;
     recipe['title'] = event.title;
     recipe['readyInMinutes'] = event.readyInMinutes;
     recipe['image'] = event.image;

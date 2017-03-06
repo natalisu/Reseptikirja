@@ -1,12 +1,12 @@
 <div class="container">
 
-
     <h4><i class="fa fa-search" aria-hidden="true"></i> <b>Search for a recipe:</b></h4>
     <hr>
     <br>
 
-
     <form class="search" #f="ngForm" (ngSubmit)="search()">
+
+        <!-- Words queries -->
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="form-group">
@@ -25,9 +25,7 @@
         </div>
 
         <div class="row">
-
-
-
+            <!-- Intolerances button and modal -->
             <div class="col-lg-4 col-sm-6 col-xs-12">
 
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#allergensModal">
@@ -36,7 +34,6 @@
 
                 <div *ngFor="let intolerance of intolerancesArray" class="foodtype">
                     <span *ngIf="intolerance.checked" (click)="intolerance.checked = false"> {{intolerance.value}} <i class="fa fa-times fa-lg" aria-hidden="true"></i></span>
-
                 </div>
 
 
@@ -46,12 +43,12 @@
                             <div class="modal-body">
                                 <div class="advancedOptions" *ngFor="let option of intolerancesArray">
                                     <label>
-            <input class="" type="checkbox"
-                  name="option"
-                   value="{{option.value}}"
-                   [(ngModel)]="option.checked"/>
-                  {{option.value}}
-          </label>
+                                        <input class="" type="checkbox"
+                                        name="option"
+                                        value="{{option.value}}"
+                                        [(ngModel)]="option.checked"/>
+                                        {{option.value}}
+                                    </label>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -60,38 +57,36 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
+            <!-- Type button and modal -->
             <div class="col-lg-4 col-sm-6 col-xs-12">
 
                 <button type="button" class="btn btn-primary btn2" data-toggle="modal" data-target="#typesModal">
-  I want to make...
-</button><br>
+                    I want to make...
+                </button><br>
                 <div class="foodtype" *ngIf="searchQuery.type" (click)="removeType()"> {{searchQuery.type}} <i class="fa fa-times fa-lg" aria-hidden="true"></i></div>
-
-                <div class="modal optionsModal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="advancedOptions" *ngFor="let foodtype of typesArray">
-                                    <label>
-                                    <input class="" type="radio" 
-                                     value="{{foodtype}}" [(ngModel)]="searchQuery.type" name="searchQuery.type">
-                                    {{foodtype}}
-                                   </label>
+                    <div class="modal optionsModal" id="typesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="advancedOptions" *ngFor="let foodtype of typesArray">
+                                        <label>
+                                        <input class="" type="radio" 
+                                        value="{{foodtype}}" [(ngModel)]="searchQuery.type" name="searchQuery.type">
+                                        {{foodtype}}
+                                    </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal" (click)="checkTypes()">Done!</button>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-options" data-dismiss="modal" (click)="checkTypes()">Done!</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-            </div>
-
+            
+            <!-- Diet type options -->
             <div class="col-lg-4 col-xs-12 dietType">
                 <div class="form-group">
                     <h6><b>I am...</b></h6>
@@ -101,6 +96,7 @@
                 </div>
             </div>
         </div>
+
         <br>
 
         <div class="row">

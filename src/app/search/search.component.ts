@@ -1,4 +1,3 @@
-import { MyRecipesComponent } from './../my-recipes/my-recipes.component';
 import { Response } from '@angular/http';
 import { LikesService } from './../services/likes.service';
 import { RecipequeryService } from './../services/recipequery.service';
@@ -22,6 +21,7 @@ export class SearchComponent implements OnInit {
   constructor( private route: ActivatedRoute, private recipeservice: RecipequeryService, private likes: LikesService) { }
 
   searchNew(event) {
+    // Perform a new search with fresh parameters
     this.defaultResults = 0;
     this.parameters = event;
 
@@ -29,37 +29,35 @@ export class SearchComponent implements OnInit {
         .subscribe(
           (res) => {
          this.recipes = res.results;
-
-            this.imageurl = res.baseUri;
-            console.log(res);
+         this.imageurl = res.baseUri;
         });
   }
 
 
   ngOnInit() {
 
+ // if using front page search, grab parameters from url
   this.route.params.subscribe(params => {
        this.parameters = params;
-       console.log(this.parameters);
     });
 
     this.recipeservice.getSearchResults(this.parameters)
         .subscribe(
           (res) => {
          this.recipes = res.results;
-
-            this.imageurl = res.baseUri;
-            console.log(res);
+          this.imageurl = res.baseUri;
         });
   }
 
 
   saveUpdate(event) {
-    console.log('save');
       this.recipes = this.likes.isFavourite(event);
   }
 
   nextPrevious(ten: number) {
+    // grab next ten results. API only gives ten results at a time so in template the offset number is set to 10.
+    // add new results to recipes array and add 10 to defaultResults variable, so we get correct offset when querying even more results
+
     this.defaultResults = this.defaultResults + ten;
 
     this.recipeservice.getSearchResultsOffSet(this.parameters, this.defaultResults.toString())

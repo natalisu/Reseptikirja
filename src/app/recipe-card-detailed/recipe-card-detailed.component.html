@@ -7,7 +7,6 @@
                 <ul *ngIf="ingredients">
                     <h5>Ingredients:</h5>
                     <li *ngFor="let foodthing of ingredients" class="ingrd">
-                        <!-- {{foodthing.originalString}} -->
                         <b>{{foodthing.amount | rounding}} {{foodthing.unit}}</b> {{foodthing.name}}
                     </li>
                 </ul>
@@ -49,7 +48,6 @@
 </div>
 
 <div class="container">
-
     <app-cards-container (navigateTo)="navigate($event)" (update)="saveUpdate($event)" [recipes]="similarRecipes" [imageurl]="imageurl" [title]="recipesTitle"></app-cards-container>
 </div>
 

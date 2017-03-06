@@ -13,7 +13,7 @@ export class AdvancedSearchComponent implements OnInit {
   private chosenType: string;
   @Output() searchAdvanced: EventEmitter<Object> = new EventEmitter<Object>();
 
-  checkTypes(){
+  checkTypes() {
       this.chosenType = this.searchQuery['type'];
   }
 
@@ -59,7 +59,8 @@ export class AdvancedSearchComponent implements OnInit {
 
   search() {
 
-    console.log();
+    // Check which intolerances have been checked and add those to the search array
+
     let iArray = [];
 
      this.intolerancesArray
@@ -71,11 +72,12 @@ export class AdvancedSearchComponent implements OnInit {
 
     this.searchQuery['intolerances'] = iArray;
 
+    // add '+' to types of food that have multiple words in their name
+
     if ( this.searchQuery['type']) {
       this.searchQuery['type'] = this.searchQuery['type'].replace(/ /,"+");
     }
 
-    // console.log(query);
     event.preventDefault();
     this.searchAdvanced.emit(this.searchQuery);
   }

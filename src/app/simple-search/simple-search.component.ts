@@ -16,6 +16,7 @@ export class SimpleSearchComponent implements OnInit {
   constructor(public fb: FormBuilder, private router: Router) { }
 
   search(event) {
+    // grab value, navigate to search
     let query = this.searchForm.value.query;
     event.preventDefault();
     this.router.navigate(['search', query]);

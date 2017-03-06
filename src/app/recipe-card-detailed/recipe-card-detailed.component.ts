@@ -1,3 +1,4 @@
+import { FavouritesComponent } from './../favourites/favourites.component';
 import { LikesService } from './../services/likes.service';
 import { Params, Router, ActivatedRoute } from '@angular/router';
 import { RecipequeryService } from './../services/recipequery.service';
@@ -7,7 +8,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
-import {initFacebook, refreshFacebook} from '../../ownjs'
+import {initFacebook, refreshFacebook} from '../../ownjs';
 
 @Component({
   selector: 'app-recipe-card-detailed',
@@ -33,11 +34,14 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
 
   ngOnInit() {
 
+      // grab recipe id from url parameters
       this.sub = this.route.params.subscribe(params => {
        this.activeId = params['id'];
-      })
+      });
 
-      if(this.activeId) {
+      if (this.activeId) {
+
+        // get recipe info and list of similar recipes based on active id
         this.recipequery.getRecipeById(this.activeId)
           .subscribe(
             (res) => {
@@ -47,51 +51,54 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 this.imageurlFb = this.imageurl + this.recipeInfo.image;
                 window.scrollTo(0, 0);
 
-                  this.url="http://212.24.98.139/#/recipe/" + this.activeId;
+                this.url = "http://212.24.98.139/#/recipe/" + this.activeId;
 
-                  initFacebook();
-                  refreshFacebook();
+                initFacebook();
+                refreshFacebook();
 
         this.recipequery.getSimilarRecipe(this.activeId)
         .subscribe(
           (res) => {
             this.similarRecipes =  res.slice(0, 4);
-            this.imageurl = "https://spoonacular.com/recipeImages/";
-
         })
       })
   }}
 
 
   saveToFavourites() {
+    //save current active recipe to favourites after constructing an object with required information
+
     let recipe: Object = {};
     recipe['id']= this.activeId;
     recipe['title'] = this.recipeInfo.title;
     recipe['readyInMinutes'] = this.recipeInfo.readyInMinutes;
 
+    // for some reason with compelete recipe query the API returns full url to image when in other
+    // cases just image file name is returned, so we need to extract that as our container component only needs file name
     let urlCheck = /[^\/]+$/g;
     let imageUrl = this.recipeInfo.image.match(urlCheck);
-    console.log(imageUrl);
+
     recipe['image'] = imageUrl;
     this.likes.saveToFavourites(recipe);
   }
 
    saveUpdate(event) {
-    console.log('save');
+     // save recipe to favourites
       this.similarRecipes = this.likes.isFavourite(event);
   }
 
   navigate(event) {
+    // we need to assign new recipe's info to local variables as no router actions are taken when navigating to "same page"
 
      this.recipequery.getRecipeById(event)
           .subscribe(
             (res) => {
-                this.activeId= event;
+                this.activeId = event;
                 this.recipeInfo = res;
                 this.instructions = res.analyzedInstructions[0].steps;
                 this.ingredients = res.extendedIngredients;
 
-                 this.url="http://212.24.98.139/#/recipe/" + this.activeId;
+                 this.url = "http://212.24.98.139/#/recipe/" + this.activeId;
 
                 initFacebook();
                 refreshFacebook();
@@ -100,11 +107,8 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
         .subscribe(
           (res) => {
             this.similarRecipes =  res.slice(0, 4);
-            this.imageurl = "https://spoonacular.com/recipeImages/";
-            
-
-        })
-      })
+        });
+      });
     window.scrollTo(0, 0);
 
   }

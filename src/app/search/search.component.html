@@ -2,16 +2,14 @@
 
 <app-cards-container (update)="saveUpdate($event)" [imageurl]="imageurl" [recipes]="recipes" [title]="recTitle" *ngIf="recipes.length"></app-cards-container>
 
+<!-- if ten results are returned from search, give option to search for more. 
+API doesn't give info about total result amount so we can only guess that if maximum amount, ten, were returned, then there might be more -->
 <div class="show-more" *ngIf="recipes.length>=10" (click)="nextPrevious(10)">
     <button class="btn-warning">Show more...  <i class="fa fa-cutlery" aria-hidden="true"></i></button>
 </div>
 
 <div *ngIf="!recipes.length">
-
     <div class="container">
-
         <h4>No recipes found. Try something else!</h4>
-
     </div>
-
 </div>

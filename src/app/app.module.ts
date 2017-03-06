@@ -19,7 +19,6 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { SearchComponent } from './search/search.component';
 
 import { CommentboxComponent } from './commentbox/commentbox.component';
-import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { CardsContainerComponent } from './cards-container/cards-container.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { RoundingPipe } from './pipes/rounding.pipe';
@@ -63,7 +62,6 @@ const routeConfig = [
     AdvancedSearchComponent,
     SearchComponent,
     CommentboxComponent,
-    MyRecipesComponent,
     CardsContainerComponent,
     FavouritesComponent,
     RoundingPipe

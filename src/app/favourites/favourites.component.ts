@@ -1,5 +1,5 @@
 import { LikesService } from './../services/likes.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-favourites',
@@ -12,12 +12,13 @@ export class FavouritesComponent implements OnInit {
   private title: string = '';
   private showButton: boolean = false;
   private imageurl ="https://spoonacular.com/recipeImages/";
+  private sub: any;
 
   constructor(private likes: LikesService) { }
 
   ngOnInit() {
-    this.ownRecipes = this.likes.getFavourites();
-    if (this.ownRecipes){
+   this.sub =  this.ownRecipes = this.likes.getFavourites();
+    if (this.ownRecipes) {
       this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
       console.log(this.ownRecipes);
       if (this.ownRecipes === null) {
@@ -29,9 +30,8 @@ export class FavouritesComponent implements OnInit {
      }
   }
 
-  
+
    saveUpdate(event) {
-    console.log('save');
       this.ownRecipes = this.likes.getFavourites();
       this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
   }

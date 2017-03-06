@@ -9,15 +9,6 @@ export class RecipequeryService {
 
   constructor(private http:Http) { }
 
-  getFoodJoke = () => {
-    let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
-    let options = new RequestOptions({ headers: headers });
-
-    let recipeUrl: string = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random';
-
-    return this.http.get(recipeUrl, options).map(resp => resp.json());
-     }
-
   getRecipeById = (id: number) => {
     let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
     let options = new RequestOptions({ headers: headers });
@@ -28,15 +19,16 @@ export class RecipequeryService {
   }
 
   getSearchResults = (params: Params) => {
+
+    //add our own parameter to query
+    // go through parameters and form a string that can be added to the http request url
     let parameters = '?instructionsRequired=true&';
-    for (let key in params){
+    for (let key in params) {
       parameters = parameters + key.toString()+"="+params[key]+"&";
     };
 
     let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
     let options = new RequestOptions({ headers: headers });
-
-    console.log(parameters);
 
     let recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search' + parameters;
 
@@ -44,16 +36,16 @@ export class RecipequeryService {
     }
 
  getSearchResultsOffSet = (params: Params, ten: string) => {
+   // same than above but add offset-parameter and combine it with given value for 'ten'
     let parameters = '?instructionsRequired=true&';
     for (let key in params){
       parameters = parameters + key.toString()+"="+params[key]+"&";
     };
-    parameters = parameters + 'offset='+ten;
+
+    parameters = parameters + 'offset=' + ten;
 
     let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
     let options = new RequestOptions({ headers: headers });
-
-    console.log(parameters);
 
     let recipeUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search' + parameters;
 
@@ -73,17 +65,17 @@ export class RecipequeryService {
       let headers = new Headers({ 'Accept': 'application/json', 'X-Mashape-Key': '4QehuLvcO0mshaMAE6nXERhX6id7p1lmS1rjsnVbsumPbznDZR' });
       let options = new RequestOptions({ headers: headers });
 
+      // go through the list of given ingredients
+      // check if ingredient name contains unit that needs to be converted to either grams or litres 
       for (let ingredient of ingredients) {
           if (ingredient['unit'].indexOf('pound') >= 0 || ingredient['unit'].indexOf('oz') >= 0
           || ingredient['unit'].indexOf('ounce') >= 0 || ingredient['unit'].indexOf('lb') >= 0) {
-            console.log(ingredient);
            let  name = ingredient['name'];
            let  amount = ingredient['amount'];
            let  unit = ingredient['unit'];
           let recipeUrl='https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/convert?ingredientName='+name+'&sourceAmount='+amount+'&sourceUnit='+unit+'&targetUnit='+targetUnit;
             this.http.get(recipeUrl, options).map(resp => resp.json()).subscribe(
           (resp) => {
-              console.log(resp);
               ingredient['unit'] = resp.targetUnit;
               ingredient['amount'] = resp.targetAmount;
             });

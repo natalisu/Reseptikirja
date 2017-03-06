@@ -1,7 +1,8 @@
+import { CommentboxComponent } from './../commentbox/commentbox.component';
 import { LikesService } from './../services/likes.service';
 import { RecipequeryService } from './../services/recipequery.service';
 import { Router, Params } from '@angular/router';
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Response } from '@angular/http';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -13,8 +14,10 @@ import 'rxjs/add/operator/switchMap';
   templateUrl: './front-page.component.html',
   styleUrls: ['./front-page.component.scss']
 })
-export class FrontPageComponent implements OnInit {
+export class FrontPageComponent implements OnInit, OnDestroy {
 
+// define parameter for the recommended recipe CommentboxComponent
+// one of the parameters will be picked randomly
   private recommendedArray: Array<Params> = [
     {'cuisine': 'japanese'},
     {'cuisine': 'french'},
@@ -24,11 +27,12 @@ export class FrontPageComponent implements OnInit {
     ];
 
   private recParams: Params;
-  private recommendRecipes: Array<Object> = [];
+  private recommendRecipes: Array<Object>;
   private recTitle: string = "Recommended recipes";
   private horizontal: boolean = true;
   private imageurl: string = '';
   private foodFact: string = '';
+  private sub: any;
   constructor(private router: Router, private recipeservice: RecipequeryService, private likes: LikesService) {
 
   }
@@ -36,13 +40,16 @@ export class FrontPageComponent implements OnInit {
   ngOnInit() {
 
     this.randomizeRec();
+    console.log(this.recParams);
 
-     this.recipeservice.getSearchResults(this.recParams)
+    this.sub = this.recipeservice.getSearchResults(this.recParams)
         .subscribe(
           (res) => {
             this.recommendRecipes = res.results.slice(0, 4);
             this.imageurl = res.baseUri;
+            console.log(res.results);
         });
+
 
         this.recipeservice.getFoodFact()
         .subscribe(res => this.foodFact = res.text);
@@ -50,16 +57,16 @@ export class FrontPageComponent implements OnInit {
   }
 
    saveUpdate(event) {
-    console.log('save', event);
       this.recommendRecipes = this.likes.isFavourite(event);
   }
 
   randomizeRec(){
     let length = this.recommendedArray.length;
     let index = Math.floor((Math.random() * length) + 0.1);
-    console.log(index);
     this.recParams = this.recommendedArray[index];
-    console.log(this.recParams);
   }
 
+  ngOnDestroy(){
+     this.sub.unsubscribe(); 
+    }
 }

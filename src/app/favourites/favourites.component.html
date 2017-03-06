@@ -1,8 +1,8 @@
 <div class="container">
 
-<h4>{{title}}</h4>
+    <h4>{{title}}</h4>
 
-<app-cards-container (update)="saveUpdate($event)" [recipes]="ownRecipes" [imageurl]="imageurl"></app-cards-container>
+    <app-cards-container (update)="saveUpdate($event)" [recipes]="ownRecipes" [imageurl]="imageurl"></app-cards-container>
 
-<button class="btn btn-warning" (click)="emptyFavourites()" *ngIf="showButton">Clear favourites</button>
+    <button class="btn btn-warning" (click)="emptyFavourites()" *ngIf="showButton">Clear favourites</button>
 </div>

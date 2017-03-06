@@ -5,11 +5,13 @@
         <h4>{{title}}</h4>
         <br>
 
-        <div class="row" *ngIf="horizontal">
+        <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 recipecard" *ngFor="let recipe of recipes">
                 <div class="card-group">
                     <div class="card">
                         <a class="btn btn-default heartContainer">
+
+                            <!-- check if the recipe has been added to favourites and display corresponding heart icon -->
                             <i class="fa fa-heart fa-lg likedHeart" aria-hidden="true" *ngIf="recipe.isliked" (click)="removeFromFavourites(recipe)"></i>
                             <i class="fa fa-heart fa-lg notLikedHeart" aria-hidden="true" *ngIf="!recipe.isliked" (click)="saveToFavourites(recipe)"></i></a>
                         <a [routerLink]="['/recipe', recipe.id]" (click)="navigate(recipe.id)">
@@ -23,11 +25,8 @@
                             </div>
                         </a>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>

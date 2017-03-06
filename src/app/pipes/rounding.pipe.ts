@@ -5,6 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RoundingPipe implements PipeTransform {
 
+
+// Round ingredient amounts to nearest decimals, integers or tens
   transform(value: any, args?: any): any {
     if (value > 100) {
       return Math.round(value / 10) * 10;
