@@ -57,7 +57,9 @@ export class AdvancedSearchComponent implements OnInit {
 
   constructor(public fb: FormBuilder, private router: Router) { }
 
-  search() {
+  search(event) {
+
+    event.preventDefault();
 
     // Check which intolerances have been checked and add those to the search array
 
@@ -78,7 +80,7 @@ export class AdvancedSearchComponent implements OnInit {
       this.searchQuery['type'] = this.searchQuery['type'].replace(/ /,"+");
     }
 
-    event.preventDefault();
+    
     this.searchAdvanced.emit(this.searchQuery);
   }
 
