@@ -654,8 +654,9 @@ var FrontPageComponent = (function () {
             _this.imageurl = res.baseUri;
             console.log(res.results);
         });
-        this.ownRecipes = this.likes.getFavourites().slice(0, 4);
+        this.ownRecipes = this.likes.getFavourites();
         if (this.ownRecipes) {
+            this.ownRecipes = this.ownRecipes.slice(0, 4);
             this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
             console.log(this.ownRecipes);
         }
@@ -1380,15 +1381,21 @@ var LikesService = (function () {
         return likes;
     };
     LikesService.prototype.isFavourite = function (recipes) {
-        // check if a recipe already exists in localStorage, using recipeExists() function
-        var favs = JSON.parse(localStorage.getItem('likes'));
-        for (var _i = 0, recipes_1 = recipes; _i < recipes_1.length; _i++) {
-            var recipe = recipes_1[_i];
-            if (this.recipeExists(recipe, favs)) {
-                recipe['isliked'] = true;
-            }
-            else {
-                recipe['isliked'] = false;
+        if (!recipes.length) {
+        }
+        else {
+            // check if a recipe already exists in localStorage, using recipeExists() function
+            var favs = JSON.parse(localStorage.getItem('likes'));
+            if (favs) {
+                for (var _i = 0, recipes_1 = recipes; _i < recipes_1.length; _i++) {
+                    var recipe = recipes_1[_i];
+                    if (this.recipeExists(recipe, favs)) {
+                        recipe['isliked'] = true;
+                    }
+                    else {
+                        recipe['isliked'] = false;
+                    }
+                }
             }
         }
         return recipes;

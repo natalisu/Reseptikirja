@@ -32,8 +32,9 @@ export class FavouritesComponent implements OnInit {
 
 
    saveUpdate(event) {
-      this.ownRecipes = this.likes.getFavourites();
+     if(this.ownRecipes){
       this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+     }
   }
 
   emptyFavourites() {

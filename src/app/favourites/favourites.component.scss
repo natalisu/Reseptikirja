@@ -1,4 +1,5 @@
 /* COLOURS */
+
 $bg: #eee;
 $darkgr: #65874B;
 $midgr: #84A16E;
@@ -6,17 +7,37 @@ $gr: #A8C095;
 $heart: #d65164;
 
 /* FONTS */
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
-$head: 'Lora', serif;
-$txt: 'PT Serif', serif;
-$desc: 'Karla', sans-serif;
 
-
-h4, p.card-text {
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$head: 'Lora',
+serif;
+$txt: 'PT Serif',
+serif;
+$desc: 'Karla',
+sans-serif;
+$cursive: 'Caveat',
+cursive;
+h4,
+p.card-text {
     font-family: $desc;
     text-transform: uppercase;
+}
+
+.norecipes {
+    text-align: center;
+    h4 {
+        font-family: $desc;
+        text-transform: none;
+        font-size: 1em;
+    }
+    h3 {
+        font-family: $cursive;
+    }
 }
 
 .btn {
@@ -31,4 +52,3 @@ h4, p.card-text {
 .container {
     padding: 2%;
 }
-
