@@ -4,19 +4,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
 
             <ul class="navbar-nav mr-auto nav">
-                <li class="nav-item navitem">
-                    <a class="navbar-brand" [routerLink]="['/']">
+                <li class="nav-item">
+                    <a class="navbar-brand">
                         <img src="https://trello-attachments.s3.amazonaws.com/588727fd73d9c03b796b7e16/306x282/1c03784ed78a3c26c554d8d85430b643/logo.png" class="d-inline-block align-top" alt="">
-                    </a>
+                    </a>      
+                </li>
+                <li class="nav-item verticalLine hidden-sm-down">
                 </li>
                 <li class="nav-item navitem myhome">
-                    <a [routerLink]="['/']" class="nav-link"><i class="fa fa-home nav-icon showhome" aria-hidden="true"></i><span class="nav-hide"><b>Home</b></span></a>
+                    <a [routerLink]="['/']" class="nav-link"><i class="fa fa-home nav-icon" aria-hidden="true"></i><span class="nav-hide"><b>Home</b></span></a>
                 </li>
-
+                <li class="nav-item verticalLine hidden-sm-down">
+                </li>
                 <li class="nav-item navitem mysearch">
-                    <a [routerLink]="['/search']" class="nav-link"><i class="fa fa-search nav-icon showsearch" aria-hidden="true"></i><span class="nav-hide">Recipe search</span></a>
+                    <a [routerLink]="['/search']" class="nav-link"><i class="fa fa-search hidden-md-up nav-icon" aria-hidden="true"></i><span class="nav-hide">Recipe search</span></a>
                 </li>
-
+                <li class="nav-item verticalLine hidden-sm-down">
+                </li>
                 <li class="nav-item navitem myrecipes">
                     <a [routerLink]="['/favourites']" class="nav-link"><i class="fa fa-heart nav-icon showheart" aria-hidden="true"></i><span class="nav-hide">My recipes</span></a>
                 </li>
