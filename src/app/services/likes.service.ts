@@ -33,15 +33,21 @@ export class LikesService {
   }
 
   isFavourite(recipes: Array<Object>) {
-    // check if a recipe already exists in localStorage, using recipeExists() function
-    let favs = JSON.parse(localStorage.getItem('likes'));
-    for (let recipe of recipes) {
-      if (this.recipeExists(recipe, favs)) {
-        recipe['isliked'] = true;
-      } else {
-        recipe['isliked'] = false;
-      }
-    } 
+
+    if (!recipes.length) {
+    } else {
+        // check if a recipe already exists in localStorage, using recipeExists() function
+        let favs = JSON.parse(localStorage.getItem('likes'));
+        if (favs) {
+            for (let recipe of recipes) {
+              if (this.recipeExists(recipe, favs)) {
+                recipe['isliked'] = true;
+              } else {
+                recipe['isliked'] = false;
+              }
+            }
+        }
+    }
     return recipes;
   }
 

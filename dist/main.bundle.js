@@ -556,7 +556,7 @@ var FavouritesComponent = (function () {
         this.imageurl = "https://spoonacular.com/recipeImages/";
     }
     FavouritesComponent.prototype.ngOnInit = function () {
-        this.sub = this.ownRecipes = this.likes.getFavourites();
+        this.ownRecipes = this.likes.getFavourites();
         if (this.ownRecipes) {
             this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
             console.log(this.ownRecipes);
@@ -639,6 +639,7 @@ var FrontPageComponent = (function () {
             { 'query': 'cupcakes' }
         ];
         this.recTitle = "Recommended recipes";
+        this.ownTitle = "Your favourites";
         this.horizontal = true;
         this.imageurl = '';
         this.foodFact = '';
@@ -653,11 +654,19 @@ var FrontPageComponent = (function () {
             _this.imageurl = res.baseUri;
             console.log(res.results);
         });
+        this.ownRecipes = this.likes.getFavourites().slice(0, 4);
+        if (this.ownRecipes) {
+            this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+            console.log(this.ownRecipes);
+        }
         this.recipeservice.getFoodFact()
             .subscribe(function (res) { return _this.foodFact = res.text; });
     };
     FrontPageComponent.prototype.saveUpdate = function (event) {
         this.recommendRecipes = this.likes.isFavourite(event);
+    };
+    FrontPageComponent.prototype.saveFavourites = function (event) {
+        this.ownRecipes = this.likes.isFavourite(event);
     };
     FrontPageComponent.prototype.randomizeRec = function () {
         var length = this.recommendedArray.length;
@@ -1219,7 +1228,7 @@ module.exports = "/* COLOURS */\n/* FONTS */\n.carousel-inner > .carousel-item >
 /***/ 688:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\nnav {\n  background-color: #fff; }\n\n.navbar-brand img {\n  width: 60px;\n  height: 60px;\n  margin-left: -0.8em; }\n\n.navbar-collapse.collapse {\n  display: block !important; }\n\n.navbar-nav > li,\n.navbar-nav {\n  float: left !important; }\n\n.navbar-nav.navbar-right:last-child {\n  margin-right: -15px !important; }\n\n.navbar-right {\n  float: right !important; }\n\n.navitem,\n.myrecipes {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase;\n  padding-bottom: 1%;\n  font-size: 1.4em; }\n\n.navitem:hover {\n  background-color: rgba(168, 192, 149, 0.6); }\n\n.text-right {\n  float: right; }\n\nli {\n  width: 100%;\n  margin-left: 2%;\n  margin-right: 2%; }\n\nul {\n  white-space: nowrap; }\n\n.myrecipes {\n  display: inline-block; }\n  .myrecipes a {\n    display: inline-block; }\n\n.nav-icon {\n  display: inline-block; }\n\n.showheart,\n.showsearch,\n.showhome {\n  display: inline-block;\n  color: #fff;\n  z-index: 10000;\n  margin-right: 1%; }\n\n.myrecipes:hover .showheart {\n  color: #d65164; }\n\n.mysearch:hover .showsearch {\n  color: #000; }\n\n.myhome:hover .showhome {\n  color: #000; }\n\n@media screen and (max-width: 768px) {\n  .nav-icon {\n    color: #7f7f7f; }\n  .searchbox {\n    top: 5%;\n    width: 90%; }\n  .nav-link {\n    display: inline-block;\n    padding-right: 2rem;\n    padding-left: 2rem; }\n  .nav-hide {\n    display: none; }\n  .nav-icon {\n    font-size: 1.3em; }\n  .navbar-nav {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-direction: row;\n    flex-direction: row; }\n  .navbar-toggleable-sm {\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    align-items: center; }\n  .shownext {\n    display: inline-block;\n    color: #d65164; } }\n\n@media screen and (max-width: 992px) {\n  .nav-item {\n    font-size: 1.3em; } }\n"
+module.exports = "/* COLOURS */\n/* FONTS */\nnav {\n  background-color: #fff; }\n\n.navbar-brand img {\n  width: 60px;\n  height: 60px; }\n\n.navbar-collapse.collapse {\n  display: block !important; }\n\n.navbar-nav > li,\n.navbar-nav {\n  float: left !important; }\n\n.navbar-nav.navbar-right:last-child {\n  margin-right: -15px !important; }\n\n.navbar-right {\n  float: right !important; }\n\n.navitem,\n.myrecipes {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase;\n  padding-bottom: 1%;\n  font-size: 1.4em; }\n\n.navitem:hover {\n  background-color: rgba(168, 192, 149, 0.6); }\n\n.text-right {\n  float: right; }\n\nli {\n  width: 100%;\n  margin-left: 2%;\n  margin-right: 2%; }\n\nul {\n  white-space: nowrap; }\n\n.myrecipes {\n  display: inline-block; }\n  .myrecipes a {\n    display: inline-block; }\n\n.nav-icon {\n  display: inline-block; }\n\n.showheart,\n.showsearch,\n.showhome {\n  display: inline-block;\n  color: #fff;\n  z-index: 10000;\n  margin-right: 1%;\n  margin-top: 0; }\n\n.myrecipes:hover .showheart {\n  color: #d65164; }\n\n.mysearch:hover .showsearch {\n  color: #000; }\n\n.myhome:hover .showhome {\n  color: #000; }\n\n@media screen and (max-width: 576px) {\n  .navbar-brand img {\n    width: 40px;\n    height: 40px;\n    margin-left: 0.8em; }\n  .navitem {\n    font-size: 0.9em;\n    margin: auto 0; } }\n\n@media screen and (max-width: 768px) {\n  .nav-icon {\n    color: #7f7f7f;\n    margin-top: 50%; }\n  .searchbox {\n    top: 5%;\n    width: 90%; }\n  .nav-link {\n    display: inline-block;\n    padding-right: 2rem;\n    padding-left: 2rem; }\n  .nav-hide {\n    display: none; }\n  .nav-icon {\n    font-size: 1.3em; }\n  .navbar-nav {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-direction: row;\n    flex-direction: row; }\n  .navbar-toggleable-sm {\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    align-items: center; }\n  .shownext {\n    display: inline-block;\n    color: #d65164; } }\n\n@media screen and (max-width: 992px) {\n  .nav-item {\n    font-size: 1.3em; } }\n"
 
 /***/ },
 
@@ -1282,7 +1291,7 @@ module.exports = "<div class=\"container\">\n\n    <h4>{{title}}</h4>\n\n    <ap
 /***/ 698:
 /***/ function(module, exports) {
 
-module.exports = "<app-image-carousel></app-image-carousel>\r\n\r\n<br>\r\n\r\n<app-cards-container (update)=\"saveUpdate($event)\" [imageurl]=\"imageurl\" [recipes]=\"recommendRecipes\" [title]=\"recTitle\" *ngIf=\"recommendRecipes\"></app-cards-container>\r\n\r\n<div class=\"container container-fact\">\r\n    <h4><b>Did you know?</b></h4>\r\n    <p> {{foodFact}} </p>\r\n</div>\r\n\r\n<!--\r\n<br>\r\n<app-cards-container [recipes]=\"ownRecipes\" [horizontal]=\"false\" [title]=\"Similar recipes\"></app-cards-container>\r\n<br>\r\n-->"
+module.exports = "<app-image-carousel></app-image-carousel>\r\n\r\n<br>\r\n\r\n<app-cards-container (update)=\"saveUpdate($event)\" [imageurl]=\"imageurl\" [recipes]=\"recommendRecipes\" [title]=\"recTitle\" *ngIf=\"recommendRecipes\"></app-cards-container>\r\n\r\n<div class=\"container container-fact\">\r\n    <h4><b>Did you know?</b></h4>\r\n    <p> {{foodFact}} </p>\r\n</div>\r\n\r\n<app-cards-container (update)=\"saveFavourites($event)\" [recipes]=\"ownRecipes\" [title]=\"ownTitle\" *ngIf=\"ownRecipes\"></app-cards-container>"
 
 /***/ },
 

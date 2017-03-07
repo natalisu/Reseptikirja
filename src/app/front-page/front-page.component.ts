@@ -52,19 +52,20 @@ export class FrontPageComponent implements OnInit, OnDestroy {
             console.log(res.results);
         });
 
-        this.ownRecipes = this.likes.getFavourites().slice(0, 4);
+        this.ownRecipes = this.likes.getFavourites();
           if (this.ownRecipes) {
-             this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+            this.ownRecipes = this.ownRecipes.slice(0, 4);
+            this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
             console.log(this.ownRecipes);
-          }
-        
+          } 
+
         this.recipeservice.getFoodFact()
         .subscribe(res => this.foodFact = res.text);
 
   }
 
    saveUpdate(event) {
-      this.recommendRecipes = this.likes.isFavourite(event);
+       this.recommendRecipes = this.likes.isFavourite(event);
   }
 
   saveFavourites(event) {
