@@ -103,6 +103,7 @@ p.card-title {
     img {
         position: absolute;
         width: auto;
+        object-fit: cover;
         min-width: 100%;
         min-height: 100%;
     }
@@ -110,10 +111,10 @@ p.card-title {
 
 @media screen and (max-width: 560px) {
     .card {
-        min-width: 90%;
+        min-width: 100%;
     }
     .card-group {
-        min-width: 90%;
+        min-width: 100%;
         text-align: center;
     }
 }

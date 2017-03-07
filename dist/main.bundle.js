@@ -570,8 +570,9 @@ var FavouritesComponent = (function () {
         }
     };
     FavouritesComponent.prototype.saveUpdate = function (event) {
-        this.ownRecipes = this.likes.getFavourites();
-        this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+        if (this.ownRecipes) {
+            this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+        }
     };
     FavouritesComponent.prototype.emptyFavourites = function () {
         this.likes.emptyFavourites();
@@ -1208,7 +1209,7 @@ module.exports = "/* COLOURS */\n/* FONTS */\nh4 {\n  font-family: \"Karla\", sa
 /***/ 685:
 /***/ function(module, exports) {
 
-module.exports = "/* COLOURS */\n/* FONTS */\nh4, p.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.btn {\n  margin: auto;\n  display: block;\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.container {\n  padding: 2%; }\n"
+module.exports = "/* COLOURS */\n/* FONTS */\nh4,\np.card-text {\n  font-family: \"Karla\", sans-serif;\n  text-transform: uppercase; }\n\n.norecipes {\n  text-align: center; }\n  .norecipes h4 {\n    font-family: \"Karla\", sans-serif;\n    text-transform: none;\n    font-size: 1em; }\n  .norecipes h3 {\n    font-family: \"Caveat\", cursive; }\n\n.btn {\n  margin: auto;\n  display: block;\n  letter-spacing: 1px;\n  font-family: \"Karla\", sans-serif;\n  background-color: #84A16E;\n  border: none; }\n\n.container {\n  padding: 2%; }\n"
 
 /***/ },
 
@@ -1285,7 +1286,7 @@ module.exports = "\n<div class=\"container\" style=\"background-color: #fff; pad
 /***/ 697:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n    <h4>{{title}}</h4>\n\n    <app-cards-container (update)=\"saveUpdate($event)\" [recipes]=\"ownRecipes\" [imageurl]=\"imageurl\"></app-cards-container>\n\n    <button class=\"btn btn-warning\" (click)=\"emptyFavourites()\" *ngIf=\"showButton\">Clear favourites</button>\n</div>"
+module.exports = "<div class=\"container\" *ngIf=\"ownRecipes\">\n\n    <h4>{{title}}</h4>\n\n    <app-cards-container (update)=\"saveUpdate($event)\" [recipes]=\"ownRecipes\" [imageurl]=\"imageurl\" *ngIf=\"ownRecipes\"></app-cards-container>\n\n    <button class=\"btn btn-warning\" (click)=\"emptyFavourites()\" *ngIf=\"showButton\">Clear favourites</button>\n\n</div>\n\n<div *ngIf=\"!ownRecipes\">\n    <div class=\"container norecipes\">\n        <h3>Nothing found.</h3><br>\n        <h4> Favourite a recipe by clicking the heart icon or text \"add to favourites\".</h4>\n    </div>\n</div>"
 
 /***/ },
 
