@@ -9,8 +9,4 @@
     <p> {{foodFact}} </p>
 </div>
 
-<!--
-<br>
-<app-cards-container [recipes]="ownRecipes" [horizontal]="false" [title]="Similar recipes"></app-cards-container>
-<br>
--->
+<app-cards-container (update)="saveFavourites($event)" [recipes]="ownRecipes" [title]="ownTitle" *ngIf="ownRecipes"></app-cards-container>

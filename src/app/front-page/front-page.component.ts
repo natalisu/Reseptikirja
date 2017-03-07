@@ -28,7 +28,9 @@ export class FrontPageComponent implements OnInit, OnDestroy {
 
   private recParams: Params;
   private recommendRecipes: Array<Object>;
+  private ownRecipes: Array<Object>;
   private recTitle: string = "Recommended recipes";
+  private ownTitle: string = "Your favourites";
   private horizontal: boolean = true;
   private imageurl: string = '';
   private foodFact: string = '';
@@ -49,6 +51,12 @@ export class FrontPageComponent implements OnInit, OnDestroy {
             this.imageurl = res.baseUri;
             console.log(res.results);
         });
+
+        this.ownRecipes = this.likes.getFavourites().slice(0, 4);
+          if (this.ownRecipes) {
+             this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
+            console.log(this.ownRecipes);
+          }
         
         this.recipeservice.getFoodFact()
         .subscribe(res => this.foodFact = res.text);
@@ -57,6 +65,10 @@ export class FrontPageComponent implements OnInit, OnDestroy {
 
    saveUpdate(event) {
       this.recommendRecipes = this.likes.isFavourite(event);
+  }
+
+  saveFavourites(event) {
+      this.ownRecipes = this.likes.isFavourite(event);
   }
 
   randomizeRec(){

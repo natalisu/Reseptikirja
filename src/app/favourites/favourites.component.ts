@@ -17,7 +17,7 @@ export class FavouritesComponent implements OnInit {
   constructor(private likes: LikesService) { }
 
   ngOnInit() {
-   this.sub =  this.ownRecipes = this.likes.getFavourites();
+  this.ownRecipes = this.likes.getFavourites();
     if (this.ownRecipes) {
       this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
       console.log(this.ownRecipes);
