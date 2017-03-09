@@ -15,12 +15,6 @@ $txt: 'PT Serif',
 serif;
 $desc: 'Karla',
 sans-serif;
-$head: 'Lora',
-serif;
-$txt: 'PT Serif',
-serif;
-$desc: 'Karla',
-sans-serif;
 $cursive: 'Caveat',
 cursive;
 .container {
@@ -32,6 +26,11 @@ cursive;
     width: 90%;
     margin: 3% auto;
     background-color: $accent;
+    padding: 1.5% 3% 1.5% 3%;
+}
+
+p {
+    font-family: $desc;
 }
 
 h4 {

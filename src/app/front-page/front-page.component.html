@@ -3,10 +3,11 @@
 <br>
 
 <app-cards-container (update)="saveUpdate($event)" [imageurl]="imageurl" [recipes]="recommendRecipes" [title]="recTitle" *ngIf="recommendRecipes"></app-cards-container>
+<app-cards-container (update)="saveFavourites($event)" [recipes]="ownRecipes" [title]="ownTitle" *ngIf="ownRecipes"></app-cards-container>
+
 
 <div class="container container-fact">
     <h4><b>Did you know?</b></h4>
     <p> {{foodFact}} </p>
 </div>
 
-<app-cards-container (update)="saveFavourites($event)" [recipes]="ownRecipes" [title]="ownTitle" *ngIf="ownRecipes"></app-cards-container>

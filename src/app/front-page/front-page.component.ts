@@ -30,7 +30,7 @@ export class FrontPageComponent implements OnInit, OnDestroy {
   private recommendRecipes: Array<Object>;
   private ownRecipes: Array<Object>;
   private recTitle: string = "Recommended recipes";
-  private ownTitle: string = "Your favourites";
+  private ownTitle: string = "Your saved recipes";
   private horizontal: boolean = true;
   private imageurl: string = '';
   private foodFact: string = '';
@@ -57,7 +57,7 @@ export class FrontPageComponent implements OnInit, OnDestroy {
             this.ownRecipes = this.ownRecipes.slice(0, 4);
             this.ownRecipes = this.likes.isFavourite(this.ownRecipes);
             console.log(this.ownRecipes);
-          } 
+          }
 
         this.recipeservice.getFoodFact()
         .subscribe(res => this.foodFact = res.text);

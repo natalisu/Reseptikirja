@@ -14,12 +14,7 @@ $txt: 'PT Serif',
 serif;
 $desc: 'Karla',
 sans-serif;
-$head: 'Lora',
-serif;
-$txt: 'PT Serif',
-serif;
-$desc: 'Karla',
-sans-serif;
+
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
@@ -33,6 +28,10 @@ sans-serif;
 .card {
     margin: 0.5%;
     display: inline-block;
+}
+
+.card-group {
+    margin-bottom: 1em;
 }
 
 a {
