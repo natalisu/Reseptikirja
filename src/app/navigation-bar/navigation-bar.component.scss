@@ -90,6 +90,17 @@ ul {
 .myrecipes:hover .showheart {
     color: $heart;
 }
+@media screen and (max-width: 400px) {
+    .nav-link {
+        font-size: 0.9em;
+        margin: auto 0;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    .navitem {
+        width: 90%;
+    }
+}
 
 @media screen and (max-width: 576px) {
     .navbar-brand {
@@ -102,9 +113,14 @@ ul {
         font-size: 0.9em;
         margin: auto 0;
     }
+    .nav-link {
+        display: inline-block;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 766px) {
     .nav-icon {
         color: #7f7f7f;
         margin-top: 50%;
@@ -120,8 +136,8 @@ ul {
 
     .nav-link {
         display: inline-block;
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
     .nav-hide {
         display: none;
@@ -156,5 +172,9 @@ ul {
 @media screen and (max-width: 992px) {
     .nav-item {
         font-size: 1.3em;
+    }
+    .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }
