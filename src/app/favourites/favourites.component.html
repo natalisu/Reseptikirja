@@ -1,4 +1,4 @@
-<div class="container" *ngIf="ownRecipes">
+<div class="container" *ngIf="recipesFound">
 
     <h4>{{title}}</h4>
 
@@ -8,7 +8,7 @@
 
 </div>
 
-<div *ngIf="!ownRecipes">
+<div *ngIf="!recipesFound">
     <div class="container norecipes">
         <h3>Nothing found.</h3><br>
         <h4>Favourite a recipe by clicking the heart icon, or the link "add to favourites" next to a recipe.</h4><br>

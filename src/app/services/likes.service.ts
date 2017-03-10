@@ -26,6 +26,29 @@ export class LikesService {
 
   }
 
+  isRecipeFavourite(recipeId: string) {
+    //checks if given id of recipe is liked, return true or false
+    let recipe: Object = {};
+    recipe['id'] = parseInt(recipeId);
+    console.log(recipe);
+    let likes: Array<Object>;
+    console.log(localStorage.getItem('likes'));
+        if (localStorage.getItem('likes') === null) {
+          console.log('no favs, so false');
+          return false;
+        } else {
+          likes = JSON.parse(localStorage.getItem('likes'));
+          console.log(likes);
+          if (this.recipeExists(recipe, likes)) {
+            console.log('recipe found, so true')
+            return true;
+          } else {
+            console.log('recipe not found, can be added');
+            return false;
+          }
+        }
+  }
+
   getFavourites() {
     let likes;
     likes = JSON.parse(localStorage.getItem('likes'));

@@ -27,6 +27,7 @@ export class RecipeCardDetailedComponent implements OnInit {
   private imageurl: string = 'https://spoonacular.com/recipeImages/';
   private url: string = '';
   private imageurlFb;
+  private isLiked: boolean;
 
 constructor(private recipequery: RecipequeryService, private router: Router, private route: ActivatedRoute, private likes: LikesService) { 
 
@@ -56,11 +57,15 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
                 initFacebook();
                 refreshFacebook();
 
+                this.isLiked = this.likes.isRecipeFavourite(this.activeId);
+                console.log(this.isLiked);
+
         this.recipequery.getSimilarRecipe(this.activeId)
         .subscribe(
           (res) => {
             this.similarRecipes =  res.slice(0, 4);
         })
+
       })
   }}
 
@@ -69,7 +74,7 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
     //save current active recipe to favourites after constructing an object with required information
 
     let recipe: Object = {};
-    recipe['id']= this.activeId;
+    recipe['id']= parseInt(this.activeId);
     recipe['title'] = this.recipeInfo.title;
     recipe['readyInMinutes'] = this.recipeInfo.readyInMinutes;
 
@@ -80,6 +85,15 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
 
     recipe['image'] = imageUrl;
     this.likes.saveToFavourites(recipe);
+    this.isLiked = this.likes.isRecipeFavourite(this.activeId);
+  }
+
+  removeFromFavourites() {
+     let recipe: Object = {};
+    recipe['id']= parseInt(this.activeId);
+    this.likes.removeFavourite(recipe);
+    this.isLiked = this.likes.isRecipeFavourite(this.activeId);
+
   }
 
    saveUpdate(event) {
@@ -102,6 +116,8 @@ constructor(private recipequery: RecipequeryService, private router: Router, pri
 
                 initFacebook();
                 refreshFacebook();
+
+                this.isLiked = this.likes.isRecipeFavourite(this.activeId);
 
         this.recipequery.getSimilarRecipe(event)
         .subscribe(
