@@ -20,6 +20,8 @@ sans-serif;
 
 nav {
     background-color: #fff;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
 }
 
 .navbar-brand {
@@ -37,10 +39,6 @@ nav {
 .navbar-nav>li,
 .navbar-nav {
     float: left !important;
-}
-
-.myrecipes {
-    margin-left: auto;
 }
 
 .navitem {
@@ -148,6 +146,10 @@ ul {
     .shownext {
         display: inline-block;
         color: $heart;
+    }
+    
+    .fa-heart {
+        margin-top: 0.7em;
     }
 }
 
