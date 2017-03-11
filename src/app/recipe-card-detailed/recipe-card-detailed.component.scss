@@ -64,12 +64,9 @@ li.ingrd {
     display: inline-block;
 }
 
-.btn-likes {
-    background-color: $heart;
-}
-
+.btn-likes,
 .btn-not-liked {
-    background-color: $darkyel;
+    background-color: $heart;
 }
 
 .btn-likes:hover {
